@@ -1,0 +1,13 @@
+$txcm-factorsLabel-color: $txgl-white-900;
+
+.txcm-factorsLabel {
+  @include txmx-fontSize(18px);
+  position: absolute;
+  z-index: 4;
+  top: 24px;
+  left: 32px;
+  color: $txcm-factorsLabel-color;
+  font-weight: 700;
+  line-height: 1;
+  width: 200px;  
+}

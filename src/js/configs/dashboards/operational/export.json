@@ -1,0 +1,32 @@
+[
+  {
+    "value": "FRMT",
+    "label": "Формат",
+    "bit": 1
+  }, {
+    "value": "SUBFRMT",
+    "label": "Подформат",
+    "bit": 2
+  }, {
+    "value": "REGION",
+    "label": "Округ",
+    "bit": 3
+  }, {
+    "value": "BRANCH",
+    "label": "Филиaл",
+    "bit": 4
+  }, {
+    "value": "ТУ",
+    "label": "ТУ",
+    "bit": 5
+  }, {
+    "value": "СВ",
+    "label": "СВ",
+    "bit": 6
+  }, {
+    "value": "ART_GRP_LVL_0_NAME",
+    "label": "ГР20",
+    "bit": 7
+  }
+]
+

@@ -1,0 +1,6 @@
+// Layer
+
+@mixin txmx-layer($layer: content, $shift: 0) {
+  $zIndex: map-get($txgl-layers, $layer);
+  z-index: ($zIndex + $shift);
+}

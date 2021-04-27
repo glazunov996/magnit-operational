@@ -1,0 +1,28 @@
+.txcm-exportIndicators {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.txcm-exportIndicatorsRow {
+  @extend %txph-scroll;
+  display: flex;
+  align-self: stretch;
+  flex-wrap: wrap;
+  margin: 8px 0 0;
+
+  @include txmx-mq(tablet) {
+    position: relative;
+    overflow: auto;
+    padding: 0 0 4px;
+  }
+
+  @include txmx-mq(phone) {
+    display: block;
+    overflow: visible;
+  }
+}

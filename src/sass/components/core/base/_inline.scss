@@ -1,0 +1,146 @@
+%txph-inlineInteractive {
+  text-decoration: none;
+  cursor: help;
+}
+
+$txph-inlineInteractiveHighlight-color: $txgl-red;
+
+%txph-inlineInteractiveHighlight {
+  border-bottom: 1px dotted $txph-inlineInteractiveHighlight-color;
+  color: $txph-inlineInteractiveHighlight-color;
+}
+
+%txph-inlineSmallFont {
+  @include txmx-fontSize(large);
+  line-height: 0;
+}
+
+%txph-inlineSpecial {
+  margin: 0 -0.075em 0 0;
+  letter-spacing: 0.075em;
+}
+
+%txph-inlineAttention {
+  font-weight: bold;
+}
+
+%txph-inlineEmphasis {
+  font-style: italic;
+}
+
+%txph-inlineRemoved {
+  text-decoration: line-through;
+}
+
+strong {
+  @extend %txph-inlineAttention;
+}
+
+b {
+  @extend %txph-inlineAttention;
+}
+
+em {
+  @extend %txph-inlineEmphasis;
+}
+
+cite {
+  @extend %txph-inlineEmphasis;
+}
+
+q {
+  @extend %txph-inlineEmphasis;
+  quotes: none;
+
+  &::before,
+  &::after {
+    content: none;
+  }
+}
+
+i {
+  @extend %txph-inlineEmphasis;
+}
+
+dfn {
+  @extend %txph-inlineAttention;
+}
+
+acronym {
+  @extend %txph-inlineSpecial;
+  @extend %txph-inlineAttention;
+  @extend %txph-inlineInteractive;
+  @extend %txph-inlineInteractiveHighlight;
+}
+
+abbr {
+  @extend %txph-inlineSpecial;
+  @extend %txph-inlineAttention;
+  @extend %txph-inlineInteractive;
+  @extend %txph-inlineInteractiveHighlight;
+}
+
+ins {
+  @extend %txph-inlineInteractive;
+  @extend %txph-inlineInteractiveHighlight;
+}
+
+mark {
+  @extend %txph-inlineInteractiveHighlight;
+}
+
+$txcm-del-color: $txgl-gray;
+
+del {
+  @extend %txph-inlineRemoved;
+  border-bottom: 1px dotted currentColor;
+  color: $txcm-del-color;
+}
+
+strike {
+  @extend %txph-inlineRemoved;
+}
+
+s {
+  @extend %txph-inlineRemoved;
+}
+
+$txcm-kbd-background: $txgl-gray;
+
+kbd {
+  @extend %txph-inlineAttention;
+  display: inline-block;
+  height: 1.5em;
+  padding: 0 0.25em;
+  border-radius: 3px;
+  background: $txcm-kbd-background;
+  background-clip: padding-box;
+  font-weight: bold;
+  font-family: $txgl-font-mono;
+  vertical-align: top;
+}
+
+sup {
+  @extend %txph-inlineSmallFont;
+  position: relative;
+  top: -0.65em;
+}
+
+sub {
+  @extend %txph-inlineSmallFont;
+  position: relative;
+  bottom: -0.25em;
+}
+
+big {
+  @include txmx-fontSize(large);
+  line-height: 0;
+}
+
+small {
+  @extend %txph-inlineSmallFont;
+}
+
+u {
+  text-decoration: underline;
+}

@@ -1,0 +1,65 @@
+$txcm-factorsTotalValue-color: $txgl-white-900;
+
+$txcm-factorsTotalValue-phone-background: $txgl-gray-500;
+
+.txcm-factorsTotalValue {
+  @extend %txph-dataTableColumnLayout;
+  @include txmx-fontSize(15px);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0 18px 0 0;
+  color: $txcm-factorsTotalValue-color;
+  white-space: nowrap;
+
+  @include txmx-mq(phone) {
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    left: 164px;
+    margin: 0 18px 0 4px;
+
+    &::before {
+      @include txmx-pseudo;
+      z-index: -1;
+      top: 0;
+      right: -8px;
+      left: -5px;
+      height: 100%;
+      background: linear-gradient(to right, $txcm-factorsTotalValue-phone-background, $txcm-factorsTotalValue-phone-background 90%, transparent);
+    }
+  }
+}
+
+$txcm-factorsTotalValueIcon-width: 4px;
+$txcm-factorsTotalValueIcon-height: 6px;
+$txcm-factorsTotalValueIcon-increasing-fill: $txgl-green;
+$txcm-factorsTotalValueIcon-dectreasing-fill: $txgl-red;
+
+.txcm-factorsTotalValueIcon {
+  position: relative;
+  top: 1px;
+  width: $txcm-factorsTotalValueIcon-width;
+  height: $txcm-factorsTotalValueIcon-height;
+  margin: 0 6px 0 0;
+  opacity: 0;
+  transform: rotate(90deg);
+  transition: $txgl-transition-default;
+  fill: $txcm-factorsTotalValueIcon-increasing-fill;
+
+  &-is-increasing {
+    opacity: 1;
+  }
+
+  &-is-decreasing {
+    opacity: 1;
+    transform: rotate(-90deg);
+    fill: $txcm-factorsTotalValueIcon-dectreasing-fill;
+  }
+
+  &-is-decreasingCritically {
+    opacity: 1;
+    transform: rotate(-90deg);
+    fill: $txcm-factorsTotalValueIcon-dectreasing-fill;
+  }
+}

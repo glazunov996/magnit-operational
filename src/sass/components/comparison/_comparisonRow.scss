@@ -1,0 +1,52 @@
+$txcm-comparisonRow-height: 110px;
+$txcm-comparisonRow-borderColor: $txgl-gray-400;
+$txcm-comparisonRow-background: $txgl-background;
+
+.txcm-comparisonRow {
+  @extend %txph-dataTableRow;
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  min-height: $txcm-comparisonRow-height;
+  background: $txcm-comparisonRow-background;
+  transition: margin $txgl-transition-default;
+
+  &::before {
+    @include txmx-pseudo;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 1px;
+    background: $txcm-comparisonRow-borderColor;
+  }
+
+  &::after {
+    @extend %txph-dataTableGraph;
+    @include txmx-pseudo(relative);
+    margin: 0 0 0 16px;
+  }
+
+  &-has-graph {
+    &::after {
+      display: none;
+    }
+  }
+
+  &-has-deviations {
+    margin: 0 0 16px;
+  }
+
+  &-has-deviations + & {
+    &::before {
+      display: none;
+    }
+  }
+
+  &:last-child {
+    border-bottom: 1px solid $txcm-comparisonRow-borderColor;
+    margin: 0;
+  }
+}

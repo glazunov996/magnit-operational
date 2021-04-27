@@ -1,0 +1,46 @@
+// Add New font-face
+
+@mixin txmx-font-face($family, $filename, $variants, $extensions, $base: false, $append: true) {
+  $familyNorm: txf-replaceString(#{$family}, ' ');
+  @each $variant, $name in $variants {
+    @font-face {
+      @include txmx-font-variant($variant);
+      font-family: '#{$family}';
+      font-display: swap;
+      @if map-has-key($extensions, eot) {
+        src: url('../fonts/#{$familyNorm}/#{$filename}-#{$name}.eot');
+      }
+      src: txf-fontFormat($extensions, $familyNorm, $filename, $name);
+    }
+  }
+  $extend: #{'%'}font-#{$familyNorm};
+  $loaded: font-#{$familyNorm}-is-loaded;
+  @if ($base) {
+    html {
+      font-family: unquote('"' + $family + '"' + txf-appendStack($append));
+    }
+  }
+
+  #{$extend} {
+    font-family: unquote('"' + $family + '"' + txf-appendStack($append));
+  }
+}
+
+@mixin txmx-font-variant($variant) {
+  @if $variant == bold {
+    font-weight: bold;
+    font-style: normal;
+  } @else if $variant == italic {
+    font-weight: normal;
+    font-style: italic;
+  } @else if $variant == bolditalic {
+    font-weight: bold;
+    font-style: italic;
+  } @else if type-of($variant) == number {
+    font-weight: $variant;
+    font-style: normal;
+  } @else {
+    font-weight: normal;
+    font-style: normal;
+  }
+}

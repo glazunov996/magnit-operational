@@ -1,0 +1,27 @@
+$txcm-loaderForm-fill: #383c42;
+
+.txcm-loaderForm {
+  fill: $txcm-loaderForm-fill;
+}
+
+$txcm-loaderPath-stroke: $txgl-white-900;
+$txcm-loaderPath-length: 76.6129;
+$txcm-loaderPath-part: 0.25;
+$txcm-loaderPath-duration: 1s;
+
+.txcm-loaderPath {
+  animation: load $txcm-loaderPath-duration infinite linear;
+  stroke: $txcm-loaderPath-stroke;
+  stroke-width: 3.25;
+  stroke-dasharray: 0 ($txcm-loaderPath-length * (1 - $txcm-loaderPath-part)) ($txcm-loaderPath-length * $txcm-loaderPath-part) 0;
+}
+
+@keyframes load {
+  from {
+    stroke-dashoffset: 0;
+  }
+
+  to {
+    stroke-dashoffset: $txcm-loaderPath-length;
+  }
+}

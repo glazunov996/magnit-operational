@@ -1,0 +1,67 @@
+{
+  "qInitialDataFetch": [
+    {
+        "qHeight": 600,
+        "qWidth": 12
+    }
+  ],
+  "qDimensions": [
+      {
+          "qLabel": "PNL_ITEM_ID7",
+          "qLibraryId": "fJjkWPP",
+          "qNullSuppression": true
+      },
+      {
+          "qLabel": "ПериодИзмерение_id",
+          "qLibraryId": "0a2456a6-3694-468d-b28c-778bac05b6cb",
+          "qNullSuppression": true,
+          "qDef" : {
+              "qSortCriterias": [{
+                  "qSortByNumeric": 1
+              }]
+          }
+      },
+      {
+          "qLabel": "ПериодИзмерение",
+          "qLibraryId": "sAVanm",
+          "qNullSuppression": true
+      }
+
+  ],
+  "qMeasures": [ 
+      {
+          "qLabel": "График.Факт",
+          "qLibraryId": "nAeSu"
+      },
+      {
+          "qLabel": "График.Доля от бюд.",
+          "qLibraryId": "DrXbatP"
+      },
+      {
+          "qLabel": "График.Доля от бюд. отклонения",
+          "qLibraryId": "7acd96fc-20d0-487d-9194-ac0676d2f2d9"
+      },
+      {
+          "qLabel": "График.Бюджет",
+          "qLibraryId": "RqxUaDd"
+      },
+      {
+          "qLabel": "График.Факт п.п.",
+          "qLibraryId": "xJQePB"
+      },
+      {
+          "qLabel": "График.Доля от факта п.п.",
+          "qLibraryId": "mzsWEjJ"
+      }, 
+
+      {
+          "qLabel": "График.Доля от факта п.п. отклонения",
+          "qLibraryId": "dee4b704-766e-4182-a84d-a3635562ca1b"
+      }
+  ],
+  "qSuppressZero": true,
+  "qSuppressMissing": true,
+  "qMode": "S",
+  "qInterColumnSortOrder": [],
+  "qStateName": "$"
+}

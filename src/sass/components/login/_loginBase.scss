@@ -1,0 +1,27 @@
+$txcm-authPage-backgroundStart: #1b1e21;
+$txcm-authPage-backgroundEnd: #181a1e;
+
+.txcm-authPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 100%;
+  padding: 70px 0 0;
+  background-image: linear-gradient(-45deg, $txcm-authPage-backgroundStart, $txcm-authPage-backgroundStart 0.5px, $txcm-authPage-backgroundEnd 0.5px, $txcm-authPage-backgroundEnd 5.25px, $txcm-authPage-backgroundStart 5.25px, $txcm-authPage-backgroundStart 6.25px, $txcm-authPage-backgroundEnd 6.25px, $txcm-authPage-backgroundEnd 11.5px, $txcm-authPage-backgroundStart 11.5px, $txcm-authPage-backgroundStart);
+  background-size: 8px 8px;
+}
+
+$txcm-authLogo-size: 33px;
+$txcm-authLogo-color: $txgl-white-900;
+
+.txcm-authLogo {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  width: $txcm-authLogo-size;
+  height: $txcm-authLogo-size;
+  margin: 0 0 0 ($txcm-authLogo-size / -2);
+  fill: $txcm-authLogo-color;
+}

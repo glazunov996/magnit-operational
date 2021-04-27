@@ -1,0 +1,32 @@
+$txcm-comparisonGraph-minHeight: 110px;
+
+.txcm-comparisonGraph {
+  --highlightWidth: 0;
+  --highlightPosition: 0;
+  --highlightOpacity: 0;
+  --highlightShift: 0;
+  @extend %txph-dataTableGraph;
+  position: relative;
+  overflow: hidden;
+  min-height: $txcm-comparisonGraph-minHeight;
+  margin: 0 0 0 16px;
+}
+
+$txcm-comparisonGraphHightlight-background: #26292d;
+
+.txcm-comparisonGraphHolder {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 90px;
+  height: 100%;
+
+  &::before {
+    @include txmx-pseudo;
+    width: var(--highlightWidth);
+    height: 100%;
+    background: $txcm-comparisonGraphHightlight-background;
+    opacity: var(--highlightOpacity);
+    transform: translateX(var(--highlightPosition)) translateX(var(--highlightShift));
+  }
+}

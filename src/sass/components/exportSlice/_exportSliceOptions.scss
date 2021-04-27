@@ -1,0 +1,15 @@
+$txcm-exportSliceOptions-background: $txgl-gray-400;
+
+.txcm-exportSliceOptions {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  border-radius: 3px;
+  margin: 8px 0 0;
+  background: $txcm-exportSliceOptions-background;
+
+  @include txmx-mq(phone) {
+    width: calc(100% + 16px);
+    margin: 8px -8px 0;
+  }
+}

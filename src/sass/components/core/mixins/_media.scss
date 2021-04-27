@@ -1,0 +1,13 @@
+// Media Queries
+
+@mixin txmx-media($name, $pixels: false) {
+  @media #{txf-media($name, $pixels)} {
+    @content;
+  }
+}
+
+@mixin txmx-mq($name, $pixels: false) {
+  @include txmx-media($name, $pixels) {
+    @content;
+  }
+}

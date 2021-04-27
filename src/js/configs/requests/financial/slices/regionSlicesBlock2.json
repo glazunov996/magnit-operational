@@ -1,0 +1,38 @@
+{
+  "qInitialDataFetch": [
+    {
+        "qHeight": 20,
+        "qWidth": 5
+    }
+  ],
+  "qDimensions": [
+      {
+          "qLabel": "Округ",
+          "qLibraryId": "HkYej",
+          "qNullSuppression": true
+      }
+  ],
+  "qMeasures": [
+      {
+          "qLabel": "ТаблОтклоненияПоОкругам.Факт % от выр",
+          "qLibraryId": "pHxRHve"
+      },
+      {
+          "qLabel": "ТаблОтклоненияПоОкругам.vs Факт п-п %",
+          "qLibraryId": "hsxdBx"
+      },
+      {
+          "qLabel": "ТаблОтклоненияПоОкругам.vs Бюджет %",
+          "qLibraryId": "djMLRy"
+      },
+      {
+          "qLabel": "ТаблОтклоненияПоОкругам.Стрелка",
+          "qLibraryId": "rdJ"
+      }
+  ],
+  "qSuppressZero": true,
+  "qSuppressMissing": true,
+  "qMode": "S",
+  "qInterColumnSortOrder": [],
+  "qStateName": "$"
+}

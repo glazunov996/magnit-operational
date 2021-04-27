@@ -1,0 +1,11 @@
+.txcm-tableHeaderGraph {
+  @extend %txph-dataTableGraph;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  margin: 0 0 -20px 16px;
+
+  @include txmx-mq(phone) {
+    margin: 0 0 -20px;
+  }
+}

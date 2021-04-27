@@ -1,0 +1,42 @@
+.txcm-factorsTotalCell {
+  @extend %txph-dataTableCell;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  &::before {
+    @include txmx-pseudo;
+    top: -9px;
+    right: 0;
+    bottom: -9px;
+    width: 1px;
+    background: $txgl-background;
+  }
+
+  &:last-child {
+    margin: 0;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  @include txmx-mq(tablet) {
+    flex-grow: 1;
+    width: auto;
+    min-width: 0;
+    max-width: initial;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  @include txmx-mq(phone) {
+    margin: 0 32px 0 0;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+}

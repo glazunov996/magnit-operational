@@ -1,0 +1,8 @@
+$txcm-lineGraphAxis-stroke: $txgl-gray-300;
+
+.txcm-lineGraphAxis {
+  stroke: $txcm-lineGraphAxis-stroke;
+  stroke-width: 1.0;
+  stroke-dasharray: 5 3;
+  
+}

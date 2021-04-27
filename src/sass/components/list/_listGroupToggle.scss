@@ -1,0 +1,38 @@
+$txcm-listGroupToggle-height: 32px;
+$txcm-listGroupToggle-color: $txgl-white-900;
+
+$txcm-listGroupToggleIcon-width: 3px;
+$txcm-listGroupToggleIcon-height: 5px;
+$txcm-listGroupToggleIcon-color: $txgl-gray-100;
+
+.txcm-listGroupToggle {
+  @include txmx-fontSize(12px);
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;
+  height: $txcm-listGroupToggle-height;
+  padding: 0 0 0 22px;
+  color: $txcm-listGroupToggle-color;
+  background: none;
+  text-align: left;
+
+  &-is-active {
+    @extend %txph-listGroupToggle-is-active;
+  }
+}
+
+.txcm-listGroupToggleIcon {
+  position: absolute;
+  top: 50%;
+  left: 6px;
+  width: $txcm-listGroupToggleIcon-width;
+  height: $txcm-listGroupToggleIcon-height;
+  margin: ($txcm-listGroupToggleIcon-height / -2) 0 0;
+  transform: rotate(180deg);
+  transition: transform $txgl-transition-default;
+  fill: $txcm-listGroupToggleIcon-color;
+
+  %txph-listGroupToggle-is-active > & {
+    transform: rotate(270deg);
+  }
+}

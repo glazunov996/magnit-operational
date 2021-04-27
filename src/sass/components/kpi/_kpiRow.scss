@@ -1,0 +1,82 @@
+$txcm-kpiRow-height: 110px;
+$txcm-kpiRow-borderColor: $txgl-gray-400;
+$txcm-kpiRow-background: $txgl-gray;
+
+$txcm-kpiRow-phone-height: 75px;
+
+.txcm-kpiRow {
+  @extend %txph-dataTableRow;
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  min-height: $txcm-kpiRow-height;
+  background: $txcm-kpiRow-background;
+  transition: margin $txgl-transition-default;
+  opacity: 0.25;
+  transition-property: opacity;
+  transition-duration: 500ms;
+
+  &::before {
+    @include txmx-pseudo;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 1px;
+    background: $txcm-kpiRow-borderColor;
+  }
+
+  &::after {
+    @extend %txph-dataTableGraph;
+    @include txmx-pseudo(relative);
+    margin: 0 0 0 16px;
+  }
+
+  &-loaded {
+    opacity: 1.0;
+  }
+
+  &-has-graph {
+    &::after {
+      display: none;
+    }
+  }
+
+  &-has-deviations {
+    margin: 0 0 16px;
+  }
+
+  &-has-deviations + & {
+    &::before {
+      display: none;
+    }
+  }
+
+  &:nth-child(2) {
+    z-index: 2;
+    border-radius: 0 3px 0 0;
+  }
+
+  &:last-child {
+    border-radius: 0 0 3px;
+    margin: 0;
+  }
+
+  @include txmx-mq(tablet) {
+    &:nth-child(2) {
+      border-radius: 0;
+    }
+
+    &:last-child {
+      border-radius: 0;
+    }
+  }
+
+  @include txmx-mq(phone) {
+    min-height: $txcm-kpiRow-phone-height;
+  }
+}

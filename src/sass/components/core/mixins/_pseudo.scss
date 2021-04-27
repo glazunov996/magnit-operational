@@ -1,0 +1,13 @@
+// Pseudo Element
+
+@mixin txmx-pseudo($position: absolute, $display: block, $content: '') {
+  @if $position == 'absolute' and $display == 'block' and $content == '' {
+    position: absolute;
+    content: '';
+    display: block;
+  } @else {
+    position: $position;
+    content: '' + $content;
+    display: $display;
+  }
+}

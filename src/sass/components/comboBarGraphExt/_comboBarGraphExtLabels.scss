@@ -1,0 +1,22 @@
+$txcm-linearGraphLabels-width: 90px;
+$txcm-linearGraphLabels-color: $txgl-gray-100;
+
+$txcm-linearGraphLabels-compact-height: 70px;
+
+.txcm-comboBarGraphExtLabels {
+  position: absolute;
+  top: 0;
+  right: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 122px;
+  padding: 32px 0 152px 32px;
+  color: $txcm-linearGraphLabels-color;
+  white-space: nowrap;
+  font-size: 14px;
+  height: 510px;
+  background-color: $txgl-gray-500;
+  box-shadow: 0 0 8px 0 $txgl-gray-600;
+}

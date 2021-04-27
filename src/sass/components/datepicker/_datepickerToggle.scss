@@ -1,0 +1,42 @@
+$txcm-datepickerToggle-color: $txgl-white;
+$txcm-datepickerToggle-background: $txgl-gray-400;
+$txcm-datepickerToggle-hover-color: $txgl-white-900;
+$txcm-datepickerToggle-hover-background: $txgl-gray-300;
+$txcm-datepickerToggle-active-color: $txgl-white-900;
+$txcm-datepickerToggle-active-background: $txgl-gray-200;
+
+.txcm-datepickerToggle {
+  position: relative;
+  height: $txgl-filter-height;
+  padding: 0 28px 0 12px;
+  color: $txcm-datepickerToggle-color;
+  background: $txcm-datepickerToggle-background;
+
+  &:hover {
+    color: $txcm-datepickerToggle-hover-color;
+    background: $txcm-datepickerToggle-hover-background;
+  }
+
+  &:active {
+    color: $txcm-datepickerToggle-active-color;
+    background: $txcm-datepickerToggle-active-background;
+  }
+
+  &-is-active {
+    color: $txcm-datepickerToggle-active-color;
+    background: $txcm-datepickerToggle-active-background;
+
+    &:hover {
+      color: $txcm-datepickerToggle-active-color;
+      background: $txcm-datepickerToggle-active-background;
+    }
+  }
+}
+
+$txcm-datepickerToggleIcon-width: 6px;
+$txcm-datepickerToggleIcon-height: 4px;
+
+.txcm-datepickerToggleIcon {
+  @extend %txph-fatArrow;
+  right: ($txgl-filter-height / 2);
+}

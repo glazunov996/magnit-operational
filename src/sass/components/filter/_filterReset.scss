@@ -1,0 +1,19 @@
+$txcm-filterReset-color: $txgl-gray-100;
+$txcm-filterReset-hover-color: $txgl-white;
+
+.txcm-filterReset {
+  padding: 0;
+  margin: 0 14px 0 0;
+  color: $txcm-filterReset-color;
+  background: none;
+  pointer-events: all;
+
+  &:hover,
+  &:active {
+    color: $txcm-filterReset-hover-color;
+  }
+
+  &:disabled {
+    background: none;
+  }
+}

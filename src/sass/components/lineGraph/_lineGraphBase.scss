@@ -1,0 +1,31 @@
+$txcm-lineGraphHolderHighlight-background: #26292d;
+
+.txcm-lineGraphHolder {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  padding: 0 0 8px;
+
+  &::before {
+    @include txmx-pseudo;
+    width: var(--highlightWidth);
+    height: 100%;
+    background: $txcm-lineGraphHolderHighlight-background;
+    opacity: var(--highlightOpacity);
+    transform: translateX(var(--highlightPosition)) translateX(var(--highlightShift));
+  }
+
+  &:last-child {
+    padding: 0;
+  }
+}
+
+.txcm-lineGraph {
+  position: relative;
+  z-index: 1;
+  margin: 14px 0;
+
+  &-is-compact {
+    margin: 14px 0 0;
+  }
+}

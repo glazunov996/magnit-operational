@@ -1,0 +1,46 @@
+.txcm-indicatorsToggle {
+  @extend %txph-buttonLayout;
+  @extend %txph-buttonBorder;
+  @include txmx-layer(top);
+  position: fixed;
+  top: 167px;
+  left: $txgl-gap;
+
+  &:hover,
+  &:active {
+    @extend %txph-indicatorsToggle-hover;
+  }
+
+  @include txmx-mq(tablet) {
+    padding: 0 8px;
+    font-size: 0;
+  }
+
+  @include txmx-mq(phone) {
+    top: 151px;
+    left: $txgl-gap-small;
+  }
+}
+
+$txcm-indicatorsToggleIcon-size: 9px;
+$txcm-indicatorsToggleIcon-fill: $txgl-gray-100;
+
+$txcm-indicatorsToggleIcon-tablet-size: 15px;
+
+.txcm-indicatorsToggleIcon {
+  @extend %txph-buttonIcon;
+  width: $txcm-indicatorsToggleIcon-size;
+  height: $txcm-indicatorsToggleIcon-size;
+  transition: fill $txgl-transition;
+  fill: $txcm-indicatorsToggleIcon-fill;
+
+  %txph-indicatorsToggle-hover & {
+    fill: currentColor;
+  }
+
+  @include txmx-mq(tablet) {
+    width: $txcm-indicatorsToggleIcon-tablet-size;
+    height: $txcm-indicatorsToggleIcon-tablet-size;
+    margin: 0;
+  }
+}

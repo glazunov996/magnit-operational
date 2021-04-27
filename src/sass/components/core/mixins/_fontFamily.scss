@@ -1,0 +1,7 @@
+// Set font-family Property
+
+@mixin txmx-fontFamily($family) {
+  $familyNorm: txf-replaceString(#{$family}, ' ');
+  $familyExtend: #{'%'}font-#{$familyNorm};
+  @extend #{$familyExtend};
+}

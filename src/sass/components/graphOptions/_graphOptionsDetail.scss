@@ -1,0 +1,45 @@
+.txcm-graphDetailInput {
+  @extend %txph-checkControlInput;
+
+  &:checked {
+    @extend %txph-groupDetailInput-checked;
+  }
+}
+
+$txcm-graphDetailControl-height: 24px;
+$txcm-graphDetailControl-color: $txgl-white;
+
+$txcm-graphDetailControl-active-color: $txgl-black;
+$txcm-graphDetailControl-active-background: $txgl-white-900;
+
+.txcm-graphDetailControl {
+  @include txmx-fontSize(14px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: $txcm-graphDetailControl-height;
+  min-width: $txcm-graphDetailControl-height;
+  padding: 0 4px;
+  border-radius: $txgl-form-borderRadius;
+  margin: 0 2px;
+  color: $txcm-graphDetailControl-color;
+
+  &:nth-child(2) {
+    margin: 0 2px 0 24px;
+  }
+
+  &:last-child {
+    margin: 0 0 0 2px;
+  }
+
+  %txph-groupDetailInput-checked + & {
+    color: $txcm-graphDetailControl-active-color;
+    background: $txcm-graphDetailControl-active-background;
+
+    &:hover,
+    &:active {
+      color: $txcm-graphDetailControl-active-color;
+    }
+  }
+}

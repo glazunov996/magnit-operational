@@ -1,0 +1,78 @@
+$txcm-tableHeader-height: 88px;
+$txcm-tableHeader-color: $txgl-gray-100;
+
+$txcm-tableHeaderDummy-factors-tablet-width: 250px;
+
+$txcm-tableHeaderDummy-factors-phone-width: 160px;
+
+.txcm-tableHeader {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  height: $txcm-tableHeader-height;
+  padding: 24px 0;
+  margin: 0 0 -1px;
+  color: $txcm-tableHeader-color;
+  background: $txgl-background;
+  line-height: 2;
+  pointer-events: all;
+
+  &::before {
+    @extend %txph-dataTableLabel;
+    @include txmx-pseudo(relative);
+    z-index: 2;
+    order: -1;
+    background: $txgl-background;
+    box-shadow: 0 5px 0 $txgl-background, 0 -5px 0 $txgl-background;
+  }
+
+  &-factors {
+    @extend %txph-tableHeader-factors;
+  }
+
+  @include txmx-mq(tablet) {
+    width: 200%;
+    width: calc(200% - 150px);
+
+    &::before {
+      position: sticky;
+      left: 0;
+      height: 58px;
+    }
+
+    &-factors {
+      width: 200%;
+      width: calc(200% - 235px);
+
+      &::before {
+        width: $txcm-tableHeaderDummy-factors-tablet-width;
+      }
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+
+  @include txmx-mq(phone) {
+    width: 300%;
+    width: calc(300% - 184px);
+
+    &::before {
+      position: sticky;
+      left: 0;
+      height: 58px;
+    }
+
+    &-factors {
+      width: 400%;
+      width: calc(400% - 650px);
+
+      &::before {
+        width: $txcm-tableHeaderDummy-factors-phone-width;
+        background: $txgl-background;
+      }
+    }
+  }
+}

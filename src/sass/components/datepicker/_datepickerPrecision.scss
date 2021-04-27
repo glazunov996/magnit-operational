@@ -1,0 +1,86 @@
+.txcm-datepickerPrecision {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0 0 16px;
+}
+
+.txcm-datepickerPrecisionOptions {
+  display: flex;
+  margin: 0;
+  list-style: none;
+}
+
+.txcm-datepickerPrecisionOption {
+  position: relative;
+  margin: 0 0 0 4px;
+  list-style: none;
+}
+
+.txcm-datepickerPrecisionInput {
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  opacity: 0;
+
+  &:checked {
+    @extend %txph-datepickerPrecisionInput-checked;
+  }
+
+  &:disabled {
+    @extend %txph-datepickerPrecisionInput-disabled;
+    display: none;
+  }
+}
+
+$txcm-datepickerPrecisionLabel-size: 24px;
+$txcm-datepickerPrecisionLabel-color: $txgl-white-900;
+$txcm-datepickerPrecisionLabel-hover-background: $txgl-gray-100;
+$txcm-datepickerPrecisionLabel-active-background: $txgl-red;
+$txcm-datepickerPrecisionLabel-padding-color: $txgl-gray-200;
+
+.txcm-datepickerPrecisionLabel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $txcm-datepickerPrecisionLabel-size;
+  height: $txcm-datepickerPrecisionLabel-size;
+  border-radius: 3px;
+  color: $txcm-datepickerPrecisionLabel-color;
+  background: none;
+  font-weight: 600;
+  transition: background $txgl-transition-default;
+
+  &::before {
+    @include txmx-pseudo;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+  }
+
+  &:hover {
+    background: $txcm-datepickerPrecisionLabel-hover-background;
+  }
+
+  &:active {
+    background: $txcm-datepickerPrecisionLabel-active-background;
+  }
+
+  %txph-datepickerPrecisionInput-checked + & {
+    background: $txcm-datepickerPrecisionLabel-active-background;
+
+    &:hover {
+      background: $txcm-datepickerPrecisionLabel-active-background;
+    }
+  }
+
+  %txph-datepickerPrecisionInput-disabled + & {
+    display: none;
+  }
+}

@@ -1,0 +1,23 @@
+$txcm-drawer-width: 254px;
+$txcm-drawer-background: $txgl-gray-500;
+
+.txcm-drawer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: $txcm-drawer-width;
+  height: 100%;
+  padding: 20px 20px 0;
+  background: $txcm-drawer-background;
+  pointer-events: all;
+  transform: translateX(-100%);
+  transition: transform $txgl-transition-slow;
+
+  &-is-active {
+    transform: translateX(0);
+  }
+}

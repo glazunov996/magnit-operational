@@ -1,0 +1,28 @@
+$txcm-templatesHeader-color: $txgl-white-900;
+
+.txcm-templatesHeader {
+  @include txmx-fontSize(15px);
+  margin: 0 0 8px;
+  color: $txcm-templatesHeader-color;
+  font-weight: 600;
+}
+
+$txcm-templates-borderColor: $txgl-gray-300;
+
+.txcm-templates {
+  width: 100%;
+  padding: 24px 20px 0;
+  border-top: 1px solid $txcm-templates-borderColor;
+  margin: 24px -20px 0;
+}
+
+.txcm-templateList {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.txcm-templateOption {
+  display: flex;
+  margin: 0;
+}

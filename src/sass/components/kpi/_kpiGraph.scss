@@ -1,0 +1,38 @@
+$txcm-kpiGraph-minHeight: 110px;
+
+.txcm-kpiGraph {
+  --highlightWidth: 0;
+  --highlightPosition: 0;
+  --highlightOpacity: 0;
+  --highlightShift: 0;
+  @extend %txph-dataTableGraph;
+  position: relative;
+  z-index: 1;
+  min-height: $txcm-kpiGraph-minHeight;
+  border-radius: inherit;
+  margin: 0 0 0 16px;
+
+  @include txmx-mq(phone) {
+    margin: 0;
+  }
+}
+
+$txcm-kpiGraphHolder-background: $txgl-gray-500;
+$txcm-kpiGraphHolder-expanded-height: 395px;
+
+.txcm-kpiGraphHolder {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 90px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: inherit;
+  background: $txcm-kpiGraphHolder-background;
+  transition: height $txgl-transition-default;
+
+  &-is-expanded {
+    height: $txcm-kpiGraphHolder-expanded-height;
+  }
+}

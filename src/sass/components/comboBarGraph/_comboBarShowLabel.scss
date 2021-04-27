@@ -1,0 +1,39 @@
+.txcm-comboBarShowLabel {
+  position: absolute;
+  left: 11px;
+  right: 0;
+  margin: auto;
+  top: 130px;
+  bottom: auto;
+  font-size: 14px;
+  text-decoration: none;
+  white-space: nowrap;
+
+  &-extended {
+    top: auto;
+    bottom: 20px;
+  }
+}
+
+.txcm-comboBarShowLabelText {
+  position: relative;
+  display: inline-block;
+
+  cursor: pointer;
+
+  &:hover {
+    color: $txgl-white-900;
+  }
+
+  .txcm-comboBarShowLabelIcon {    
+    width: 8px;
+    height: 10px;
+    margin: 0 8px 0 0;
+    fill: currentColor;
+    transform: rotate(-90deg);  
+
+    &-extended {
+      transform: rotate(90deg);  
+    }
+  }
+}

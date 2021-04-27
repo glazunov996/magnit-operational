@@ -1,0 +1,67 @@
+$txcm-menuDrawerUser-height: 60px;
+$txcm-menuDrawerUser-borderColor: $txgl-gray-300;
+
+.txcm-menuDrawerUser {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: $txcm-menuDrawerUser-height;
+  padding: 0 20px;
+  border-top: 1px solid $txcm-menuDrawerUser-borderColor;
+  margin: auto -20px 0;
+}
+
+$txcm-menuDrawerUserImage-size: 30px;
+
+.txcm-menuDrawerUserImage {
+  width: $txcm-menuDrawerUserImage-size;
+  height: $txcm-menuDrawerUserImage-size;
+  border-radius: 50%;
+  margin: 0 8px 0 0;
+}
+
+$txcm-menuDrawerUserLink-color: $txgl-white-900;
+$txcm-menuDrawerUserLink-hover-color: $txgl-gray-100;
+
+.txcm-menuDrawerUserLink {
+  @include txmx-link($txcm-menuDrawerUserLink-color, $txcm-menuDrawerUserLink-color, $txcm-menuDrawerUserLink-hover-color, $txcm-menuDrawerUserLink-hover-color);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+$txcm-menuDrawerUserLogout-size: 32px;
+$txcm-menuDrawerUserLogout-color: $txgl-white-900;
+$txcm-menuDrawerUserLogout-hover-color: $txgl-gray-100;
+
+.txcm-menuDrawerUserLogout {
+  @include txmx-link($txcm-menuDrawerUserLogout-color, $txcm-menuDrawerUserLogout-color, $txcm-menuDrawerUserLogout-hover-color, $txcm-menuDrawerUserLogout-hover-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $txcm-menuDrawerUserLogout-size;
+  height: $txcm-menuDrawerUserLogout-size;
+  text-decoration: none;
+
+  &-is-active {
+    @include txmx-link($txcm-menuDrawerUserLogout-color, $txcm-menuDrawerUserLogout-color, $txcm-menuDrawerUserLogout-hover-color, $txcm-menuDrawerUserLogout-hover-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $txcm-menuDrawerUserLogout-size;
+    height: $txcm-menuDrawerUserLogout-size;
+    text-decoration: none;
+  }
+}
+
+$txcm-menuDrawerLogoutIcon-size: 17px;
+
+.txcm-menuDrawerLogoutIcon {
+  width: $txcm-menuDrawerLogoutIcon-size;
+  height: $txcm-menuDrawerLogoutIcon-size;
+  fill: currentColor;
+}

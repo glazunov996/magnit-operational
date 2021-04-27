@@ -1,0 +1,106 @@
+$txcm-kpiValue-height: 20px;
+$txcm-kpiValue-color: $txgl-white-900;
+
+.txcm-kpiValue {
+  position: relative;
+  display: flex;
+  order: -3;
+  align-items: center;
+  height: $txcm-kpiValue-height;
+  margin: 14px 0 0;
+  color: $txcm-kpiValue-color;
+  line-height: $txcm-kpiValue-height;
+  transform-origin: 100% 75%;
+  transition: $txgl-transition-default;
+
+  &:first-child {
+    margin: 0 0 auto;
+  }
+
+  &-is-highlighted {
+    @extend %txph-kpiValue-is-highlighted;
+    font-weight: 600;
+    transform: scale(1.8333);
+  }
+
+  @include txmx-mq(phone) {
+    transform-origin: 100% 50%;
+
+    &-is-highlighted {
+      transform: scale(1.25);
+    }
+  }
+}
+
+$txcm-kpiValueIcon-width: 4px;
+$txcm-kpiValueIcon-height: 6px;
+$txcm-kpiValueIcon-increasing-fill: $txgl-green;
+$txcm-kpiValueIcon-dectreasing-fill: $txgl-yellow;
+$txcm-kpiValueIcon-dectreasingCritically-fill: $txgl-red;
+
+.txcm-kpiValueIcon {
+  visibility: hidden;
+  width: $txcm-kpiValueIcon-width;
+  height: $txcm-kpiValueIcon-height;
+  margin: 0 6px 0 0;
+  opacity: 0;
+  transition: $txgl-transition-default;
+
+  &-is-increasing {
+    visibility: visible;
+    transform: rotate(90deg);
+    fill: $txcm-kpiValueIcon-increasing-fill;
+  }
+
+  &-is-increasing-inverted {
+    visibility: visible;
+    transform: rotate(-90deg);
+    fill: $txcm-kpiValueIcon-increasing-fill;
+  }
+
+  &-is-decreasing {
+    visibility: visible;
+    transform: rotate(-90deg);
+    fill: $txcm-kpiValueIcon-dectreasing-fill;
+  }
+
+  &-is-decreasing-inverted {
+    visibility: visible;
+    transform: rotate(90deg);
+    fill: $txcm-kpiValueIcon-dectreasing-fill;
+  }
+
+  &-is-decreasingCritically {
+    visibility: visible;
+    transform: rotate(-90deg);
+    fill: $txcm-kpiValueIcon-dectreasingCritically-fill;
+  }
+
+  &-is-decreasingCritically-inverted {
+    visibility: visible;
+    transform: rotate(90deg);
+    fill: $txcm-kpiValueIcon-dectreasingCritically-fill;
+  }
+
+  %txph-kpiValue-is-highlighted & {
+    opacity: 1;
+  }
+}
+
+.txcm-kpiValueAdd {
+  @extend %txph-dataTableValue;
+  position: relative;
+  margin: 14px 0 0;
+
+  &:first-child {
+    margin: 0 0 auto;
+  }
+
+  &-is-decreasing {
+    @extend %txph-dataTableValue-is-decreasing;
+  }
+
+  &-is-decreasingCritically {
+    @extend %txph-dataTableValue-is-decreasingCritically;
+  }
+}

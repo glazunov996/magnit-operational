@@ -1,0 +1,17 @@
+@function txf-fontFormat($extensions, $familyNorm, $filename, $name) {
+  $result: '';
+  @each $extension, $format in $extensions {
+    $comma: '';
+    @if $result == '' {
+      $comma: '';
+    } @else {
+      $comma: ', ';
+    }
+    @if $extension == eot {
+      $result: #{$result}#{$comma}#{url('../fonts/#{$familyNorm}/#{$filename}-#{$name}.#{$extension}?#iefix') format('#{$format}')};
+    } @else {
+      $result: #{$result}#{$comma}#{url('../fonts/#{$familyNorm}/#{$filename}-#{$name}.#{$extension}') format('#{$format}')};
+    }
+  }
+  @return $result;
+}

@@ -1,0 +1,70 @@
+{
+  "qInitialDataFetch": [
+    {
+      "qHeight": 20,
+      "qWidth": 12
+    }
+  ],
+  "qDimensions": [
+    {
+      "qLabel": "PNL_ITEM_ID7",
+      "qLibraryId": "fJjkWPP",
+      "qNullSuppression": true
+    }
+  ],
+  "qMeasures": [
+    { 
+        "qLabel": "DESCRIPTION7_мера",
+        "qLibraryId": "TYNXKp"
+    }, 
+    {
+      "qLabel": "ОсновнаяТаблица.Факт",
+      "qLibraryId": "ECLbEfj"
+    },
+    {
+      "qLabel": "ОсновнаяТаблица.Факт % от выр",
+      "qLibraryId": "DAyqg"
+    },
+    {
+      "qLabel": "ОсновнаяТаблица.vs Факт п-п %",
+      "qLibraryId": "HSqstBB"
+    },
+    {
+      "qLabel": "ОсновнаяТаблица.vs Факт п-п",
+      "qLibraryId": "udZPBJR"
+    },
+    {
+      "qLabel": "ОсновнаяТаблица.vs Бюджет %",
+      "qLibraryId": "wwgXytH"
+    },
+    {
+      "qLabel": "ОсновнаяТаблица.vs Бюджет",
+      "qLibraryId": "BMkWAu"
+    },
+    {
+      "qLabel": "ОсновнаяТаблица.Бюджет % от выр",
+      "qLibraryId": "397074c3-80e4-4281-bee4-a8b0e7509c54"
+    },
+    {
+      "qLabel": "ОсновнаяТаблица.Бюджет",
+      "qLibraryId": "4d00f707-f689-4783-abdf-43e429d6877f"
+    },
+    {
+      "qLabel": "ОсновнаяТаблица.Факт п-п % от выр",
+      "qLibraryId": "256d39a3-fb65-4a15-98a4-7cc83868531e"
+    },
+    {
+      "qLabel": "ОсновнаяТаблица.Факт п-п",
+      "qLibraryId": "fbc62fa5-924b-4283-836e-884c0009c7c4"
+    },
+    {
+      "qLabel": "ОсновнаяТаблица.Стрелка",
+      "qLibraryId": "ppxtmzp"
+    }
+  ],
+  "qSuppressZero": true,
+  "qSuppressMissing": true,
+  "qMode": "S",
+  "qInterColumnSortOrder": [],
+  "qStateName": "$"
+}

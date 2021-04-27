@@ -1,0 +1,63 @@
+$txcm-tableHeaderCellLabel-color: $txgl-white-900;
+
+.txcm-tableHeaderCellLabel {
+  @extend %txph-dataTableColumnLayout;
+  @extend %txph-tableHeaderCellLabel;
+  @include txmx-fontSize(22px);
+  color: $txcm-tableHeaderCellLabel-color;
+  font-weight: 500;
+  line-height: 1;
+  margin-top: 6px;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+
+  %txph-tableHeader-factors & {
+    margin: 0 18px 0 0;
+  }
+
+  &-is-kind {
+    min-width: 0;
+    margin: 0 0 0 0;
+  }
+
+  @include txmx-mq(phone) {
+    @include txmx-fontSize(18px);
+    background: $txgl-background;
+    box-shadow: 10px 0 0 $txgl-background;
+    line-height: 1.5;
+
+    %txph-tableHeader-factors & {
+      position: sticky;
+      left: 164px;
+      margin: 0 18px 0 4px;
+      background: $txgl-background;
+
+      &::before {
+        @include txmx-pseudo;
+        z-index: -1;
+        top: 0;
+        right: -10px;
+        left: -10px;
+        height: 100%;
+        background: inherit;
+      }
+    }
+  }
+}
+
+$txcm-tableHeaderCellLabelNote-color: $txgl-white;
+
+.txcm-tableHeaderCellLabelNote {
+  @include txmx-fontSize(14px);
+  margin: 0.625em 0 0;
+  color: $txcm-tableHeaderCellLabelNote-color;
+  font-weight: normal;
+  text-align: right;
+  text-transform: none;
+
+  @include txmx-mq(phone) {
+    margin: 0.45em 0 0;
+  }
+}

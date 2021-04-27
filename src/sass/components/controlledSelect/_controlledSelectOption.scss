@@ -1,0 +1,82 @@
+$txcm-controlledSelectLabel-disabled-order: 1;
+
+.txcm-controlledSelectInput {
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+
+  &[type='radio'],
+  &[type='checkbox'] {
+    width: 0;
+    height: 0;
+  }
+
+  &:checked {
+    @extend %txph-controlledSelectInput-checked;
+  }
+
+  &:disabled {
+    @extend %txph-controlledSelectInput-disabled;
+    order: $txcm-controlledSelectLabel-disabled-order;
+  }
+}
+
+$txcm-controlledSelectLabel-height: 32px;
+$txcm-controlledSelectLabel-color: $txgl-gray-100;
+$txcm-controlledSelectLabel-hover-color: $txgl-white-900;
+$txcm-controlledSelectLabel-hover-background: $txgl-gray-300;
+$txcm-controlledSelectLabel-active-color: $txgl-white-900;
+$txcm-controlledSelectLabel-disabled-color: $txgl-gray-200;
+
+.txcm-controlledSelectLabel {
+  position: relative;
+  flex-shrink: 0;
+  overflow: hidden;
+  height: $txcm-controlledSelectLabel-height;
+  padding: 0 16px;
+  margin: 0 -16px;
+  color: $txcm-controlledSelectLabel-color;
+  text-overflow: ellipsis;
+  line-height: $txcm-controlledSelectLabel-height;
+  transition: color $txgl-transition-default;
+
+  &:hover,
+  &:active {
+    color: $txcm-controlledSelectLabel-hover-color;
+  }
+
+  &:hover {
+    background: $txcm-controlledSelectLabel-hover-background;
+  }
+
+  %txph-controlledSelectInput-checked + & {
+    @extend %txph-controlledSelectLabel-checked;
+    color: $txcm-controlledSelectLabel-active-color;
+  }
+
+  %txph-controlledSelectInput-disabled + & {
+    color: $txcm-controlledSelectLabel-disabled-color;
+    order: $txcm-controlledSelectLabel-disabled-order;
+  }
+}
+
+$txcm-controlledSelectLabelIcon-width: 9px;
+$txcm-controlledSelectLabelIcon-height: 6px;
+$txcm-controlledSelectLabelIcon-color: $txgl-red;
+
+.txcm-controlledSelectIcon {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  width: $txcm-controlledSelectLabelIcon-width;
+  height: $txcm-controlledSelectLabelIcon-height;
+  margin: ($txcm-controlledSelectLabelIcon-height / -2) 0 0;
+  color: $txcm-controlledSelectLabelIcon-color;
+  opacity: 0;
+  transition: opacity $txgl-transition-default;
+  fill: currentColor;
+
+  %txph-controlledSelectLabel-checked > & {
+    opacity: 1;
+  }
+}

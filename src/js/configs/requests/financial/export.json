@@ -1,0 +1,50 @@
+{
+  "qInitialDataFetch": [
+    {
+      "qHeight": 20,
+      "qWidth": 2
+    }
+  ],
+  "qDimensions": [
+    {
+      "qDef": {
+        "qFieldDefs": [
+          "=vSetDimension"
+        ]
+      },
+      "qNullSuppression": true,
+      "qOtherTotalSpec": {
+        "qOtherMode": "OTHER_OFF",
+        "qSuppressOther": true,
+        "qOtherSortMode": "OTHER_SORT_DESCENDING",
+        "qOtherCounted": {
+          "qv": "5"
+        },
+        "qOtherLimitMode": "OTHER_GE_LIMIT"
+      }
+    },
+    {
+      "qDef": {
+        "qFieldDefs": [
+          "=vSetExpression"
+        ]
+      },
+      "qNullSuppression": true,
+      "qOtherTotalSpec": {
+        "qOtherMode": "OTHER_OFF",
+        "qSuppressOther": true,
+        "qOtherSortMode": "OTHER_SORT_DESCENDING",
+        "qOtherCounted": {
+          "qv": "5"
+        },
+        "qOtherLimitMode": "OTHER_GE_LIMIT"
+      }
+    }
+  ],
+  "qMeasures": [],
+  "qSuppressZero": false,
+  "qSuppressMissing": false,
+  "qMode": "S",
+  "qInterColumnSortOrder": [],
+  "qStateName": "$"
+}

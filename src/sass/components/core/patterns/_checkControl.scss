@@ -1,0 +1,58 @@
+%txph-checkControlInput {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  user-select: none;
+  opacity: 0;
+}
+
+$txph-checkControl-height: 32px;
+$txph-checkControl-color: $txgl-gray-100;
+$txph-checkControl-hover-color: $txgl-white-900;
+$txph-checkControl-active-color: $txgl-white-900;
+
+%txph-checkControl {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  height: $txph-checkControl-height;
+  padding: 0 10px 0 0;
+  color: $txph-checkControl-color;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: color $txgl-transition-default;
+
+  &:hover {
+    color: $txph-checkControl-hover-color;
+  }
+
+  &:active {
+    color: $txph-checkControl-active-color;
+  }
+
+  &-is-checked {
+    color: $txph-checkControl-active-color;
+  }
+}
+
+$txph-checkControlIcon-width: 9px;
+$txph-checkControlIcon-height: 6px;
+$txph-checkControlIcon-color: $txgl-red;
+
+%txph-checkControlIcon {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: $txph-checkControlIcon-width;
+  height: $txph-checkControlIcon-height;
+  margin: ($txph-checkControlIcon-height / -2) 0 0;
+  color: $txph-checkControlIcon-color;
+  opacity: 0;
+  transition: opacity $txgl-transition-default;
+  fill: currentColor;
+
+  &-is-visible {
+    opacity: 1;
+  }
+}

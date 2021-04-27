@@ -1,0 +1,27 @@
+$txcm-graphScale-color: $txgl-gray-100;
+
+.txcm-graphScale {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  display: flex;
+  width: 100%;
+  color: $txcm-graphScale-color;
+  user-select: none;
+
+  &::after {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 100%;
+    content: attr(data-dummy);
+    overflow: hidden;
+    box-sizing: border-box;
+    width: var(--dummyWidth);
+    padding: 0 6px;
+    text-align: center;
+    text-transform: capitalize;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

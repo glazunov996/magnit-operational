@@ -1,0 +1,138 @@
+.txcm-stepper {
+  display: flex;
+  padding: 0;
+  margin: 0 $txgl-filter-margin;
+  white-space: nowrap;
+  list-style: none;
+
+  &-export {
+    @extend %txph-stepper-export;
+  }
+}
+
+.txcm-stepperOption {
+  padding: 0;
+  margin: 0;
+
+  &:first-child {
+    @extend %txph-stepperOption-firstChild;
+  }
+
+  &:last-child {
+    @extend %txph-stepperOption-lastChild;
+  }
+
+  %txph-stepper-export & {
+    margin: 0 4px;
+  }
+
+  @include txmx-mq(phone) {
+    %txph-stepper-export & {
+      margin: 12px 0;
+    }
+  }
+}
+
+.txcm-stepperInput {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+
+  &:disabled {
+    @extend %txph-stepperInput-disabled;
+  }
+
+  &:checked {
+    @extend %txph-stepperInput-checked;
+
+    &:disabled {
+      @extend %txph-stepperInput-checkedDisabled;
+    }
+  }
+}
+
+$txcm-stepperLabel-color: $txgl-white;
+$txcm-stepperLabel-background: $txgl-gray-400;
+$txcm-stepperLabel-hover-color: $txgl-white-900;
+$txcm-stepperLabel-hover-background: $txgl-gray-300;
+$txcm-stepperLabel-active-color: $txgl-white-900;
+$txcm-stepperLabel-active-background: $txgl-gray-200;
+$txcm-stepperLabel-checked-color: $txgl-gray;
+$txcm-stepperLabel-checked-background: $txgl-white-900;
+$txcm-stepperLabel-disabled-color: $txgl-gray-200;
+$txcm-stepperLabel-disabled-background: $txgl-gray;
+
+$txcm-stepperLabel-export-background: $txgl-gray-300;
+
+$txcm-stepperLabel-export-phone-width: 90px;
+$txcm-stepperLabel-export-phone-height: 50px;
+
+.txcm-stepperLabel {
+  display: flex;
+  align-items: center;
+  height: $txgl-filter-height;
+  padding: 0 8px;
+  color: $txcm-stepperLabel-color;
+  background: $txcm-stepperLabel-background;
+  transition: background $txgl-transition, color $txgl-transition;
+
+  &:hover {
+    color: $txcm-stepperLabel-hover-color;
+    background: $txcm-stepperLabel-hover-background;
+  }
+
+  &:active {
+    color: $txcm-stepperLabel-active-color;
+    background: $txcm-stepperLabel-active-background;
+  }
+
+  %txph-stepperOption-firstChild > & {
+    border-radius: $txgl-form-borderRadius 0 0 $txgl-form-borderRadius;
+  }
+
+  %txph-stepperOption-lastChild > & {
+    border-radius: 0 $txgl-form-borderRadius $txgl-form-borderRadius 0;
+  }
+
+  %txph-stepperInput-checked + & {
+    color: $txcm-stepperLabel-checked-color;
+    background: $txcm-stepperLabel-checked-background;
+  }
+
+  %txph-stepperInput-disabled + & {
+    cursor: not-allowed;
+    opacity: 0.35;
+
+    &:hover,
+    &:active {
+      color: $txcm-stepperLabel-disabled-color;
+      background: $txcm-stepperLabel-disabled-background;
+    }
+  }
+
+  %txph-stepperInput-checkedDisabled + & {
+    &:hover,
+    &:active {
+      color: $txcm-stepperLabel-checked-color;
+      background: $txcm-stepperLabel-checked-background;
+    }
+  }
+
+  %txph-stepper-export %txph-stepperOption-firstChild > &,
+  %txph-stepper-export %txph-stepperOption-lastChild > & {
+    border-radius: $txgl-form-borderRadius;
+  }
+
+  %txph-stepper-export & {
+    background: $txcm-stepperLabel-export-background;
+  }
+
+  @include txmx-mq(phone) {
+    %txph-stepper-export & {
+      justify-content: center;
+      width: $txcm-stepperLabel-export-phone-width;
+      height: $txcm-stepperLabel-export-phone-height;
+      margin: 0 0 0 12px;
+    }
+  }
+}

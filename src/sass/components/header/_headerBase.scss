@@ -1,0 +1,35 @@
+$txcm-header-borderColor: $txgl-gray-400;
+
+$txcm-headerDummy-size: 32px;
+
+.txcm-header {
+  @extend %txph-header;
+  @include txmx-layer(top, 11);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20px $txgl-gap 19px;
+  border-bottom: 1px solid $txcm-header-borderColor;
+  background: $txgl-background;
+
+  &::before {
+    @include txmx-pseudo(relative);
+    order: 0;
+    flex-grow: 1;
+  }
+
+  &::after {
+    @include txmx-pseudo(relative);
+    flex-shrink: 0;
+    width: $txcm-headerDummy-size;
+    height: $txcm-headerDummy-size;
+  }
+
+  @include txmx-mq(phone) {
+    padding: 20px $txgl-gap-small 19px;
+  }
+}

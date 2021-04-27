@@ -1,0 +1,28 @@
+.txcm-factorsSection {
+  @extend %txph-section;
+}
+
+.txcm-factorsHeader {
+  @extend %txph-sectionHeader;
+}
+
+.txcm-factorsRows {
+  @extend %txph-sectionRows;
+}
+
+.txcm-factorsSectionHeader {
+  position: sticky;
+  z-index: 2;
+  top: 209px;
+  left: 0;
+  overflow: hidden;
+  background: $txgl-background;
+}
+
+.txcm-factorsSectionFooter {
+  position: sticky;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}

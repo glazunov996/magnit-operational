@@ -1,0 +1,24 @@
+$txcm-deviationRow-height: 32px;
+$txcm-deviationRow-background: $txgl-gray-350;
+
+.txcm-deviationRow {
+  position: relative;
+  display: flex;
+  order: 10;
+  align-items: center;
+  width: 100%;
+  height: $txcm-deviationRow-height;
+  background: $txcm-deviationRow-background;
+
+  &::after {
+    @extend %txph-dataTableGraph;
+    @include txmx-pseudo(relative);
+    margin: 0 0 0 16px;
+  }
+
+  @include txmx-mq(phone) {
+    &::after {
+      margin: 0 0 0 16px;
+    }
+  }
+}

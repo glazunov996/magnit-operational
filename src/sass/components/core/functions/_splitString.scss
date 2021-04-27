@@ -1,0 +1,14 @@
+// Split String
+
+@function txf-splitString($string, $separator) {
+  $array: ();
+  $index: str-index($string, $separator);
+  @while $index != null {
+    $item: str-slice($string, 1, $index - 1);
+    $array: append($array, $item);
+    $string: str-slice($string, $index + 1);
+    $index: str-index($string, $separator);
+  }
+  $array: append($array, $string);
+  @return $array;
+}

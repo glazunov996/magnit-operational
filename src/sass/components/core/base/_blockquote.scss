@@ -1,0 +1,12 @@
+blockquote {
+  quotes: none;
+  margin: 1.5em 3em;
+  font-style: italic;
+  page-break-inside: avoid;
+  break-inside: avoid;
+
+  &::before,
+  &::after {
+    content: none;
+  }
+}

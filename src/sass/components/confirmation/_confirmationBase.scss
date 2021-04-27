@@ -1,0 +1,55 @@
+$txcm-confirmation-width: 350px;
+$txcm-confirmation-height: 145px;
+$txcm-confirmation-color: $txgl-white-900;
+$txcm-confirmation-background: $txgl-gray-500;
+
+.txcm-confirmation {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  width: $txcm-confirmation-width;
+  height: $txcm-confirmation-height;
+  padding: 24px;
+  border-radius: 5px;
+  margin: ($txcm-confirmation-height / -2) 0 0 ($txcm-confirmation-width / -2);
+  color: $txcm-confirmation-color;
+  background: $txcm-confirmation-background;
+  opacity: 0;
+  transition: opacity $txgl-transition-slow;
+
+  &-is-active {
+    opacity: 1;
+  }
+}
+
+.txcm-confirmationHeader {
+  @include txmx-fontSize(15px);
+  width: 100%;
+  margin: 0 0 0.5em;
+  font-weight: 600;
+  text-align: center;
+}
+
+.txcm-confirmationMessage {
+  width: 100%;
+  margin: 0 0 1.25em;
+  text-align: center;
+}
+
+.txcm-confirmationCancel {
+  @extend %txph-buttonLayout;
+  @extend %txph-buttonGray;
+  margin: 0 6px;
+}
+
+.txcm-confirmationAccept {
+  @extend %txph-buttonLayout;
+  @extend %txph-buttonRed;
+  margin: 0 6px;
+}

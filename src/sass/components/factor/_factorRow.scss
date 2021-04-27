@@ -1,0 +1,19 @@
+.txcm-factorRow {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  order: 10;
+  align-items: stretch;
+  align-content: center;
+  flex-grow: 1;
+
+  @include txmx-mq(tablet) {
+    width: 200%;
+    width: calc(200% - 235px);
+  }
+
+  @include txmx-mq(phone) {
+    width: 400%;
+    width: calc(400% - 650px);
+  }
+}

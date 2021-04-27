@@ -1,0 +1,69 @@
+.txcm-comboBarGraphExtLegends {
+  position: absolute;
+  display: block;
+  top: 370px;
+  left: 11px;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+}
+
+.txcm-comboBarGraphExtLegendsCell {
+  position: relative;
+  font-weight: normal;
+  font-size: 14px;
+  text-overflow: ellipsis; 
+  overflow: hidden; 
+  white-space: nowrap;
+
+  &::before {
+    @include txmx-pseudo;
+    top: 30%;
+    left: 0;
+    width: 8px;
+    height: 8px;    
+  }
+
+  &-bar1 {
+    &::before {
+      border-radius: 1px;
+      background: #57599C;
+    }
+  }
+
+  &-bar2 {
+    &::before {
+      border-radius: 1px;
+      background: #F4C856;
+      
+    }
+  }
+
+  &-bar3 {
+    &::before {
+      border-radius: 1px;
+      background: #E36735;
+    }
+  }
+
+  &-bar4 {
+    &::before {
+      border-radius: 1px;
+      background: #5D86C0;
+    }
+  }
+
+  &-bar5 {
+    &::before {
+      border-radius: 1px;
+      background: #9D4B99;
+    }
+  }
+
+  &-bar6 {
+    &::before {
+      border-radius: 1px;
+      background: #5BAFD4;
+    }
+  }
+}

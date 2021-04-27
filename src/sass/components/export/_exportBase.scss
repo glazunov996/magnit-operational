@@ -1,0 +1,45 @@
+.txcm-exportSection {
+  position: relative;
+  display: flex;
+  padding: 30px 0 0;
+  margin: 138px $txgl-gap 110px;
+
+  @include txmx-mq(tablet) {
+    display: block;
+    margin: 138px 24px 110px;
+  }
+
+  @include txmx-mq(phone) {
+    margin: 122px $txgl-gap-small 70px;
+  }
+}
+
+$txcm-exportHeader-color: $txgl-white-900;
+
+.txcm-exportHeader {
+  @include txmx-fontSize(15px);
+  margin: 0 16px 0 0;
+  color: $txcm-exportHeader-color;
+  font-weight: 600;
+  line-height: 1.65;
+
+  @include txmx-mq(phone) {
+    margin: 0 16px 0 0;
+  }
+}
+
+$txcm-exportColumnControls-borderColor: $txgl-gray-300;
+
+.txcm-exportColumnControls {
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  left: $txgl-gap;
+  display: flex;
+  margin: 0 0 8px;
+
+  @include txmx-mq(phone) {
+    position: relative;
+    left: 0;
+  }
+}

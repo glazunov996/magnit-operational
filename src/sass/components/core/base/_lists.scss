@@ -1,0 +1,32 @@
+%txph-list {
+  padding: 0 0 0 1em;
+  margin: 1.5em 0;
+}
+
+dl {
+  margin: 1.5em 0;
+}
+
+dt {
+  margin: 1.5em 0;
+  font-weight: bold;
+}
+
+dd {
+  @extend %txph-list;
+  font-style: italic;
+}
+
+ul {
+  @extend %txph-list;
+  list-style: disc;
+}
+
+ol {
+  @extend %txph-list;
+  list-style: decimal;
+}
+
+li {
+  margin: 0.75em 0;
+}

@@ -1,0 +1,21 @@
+// Math
+
+@import 'functions/pow';
+@import 'functions/relativeValue';
+@import 'functions/sqrt';
+
+// Strings
+
+@import 'functions/replaceString';
+@import 'functions/sanitizeShortHand';
+@import 'functions/splitString';
+@import 'functions/stripUnit';
+
+// Media
+
+@import 'functions/media';
+
+// Fonts
+
+@import 'functions/appendStack';
+@import 'functions/fontFormat';

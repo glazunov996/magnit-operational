@@ -1,0 +1,267 @@
+[
+  {
+    "label": "Продажи",
+    "indicators": [  
+      {
+        "id": "6",
+        "order": 1,
+        "label": "Комплексность",
+        "url": "complexity",
+        "configName": "Компл",
+        "subLabel": "",
+        "subLabelUnit": "штук в чеке",
+        "status": false
+      },    
+      {
+        "id": "1",
+        "order": 2,
+        "label": "РТО",
+        "url": "rto",
+        "configName": "РТО",
+        "subLabel": "",
+        "subLabelUnit": "млн. руб.",
+        "status": true
+      },
+      {
+        "id": "4",
+        "order": 4,
+        "label": "Средний Чек",
+        "url": "average-check",
+        "configName": "СрЧек",
+        "subLabel": "",
+        "subLabelUnit": "руб.",
+        "status": false
+      },
+      {
+        "id": "7",
+        "order": 5,
+        "label": "Трафик",
+        "configName": "Трафик",
+        "url": "traffic",
+        "subLabel": "",
+        "subLabelUnit": "тыс. шт.",
+        "status": false
+      }
+    ]
+  },
+  { 
+    "label" : "LFL",
+    "indicators": [
+      {
+        "id": "20",
+        "order": 6,
+        "label": "Инфляция",
+        "url": "inflation",
+        "configName": "Инфл",
+        "subLabel": "",
+        "subLabelUnit": "%",
+        "status": false
+      },
+      {
+        "id": "2",
+        "order": 7,
+        "label": "РТО LFL",
+        "url": "rtolfl",
+        "configName": "РТОLFL",
+        "subLabel": "",
+        "subLabelUnit": "%",
+        "status": true
+      }, 
+      {
+        "id": "5",
+        "order": 8,
+        "label": "Средний чек LFL",
+        "url": "average-check-lfl",
+        "configName": "СрЧекLFL",
+        "subLabel": "",
+        "subLabelUnit": "%",
+        "status": true
+      },  
+      {
+        "id": "8",
+        "order": 9,
+        "label": "Трафик LFL",
+        "url": "traffic-lfl",
+        "configName": "ТрафикLFL",
+        "subLabel": "",
+        "subLabelUnit": "%",
+        "status": true
+      }
+    ]
+  },
+  {
+    "label" : "Наценка",
+    "indicators": [
+      {
+        "id": "25",
+        "order": 10,
+        "label": "CM",
+        "url": "commercial-margin",
+        "configName": "KM",
+        "subLabel": "",
+        "subLabelUnit": "%",
+        "status": false
+      },
+      {
+        "id": "24",
+        "order": 11,
+        "label": "FM",
+        "url": "front-margin",
+        "configName": "FM",
+        "subLabel": "",
+        "subLabelUnit": "%",
+        "status": true
+      },      
+      {
+        "id": "27",
+        "order": 25,
+        "label": "Доля Лояльности в FM",
+        "url": "rto-vs-loyalty",
+        "configName": "Лояльность",
+        "subLabel": "",
+        "subLabelUnit": "%",
+        "status": false
+      }, 
+      {
+        "id": "26",
+        "order": 26,
+        "label": "Доля Мониторинга в FM",
+        "url": "rto-vs-monitoring",
+        "configName": "Монит",
+        "subLabel": "",
+        "subLabelUnit": "%",
+        "status": false
+      }, 
+      {
+        "id": "29",
+        "order": 27,
+        "label": "Доля Промо в FM",
+        "url": "rto-vs-promo",
+        "configName": "Промо%",
+        "subLabel": "",
+        "subLabelUnit": "%",
+        "status": false
+      },
+      {
+        "id": "31",
+        "order": 28,
+        "label": "Доля Прочего в FM",
+        "url": "rto-vs-other",
+        "configName": "Прочее",
+        "subLabel": "",
+        "subLabelUnit": "%",
+        "status": false
+      },
+      {
+        "id": "30",
+        "order": 29,
+        "label": "Доля Регулярного в FM",
+        "url": "rto-vs-regular",
+        "configName": "Регул",
+        "subLabel": "",
+        "subLabelUnit": "%",
+        "status": false
+      }, 
+      {
+        "id": "28",
+        "order": 30,
+        "label": "Доля Уценки в FM",
+        "url": "rto-vs-markdown",
+        "configName": "Уценка",
+        "subLabel": "",
+        "subLabelUnit": "%",
+        "status": false
+      }
+    ]
+  },
+  {
+    "label" : "Промо",
+    "indicators": [
+      {
+        "id": "23",
+        "order": 24,
+        "label": "Промо",
+        "url": "promo",
+        "configName": "Промо",
+        "subLabel": "",
+        "subLabelUnit": "%",
+        "status": true
+      }
+    ]
+  },
+  { 
+    "label" : "Потери",
+    "indicators": [   
+      {
+        "id": "17",
+        "order": 12,
+        "label": "Потери",
+        "url": "abs-losses",
+        "configName": "ПотерАБС",
+        "subLabel": "",
+        "subLabelUnit": "млн. руб.",
+        "status": false
+      },
+      {
+        "id": "15",
+        "order": 13,
+        "label": "Доля потерь в выручке",
+        "url": "loss-to-revenue",
+        "configName": "ПотерВыруч",
+        "subLabel": "",
+        "subLabelUnit": "%",
+        "status": true
+      },
+      {
+        "id": "16",
+        "order": 14,
+        "label": "Доля потерь в себестоимости",
+        "url": "loss-to-cost",
+        "configName": "ПотерСебест",
+        "subLabel": "",
+        "subLabelUnit": "%",
+        "status": false
+      }
+    ]
+  },
+  {
+    "label" : "Ассортимент",
+    "indicators": [
+      {
+        "id": "19",
+        "order": 35,
+        "label": "Ассортимент",
+        "url": "range",
+        "configName": "Ассорт",
+        "subLabel": "",
+        "subLabelUnit": "шт.",
+        "status": false
+      }
+    ]
+  },  
+  {
+    "label" : "Развитие",
+    "indicators": [
+      {
+        "id": "10",
+        "order": 41,
+        "label": "Количество закрытых объектов",
+        "configName": "КолЗакрТО",
+        "url": "number-of-closed-objects",
+        "subLabel": "",
+        "subLabelUnit": "шт.",
+        "status": false
+      },
+      {
+        "id": "9",
+        "order": 42,
+        "label": "Количество объектов",
+        "configName": "КолРабТО",
+        "url": "number-of-objects",
+        "subLabel": "",
+        "subLabelUnit": "шт.",
+        "status": false
+      }        
+    ]
+  }
+]

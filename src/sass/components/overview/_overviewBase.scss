@@ -1,0 +1,11 @@
+.txcm-overviewSection {
+  @extend %txph-section;
+}
+
+.txcm-overviewHeader {
+  @extend %txph-sectionHeader;
+}
+
+.txcm-overviewRows {
+  @extend %txph-sectionRows;
+}

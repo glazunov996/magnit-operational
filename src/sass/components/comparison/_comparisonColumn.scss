@@ -1,0 +1,7 @@
+.txcm-comparisonColumn {
+  @extend %txph-dataTableColumn;
+
+  &:first-child {
+    width: auto;
+  }
+}

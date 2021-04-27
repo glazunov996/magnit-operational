@@ -1,0 +1,110 @@
+$txcm-tooltip-background: $txgl-gray-400;
+$txcm-tooltip-shadowColor: rgba($txgl-black-900, 0.16);
+
+$txcm-tooltip-graphDetail-background: $txgl-gray-200;
+$txcm-tooltip-deviationHint-background: $txgl-gray-300;
+
+$txcm-tooltipTail-width: 16px;
+$txcm-tooltipTail-height: 9px;
+$txcm-tooltipTail-backgroundStart: rgba($txcm-tooltip-background, 0);
+$txcm-tooltipTail-backgroundEnd: $txcm-tooltip-background;
+
+$txcm-tooltipTail-graphDetail-backgroundStart: rgba($txcm-tooltip-graphDetail-background, 0);
+$txcm-tooltipTail-graphDetail-backgroundEnd: $txcm-tooltip-graphDetail-background;
+
+$txcm-tooltipTail-deviationHint-backgroundStart: rgba($txcm-tooltip-deviationHint-background, 0);
+$txcm-tooltipTail-deviationHint-backgroundEnd: $txcm-tooltip-deviationHint-background;
+
+.txcm-tooltip {
+  @include txmx-layer(over, 10);
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  display: flex;
+  visibility: hidden;
+  align-items: center;
+  flex-direction: column-reverse;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  user-select: none;
+
+  &::before {
+    @include txmx-pseudo(relative);
+    flex-shrink: 0;
+    width: $txcm-tooltipTail-width;
+    height: $txcm-tooltipTail-height;
+    background-image: radial-gradient(circle at 0 100%, $txcm-tooltipTail-backgroundStart, $txcm-tooltipTail-backgroundStart (($txcm-tooltipTail-width / 2) - 0.5), $txcm-tooltipTail-backgroundEnd (($txcm-tooltipTail-width / 2) + 0.5px), $txcm-tooltipTail-backgroundEnd), radial-gradient(circle at 100% 100%, $txcm-tooltipTail-backgroundStart, $txcm-tooltipTail-backgroundStart (($txcm-tooltipTail-width / 2) - 0.5), $txcm-tooltipTail-backgroundEnd (($txcm-tooltipTail-width / 2) + 0.5px), $txcm-tooltipTail-backgroundEnd);
+    background-position: 0 0, 100% 0;
+    background-size: ($txcm-tooltipTail-width / 2) $txcm-tooltipTail-height;
+    background-repeat: no-repeat;
+  }
+
+  &-is-bottom {
+    justify-content: flex-start;
+    flex-direction: column;
+
+    &::before {
+      transform: rotate(180deg);
+    }
+  }
+
+  &-is-right {
+    flex-direction: row;
+
+    &::before {
+      transform: rotate(90deg) translateY(($txcm-tooltipTail-height - $txcm-tooltipTail-width) / 2);
+    }
+  }
+
+  &-is-left {
+    flex-direction: row-reverse;
+
+    &::before {
+      transform: rotate(-90deg) translateY(($txcm-tooltipTail-height - $txcm-tooltipTail-width) / 2);
+    }
+  }
+
+  &-is-active {
+    z-index: 200;
+    visibility: visible;
+  }
+
+  &-graphDetail {
+    @extend %txph-tooltip-graphDetail;
+    margin: 18px 0 0;
+
+    &::before {
+      background-image: radial-gradient(circle at 0 100%, $txcm-tooltipTail-graphDetail-backgroundStart, $txcm-tooltipTail-graphDetail-backgroundStart (($txcm-tooltipTail-width / 2) - 0.5), $txcm-tooltipTail-graphDetail-backgroundEnd (($txcm-tooltipTail-width / 2) + 0.5px), $txcm-tooltipTail-graphDetail-backgroundEnd), radial-gradient(circle at 100% 100%, $txcm-tooltipTail-graphDetail-backgroundStart, $txcm-tooltipTail-graphDetail-backgroundStart (($txcm-tooltipTail-width / 2) - 0.5), $txcm-tooltipTail-graphDetail-backgroundEnd (($txcm-tooltipTail-width / 2) + 0.5px), $txcm-tooltipTail-graphDetail-backgroundEnd);
+    }
+  }
+
+  &-deviationHint {
+    @extend %txph-tooltip-deviationHint;
+    margin-left: 12px;
+
+    &::before {
+      background-image: radial-gradient(circle at 0 100%, $txcm-tooltipTail-deviationHint-backgroundStart, $txcm-tooltipTail-deviationHint-backgroundStart (($txcm-tooltipTail-width / 2) - 0.5), $txcm-tooltipTail-graphDetail-backgroundEnd (($txcm-tooltipTail-width / 2) + 0.5px), $txcm-tooltipTail-graphDetail-backgroundEnd), radial-gradient(circle at 100% 100%, $txcm-tooltipTail-graphDetail-backgroundStart, $txcm-tooltipTail-graphDetail-backgroundStart (($txcm-tooltipTail-width / 2) - 0.5), $txcm-tooltipTail-graphDetail-backgroundEnd (($txcm-tooltipTail-width / 2) + 0.5px), $txcm-tooltipTail-graphDetail-backgroundEnd);
+    }
+  }
+}
+
+.txcm-tooltipContent {
+  flex-shrink: 0;
+  box-sizing: border-box;
+  padding: 12px;
+  border-radius: 3px;
+  background: $txcm-tooltip-background;
+  filter: drop-shadow(0 2px 12px $txcm-tooltip-shadowColor);
+
+  %txph-tooltip-graphDetail & {
+    padding: 8px 10px;
+    background: $txcm-tooltip-graphDetail-background;
+  }
+
+  %txph-tooltip-deviationHint & {
+    padding: 8px 10px;
+    background: $txcm-tooltip-deviationHint-background;
+  }
+}

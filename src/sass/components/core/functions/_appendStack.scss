@@ -1,0 +1,3 @@
+@function txf-appendStack($append) {
+  @return if($append, unquote(', ' + $txgl-fontFamily), '');
+}

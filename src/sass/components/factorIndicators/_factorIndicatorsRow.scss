@@ -1,0 +1,35 @@
+$txcm-factorsTotalDiagramIndicatorsRowDummy-tablet-width: 250px;
+
+$txcm-factorsTotalDiagramIndicatorsRowDummy-phone-width: 160px;
+
+.txcm-factorsTotalDiagramIndicatorsRow {
+  display: flex;
+  align-items: flex-end;
+  flex-shrink: 0;
+  width: 100%;
+
+  &::before {
+    @extend %txph-dataTableLabel;
+    @include txmx-pseudo(relative);
+  }
+
+  @include txmx-mq(tablet) {
+    width: 200%;
+    width: calc(200% - 235px);
+
+    &::before {
+      position: sticky;
+      left: 0;
+      width: $txcm-factorsTotalDiagramIndicatorsRowDummy-tablet-width;
+    }
+  }
+
+  @include txmx-mq(phone) {
+    width: 400%;
+    width: calc(400% - 650px);
+
+    &::before {
+      width: $txcm-factorsTotalDiagramIndicatorsRowDummy-phone-width;
+    }
+  }
+}

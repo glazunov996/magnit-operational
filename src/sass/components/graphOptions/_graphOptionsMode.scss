@@ -1,0 +1,42 @@
+.txcm-graphModeInput {
+  @extend %txph-checkControlInput;
+
+  &:checked {
+    @extend %txph-graphModeInput-checked;
+  }
+}
+
+$txcm-graphModeControl-height: 42px;
+$txcm-graphModeControl-color: $txgl-white-900;
+
+$txcm-graphModeControl-active-background: $txgl-red;
+
+.txcm-graphModeControl {
+  @extend %txph-buttonLabel;
+  @extend %txph-buttonBorder;
+  @include txmx-fontSize(14px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: $txcm-graphModeControl-height;
+  padding: 0;
+  margin: 4px 0 0;
+  color: $txcm-graphModeControl-color;
+
+  &:nth-child(2) {
+    margin: 8px 0 0;
+  }
+
+  &:nth-child(10) {
+    margin: 4px 0 10px;
+  }
+
+  %txph-graphModeInput-checked + & {
+    background: $txcm-graphModeControl-active-background;
+
+    &:hover,
+    &:active {
+      color: $txcm-graphModeControl-color;
+    }
+  }
+}

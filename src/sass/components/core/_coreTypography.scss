@@ -1,0 +1,46 @@
+$txgl-text: $txgl-white;
+$txgl-background: $txgl-gray-600;
+
+$txgl-text-print: $txgl-text;
+$txgl-background-print: $txgl-background;
+
+$txgl-sansSerifFontStack: 'Segoe UI', Roboto, 'Noto Sans', Ubuntu, 'Droid Sans', 'Helvetica Neue', Helvetica, Calibri, Arial, sans-serif;
+$txgl-serifFontStack: 'Roboto Slab', 'Droid Serif', Cambria, Georgia , 'Times New Roman', Times, serif;
+$txgl-monospaceFontStack: Consolas, Monaco, 'Andale Mono', 'Courier New', Courier, Freemono, 'Nimbus Mono L', monospace;
+
+$txgl-font-sans: $txgl-sansSerifFontStack;
+$txgl-font-serif: $txgl-serifFontStack;
+$txgl-font-mono: $txgl-monospaceFontStack;
+
+$txgl-fontFamily: $txgl-font-sans;
+$txgl-fontSize: 12px;
+$txgl-lineHeight: 1.5;
+
+$txgl-fontVariants: (
+  regular: regular,
+  bold: bold,
+  italic: italic,
+  bolditalic: bolditalic,
+  600: medium,
+);
+
+$txgl-fontFormats: (
+  eot: embedded-opentype,
+  woff2: woff2,
+  woff: woff,
+  ttf: truetype
+);
+
+$txgl-fontRatio: 1.2;
+$txgl-fontSizeQuotient: $txgl-fontSize / 12px;
+
+$txgl-fontSizes: (
+  h1: 40px,
+  h2: 32px,
+  h3: 22px,
+  h4: 18px,
+  h5: 15px,
+  h6: 14px,
+  small: 11px,
+  large: 14px
+);

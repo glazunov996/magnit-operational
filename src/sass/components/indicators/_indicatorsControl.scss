@@ -1,0 +1,36 @@
+.txcm-indicatorsInput {
+  @extend %txph-checkControlInput;
+
+  &:checked {
+    @extend %txph-indicatorsInput-checked;
+  }
+}
+
+.txcm-indicatorsControl {
+  @extend %txph-checkControl;
+  display: block;
+  padding-right: 30px;
+
+  %txph-indicatorsInput-checked + & {
+    @extend %txph-checkControl-is-checked;
+  }
+}
+
+$txcm-indicatorsNote-color: $txgl-gray-100;
+
+.txcm-indicatorsNote {
+  color: $txcm-indicatorsNote-color;
+
+  &::before {
+    @include txmx-pseudo(relative, inline, '/');
+  }
+}
+
+.txcm-indicatorsControlIcon {
+  @extend %txph-checkControlIcon;
+  right: 20px;
+
+  &-is-visible {
+    @extend %txph-checkControlIcon-is-visible;
+  }
+}

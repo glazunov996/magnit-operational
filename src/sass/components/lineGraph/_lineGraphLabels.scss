@@ -1,0 +1,26 @@
+$txcm-linearGraphLabels-width: 90px;
+$txcm-linearGraphLabels-color: $txgl-gray-100;
+
+$txcm-linearGraphLabels-compact-height: 70px;
+
+.txcm-linearGraphLabels {
+  position: absolute;
+  top: 0;
+  right: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: $txcm-linearGraphLabels-width;
+  height: 100%;
+  padding: 14px 0;
+  color: $txcm-linearGraphLabels-color;
+  white-space: nowrap;
+  font-size: 14px;
+
+
+  &-is-compact {
+    height: $txcm-linearGraphLabels-compact-height;
+    padding: 14px 0 0;
+  }
+}

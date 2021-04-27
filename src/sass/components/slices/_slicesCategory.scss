@@ -1,0 +1,20 @@
+.txcm-slicesCategory {
+  @extend %txph-dataTableRow;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 39px 0 0;
+
+  @include txmx-mq(phone) {
+    margin: 20px 0 0;
+  }
+}
+
+.txcm-slicesCategoryControls {
+  display: flex;
+
+  @include txmx-mq(tablet) {
+    position: sticky;
+    z-index: 1;
+    left: 20px;
+  }
+}

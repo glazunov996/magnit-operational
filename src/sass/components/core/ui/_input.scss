@@ -1,0 +1,43 @@
+%txph-inputHolder {
+  position: relative;
+}
+
+$txph-inputLayoutLarge-height: 48px;
+
+%txph-inputLayoutLarge {
+  @include txmx-fontSize(14px);
+  width: 100%;
+  height: $txph-inputLayoutLarge-height;
+  padding: 14px 16px 0;
+  transition: padding $txgl-transition-default;
+}
+
+$txph-labelLayoutLarge-compact-color: $txgl-gray-200;
+
+%txph-labelLayoutLarge {
+  @include txmx-fontSize(14px);
+  position: absolute;
+  top: $txph-inputLayoutLarge-height / 2;
+  left: $txgl-form-borderWidth;
+  display: flex;
+  padding: 0 0 0 16px;
+  margin: -0.5em 0 0;
+  color: inherit;
+  line-height: 1;
+  transform-origin: 16px 0;
+  transition: color $txgl-transition-default, transform $txgl-transition-default;
+  will-change: transform;
+
+  &-is-compact {
+    color: $txph-labelLayoutLarge-compact-color;
+    transform: translateY($txgl-form-height / -2 + 5px) scale(0.75) translateY(25%);
+  }
+
+  &-focus {
+    color: $txgl-ui-focus-color;
+  }
+
+  &-is-invalid {
+    color: $txgl-ui-invalid-color;
+  }
+}

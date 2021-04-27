@@ -1,0 +1,27 @@
+.txcm-barChartComparison {
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+  flex-basis: 0;
+  overflow: hidden;
+  width: 100%;
+  transform: translateX(var(--highlightShift));
+
+  %txph-barChart-is-scrollable & {
+    &:last-child {
+      position: absolute;
+      top: 0;
+      bottom: 8px;
+      left: 100%;
+      width: var(--highlightWidth);
+    }
+  }
+
+  %txph-barChart-is-atLimit & {
+    &:last-child {
+      position: relative;
+      bottom: 0;
+      left: auto;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+.txcm-sliceRow {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 9px 0;
+  border-top: 1px solid $txgl-dataTable-borderColor;
+  border-bottom: 1px solid $txgl-dataTable-borderColor;
+  margin: 0 0 -1px;
+
+  &::after {
+    @extend %txph-dataTableGraph;
+    @include txmx-pseudo(relative);
+    margin: 0 0 0 16px;
+  }
+
+  &-has-graph {
+    &::after {
+      display: none;
+    }
+  }
+
+  @include txmx-mq(tablet) {
+    flex-shrink: 0;
+  }
+
+  @include txmx-mq(phone) {
+    &::after {
+      margin: 0;
+    }
+  }
+}

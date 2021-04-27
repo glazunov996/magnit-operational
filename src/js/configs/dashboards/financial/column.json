@@ -1,0 +1,14 @@
+[
+  {
+    "label": "Периоды",
+    "indicators": [
+      {
+        "label": "QTD",
+        "value": 3
+      }, {
+        "label": "YTD",
+        "value": 4
+      }
+    ]
+  }
+]

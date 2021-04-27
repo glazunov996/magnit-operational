@@ -1,0 +1,15 @@
+// Relative Unit Multiplier
+
+@function txf-relativeValueMultiplier($unit) {
+  @if ($unit == 'vw') or ($unit == 'vh') {
+    @return 100;
+  } @else {
+    @return 1;
+  }
+}
+
+// Convert to Relative Value
+
+@function txf-relativeValue($value, $base, $unit) {
+  @return #{($value / $base) * txf-relativeValueMultiplier($unit)}#{$unit};
+}

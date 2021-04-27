@@ -1,0 +1,27 @@
+$txcm-barChartHighlight-background: #26292d;
+
+.txcm-barChart {
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+  overflow: hidden;
+  width: 100%;
+  padding: 0 0 8px;
+
+  &::before {
+    @include txmx-pseudo;
+    width: var(--highlightWidth);
+    height: 100%;
+    background: $txcm-barChartHighlight-background;
+    opacity: var(--highlightOpacity);
+    transform: translateX(var(--highlightPosition)) translateX(var(--highlightShift));
+  }
+
+  &-is-scrollable {
+    @extend %txph-barChart-is-scrollable;
+  }
+
+  &-is-atLimit {
+    @extend %txph-barChart-is-atLimit;
+  }
+}

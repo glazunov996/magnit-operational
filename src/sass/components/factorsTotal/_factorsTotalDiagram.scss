@@ -1,0 +1,85 @@
+$txcm-factorsTotalDiagram-minHeight: 19px;
+
+.txcm-factorsTotalDiagram {
+  position: relative;
+  display: flex;
+  flex-shrink: 1;
+  width: 50%;
+  min-height: $txcm-factorsTotalDiagram-minHeight;
+
+  &::before {
+    @include txmx-pseudo;
+    top: -9px;
+    right: 0;
+    bottom: -9px;
+    width: 1px;
+    background: $txgl-background;
+  }
+
+  &::after {
+    @include txmx-pseudo(relative);
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 16px;
+  }
+
+  & + & {
+    @extend %txph-factorsTotalDiagram-next;
+
+    &::before {
+      display: none;
+    }
+
+    &::after {
+      order: -1;
+    }
+  }
+
+  @include txmx-mq(tablet) {
+    &::before {
+      display: none;
+    }
+  }
+
+  @include txmx-mq(phone) {
+    width: 100%;
+  }
+}
+
+.txcm-factorsTotalDiagramSVG {
+  flex-grow: 1;
+}
+
+$txcm-factorsTotalDiagramRectBase-fill: $txgl-gray-200;
+$txcm-factorsTotalDiagramRectBase-increasing-fill: $txgl-green;
+$txcm-factorsTotalDiagramRectBase-decreasing-fill: $txgl-red;
+
+.txcm-factorsTotalDiagramRectBase {
+  fill: $txcm-factorsTotalDiagramRectBase-fill;
+  stroke-width: 0.5;
+  stroke: $txgl-gray-100;
+
+  &-is-increasing {
+    fill: $txcm-factorsTotalDiagramRectBase-increasing-fill;
+  }
+
+  &-is-decreasingCritically {
+    fill: $txcm-factorsTotalDiagramRectBase-decreasing-fill;
+  }
+}
+
+.txcm-factorsTotalDiagramDiff {
+  @extend %txph-factorValueLayout;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  white-space: nowrap;
+
+  %txph-factorsTotalDiagram-next & {
+    left: 16px;
+  }
+}

@@ -1,0 +1,11 @@
+%txph-dataTableRow {
+  @include txmx-mq(tablet) {
+    width: 200%;
+    width: calc(200% - 150px);
+  }
+
+  @include txmx-mq(phone) {
+    width: 300%;
+    width: calc(300% - 184px);
+  }
+}

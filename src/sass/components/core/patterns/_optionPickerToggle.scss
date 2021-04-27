@@ -1,0 +1,51 @@
+$txph-optionPickerToggle-width: 80px;
+$txph-optionPickerToggle-color: $txgl-white-900;
+
+$txph-optionPickerToggleBox-size: 16px;
+$txph-optionPickerToggleBox-background: $txgl-gray-400;
+
+%txph-optionPickerToggle {
+  @include txmx-fontSize(22px);
+  position: relative;
+  display: block;
+  align-items: center;
+  width: $txph-optionPickerToggle-width;
+  padding: 0 0 0 ($txph-optionPickerToggleBox-size + 8px);
+  color: $txph-optionPickerToggle-color;
+  background: none;
+  font-weight: 500;
+  text-align: left;
+  line-height: 1;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+
+  &::after {
+    @include txmx-pseudo;
+    top: 50%;
+    left: 0;
+    order: -1;
+    width: $txph-optionPickerToggleBox-size;
+    height: $txph-optionPickerToggleBox-size;
+    border-radius: 3px;
+    margin: ($txph-optionPickerToggleBox-size / -2 + 1) 0 0;
+    background: $txph-optionPickerToggleBox-background;
+  }
+
+  @include txmx-mq(phone) {
+    @include txmx-fontSize(18px);
+  }
+}
+
+$txph-optionPickerToggleIcon-width: 6px;
+$txph-optionPickerToggleIcon-height: 4px;
+
+%txph-optionPickerToggleIcon {
+  @extend %txph-fatArrow;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 7px;
+  margin: -1px 0 0;
+}

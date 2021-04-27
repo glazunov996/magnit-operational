@@ -1,0 +1,56 @@
+$txcm-datepickerContainer-width: 304px;
+$txcm-datepickerContainer-background: $txgl-gray-400;
+
+.txcm-datepickerContainer {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  display: flex;
+  visibility: hidden;
+  align-items: center;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  overflow: hidden;
+  width: $txcm-datepickerContainer-width;
+  padding: 0 0 15px;
+  border-radius: 3px;
+  margin: ($txgl-filter-margin * 2) 0 0;
+  background: $txcm-datepickerContainer-background;
+  opacity: 0;
+  transition: opacity $txgl-transition-default, visibility $txgl-transition-default step-end, transform $txgl-transition-default step-end;
+
+  &-is-active {
+    visibility: visible;
+    opacity: 1;
+    transform: var(--shift);
+    transition: opacity $txgl-transition-default, visibility $txgl-transition-default step-start, transform $txgl-transition-default step-start;
+  }
+}
+
+$txcm-datepickerSubmit-minWidth: 90px;
+
+.txcm-datepickerSubmit {
+  @extend %txph-buttonLayout;
+  @extend %txph-buttonRed;
+  min-width: $txcm-datepickerSubmit-minWidth;
+  margin: 0 0 0 6px;
+
+  &-is-secondary {
+    border: 1px solid $txph-buttonBorder-borderColor;
+    color: $txph-buttonBorder-color;
+    background: none;
+    transition: border-color $txgl-transition, color $txgl-transition;
+
+    &:hover {
+      border-color: $txph-buttonBorder-hover-borderColor;
+      color: $txph-buttonBorder-hover-color;
+      background: none;
+    }
+
+    &:active {
+      border-color: $txph-buttonBorder-active-borderColor;
+      color: $txph-buttonBorder-active-color;
+      background: none;
+    }
+  }
+}

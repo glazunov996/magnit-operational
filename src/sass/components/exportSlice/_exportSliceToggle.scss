@@ -1,0 +1,48 @@
+$txcm-exportSliceToggle-color: $txgl-white-900;
+$txcm-exportSliceToggle-background: $txgl-gray-400;
+
+$txcm-exportSliceToggle-active-color: $txgl-gray-100;
+
+.txcm-exportSliceToggle {
+  @extend %txph-buttonLayout;
+  position: relative;
+  display: none;
+  width: 100%;
+  border: 1px solid $txcm-exportSliceToggle-background;
+  margin: 8px 0 4px;
+  color: $txcm-exportSliceToggle-color;
+  background: $txcm-exportSliceToggle-background;
+  text-align: left;
+
+  &-is-active {
+    @extend %txph-exportSliceToggle-is-active;
+  }
+
+  @include txmx-mq(phone) {
+    display: block;
+
+    &-is-active {
+      color: $txcm-exportSliceToggle-active-color;
+      background: none;
+    }
+  }
+}
+
+$txph-exportSliceToggleIcon-width: 4px;
+$txph-exportSliceToggleIcon-height: 8px;
+$txph-exportSliceToggleIcon-fill: $txgl-gray-100;
+
+.txcm-exportSliceToggleIcon {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  width: $txph-exportSliceToggleIcon-width;
+  height: $txph-exportSliceToggleIcon-height;
+  margin: ($txph-exportSliceToggleIcon-height / -2 + 1px) 0 0 ($txph-exportSliceToggleIcon-width / -2);
+  transform: rotate(-90deg);
+  fill: $txph-exportSliceToggleIcon-fill;
+
+  %txph-exportSliceToggle-is-active & {
+    transform: rotate(90deg);
+  }
+}

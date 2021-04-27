@@ -1,0 +1,77 @@
+$txcm-sliceValue-height: 20px;
+$txcm-sliceValue-color: $txgl-white-900;
+
+.txcm-sliceValue {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: $txcm-sliceValue-height;
+  color: $txcm-sliceValue-color;
+  font-weight: 600;
+  line-height: $txcm-sliceValue-height;
+  white-space: nowrap;
+}
+
+$txcm-sliceValueIcon-width: 4px;
+$txcm-sliceValueIcon-height: 6px;
+$txcm-sliceValueIcon-increasing-fill: $txgl-green;
+$txcm-sliceValueIcon-dectreasing-fill: $txgl-yellow;
+$txcm-sliceValueIcon-decreasingCritically-fill: $txgl-red;
+
+.txcm-sliceValueIcon {
+  position: relative;
+  top: 1px;
+  visibility: hidden;
+  width: $txcm-sliceValueIcon-width;
+  height: $txcm-sliceValueIcon-height;
+  margin: 0 6px 0 0;
+  transition: $txgl-transition-default;
+
+  &-is-increasing {
+    visibility: visible;
+    transform: rotate(90deg);
+    fill: $txcm-sliceValueIcon-increasing-fill;
+  }
+
+  &-is-increasing-inverted {
+    visibility: visible;
+    transform: rotate(-90deg);
+    fill: $txcm-kpiValueIcon-increasing-fill;
+  }
+
+  &-is-decreasing {
+    visibility: visible;
+    transform: rotate(-90deg);
+    fill: $txcm-sliceValueIcon-dectreasing-fill;
+  }
+
+  &-is-decreasing-inverted {
+    visibility: visible;
+    transform: rotate(90deg);
+    fill: $txcm-kpiValueIcon-dectreasing-fill;
+  }
+
+  &-is-decreasingCritically {
+    visibility: visible;
+    transform: rotate(-90deg);
+    fill: $txcm-sliceValueIcon-decreasingCritically-fill;
+  }
+
+  &-is-decreasingCritically-inverted {
+    visibility: visible;
+    transform: rotate(90deg);
+    fill: $txcm-kpiValueIcon-dectreasingCritically-fill;
+  }
+}
+
+.txcm-sliceValueAdd {
+  @extend %txph-dataTableValue;
+
+  &-is-decreasing {
+    @extend %txph-dataTableValue-is-decreasing;
+  }
+
+  &-is-decreasingCritically {
+    @extend %txph-dataTableValue-is-decreasingCritically;
+  }
+}

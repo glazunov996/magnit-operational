@@ -1,0 +1,33 @@
+.txcm-tableHeaderCellColumn {
+  @extend %txph-dataTableColumn; 
+
+  &:nth-last-child(3) {
+    width: auto;
+    margin: 0 0 0 15px;
+  }
+
+  @include txmx-mq(phone) {
+    &:nth-last-child(3) {
+      width: 20%;
+    }
+  }
+}
+
+.txcm-tableHeaderCellWideColumn {
+  @extend %txph-dataTableWideColumn;
+  padding: 0 16px 0 0;
+
+  & + & {
+    padding: 0 0 0 16px;
+  }
+
+  @include txmx-mq(phone) {
+    %txph-tableHeaderCellLabel + & {
+      margin: 0;
+    }
+
+    & + & {
+      padding: 0 0 0 18px;
+    }
+  }
+}

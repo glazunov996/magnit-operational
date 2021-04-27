@@ -1,0 +1,21 @@
+$txph-scrollbar-width: 7px;
+
+$txph-scrollThumb-background: $txgl-gray-400;
+
+%txph-scroll {
+  scrollbar-color: $txph-scrollThumb-background transparent;
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    width: $txph-scrollbar-width;
+    background: none;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient(to right, transparent, transparent 2px, $txph-scrollThumb-background 2px, $txph-scrollThumb-background 5px, transparent 5px, transparent);
+  }
+}
+
+:root {
+  @extend %txph-scroll;
+}

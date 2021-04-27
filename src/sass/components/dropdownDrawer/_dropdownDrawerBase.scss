@@ -1,0 +1,36 @@
+$txcm-dropdownDrawer-optionHeight: 32px;
+$txcm-dropdownDrawer-width: 310px;
+$txcm-dropdownDrawer-count: 5;
+$txcm-dropdownDrawer-maxHeight: 360px;
+$txcm-dropdownDrawer-background: $txgl-gray-400;
+
+.txcm-dropdownDrawer {
+  @extend %txph-scroll;
+  position: absolute;
+  z-index: -1;
+  top: 100%;
+  right: 100%;
+  display: flex;
+  visibility: hidden;
+  flex-direction: column;
+  overflow: auto;
+  box-sizing: border-box;
+  width: $txcm-dropdownDrawer-width;
+  max-height: $txcm-dropdownDrawer-maxHeight;
+  padding: 8px 16px 0;
+  border-radius: 3px;
+  margin: 6px 0 0;
+  background: $txcm-dropdownDrawer-background;
+  list-style: none;
+  opacity: 0;
+  transform: translateX(-100%) translateY(-100%) translateZ(0);
+  transition: opacity $txgl-transition-default, visibility $txgl-transition-default step-end, transform $txgl-transition-default step-end;
+
+  &-is-opened {
+    z-index: initial;
+    visibility: visible;
+    opacity: 1;
+    transform: var(--shift) translateZ(0);
+    transition: opacity $txgl-transition-default, visibility $txgl-transition-default step-start, transform $txgl-transition-default step-start;
+  }
+}

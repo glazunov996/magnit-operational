@@ -1,0 +1,47 @@
+.txcm-exportSliceOptionInput {
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  opacity: 0;
+
+  &:checked {
+    @extend %txph-exportSliceOptionInput-checked;
+  }
+}
+
+$txcm-exportSliceOptionLabel-height: 32px;
+
+.txcm-exportSliceOptionLabel {
+  position: relative;
+  display: block;
+  height: $txcm-exportSliceOptionLabel-height;
+  padding: 0 12px;
+  text-overflow: ellipsis;
+  line-height: $txcm-exportSliceOptionLabel-height;
+
+  %txph-exportSliceOptionInput-checked + & {
+    @extend %txph-exportSliceOptionLabel-checked;
+  }
+}
+
+$txcm-exportSliceOptionLabelIcon-width: 9px;
+$txcm-exportSliceOptionLabelIcon-height: 6px;
+$txcm-exportSliceOptionLabelIcon-color: $txgl-red;
+
+.txcm-exportSliceOptionLabelIcon {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  width: $txcm-exportSliceOptionLabelIcon-width;
+  height: $txcm-exportSliceOptionLabelIcon-height;
+  margin: ($txcm-exportSliceOptionLabelIcon-height / -2) 0 0;
+  color: $txcm-exportSliceOptionLabelIcon-color;
+  opacity: 0;
+  transition: opacity $txgl-transition-default;
+  fill: currentColor;
+
+  %txph-exportSliceOptionLabel-checked > & {
+    opacity: 1;
+  }
+}

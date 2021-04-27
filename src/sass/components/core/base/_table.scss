@@ -1,0 +1,41 @@
+$txph-tableCell-borderColor: $txgl-gray;
+
+%txph-tableCell {
+  padding: 0 ($txgl-gap / 2);
+  border: 1px solid $txph-tableCell-borderColor;
+}
+
+caption {
+  padding: 0 0 0.75em;
+  font-weight: 600;
+  text-align: left;
+}
+
+table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  empty-cells: hide;
+}
+
+thead {
+  @include txmx-media(print) {
+    display: table-header-group;
+  }
+}
+
+tr {
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+td {
+  @extend %txph-tableCell;
+}
+
+th {
+  @extend %txph-tableCell;
+  font-weight: 600;
+  text-align: left;
+}

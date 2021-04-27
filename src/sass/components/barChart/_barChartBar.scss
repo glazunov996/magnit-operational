@@ -1,0 +1,62 @@
+$txcm-barChartBar-left-background: $txgl-gray-200;
+$txcm-barChartBar-right-background: $txgl-gray-300;
+
+$txcm-barChartBarBorder-left-background: $txgl-red-500;
+$txcm-barChartBarBorder-right-background: $txgl-red-700;
+
+.txcm-barChartBar {
+  position: absolute;
+  top: 0;
+  height: 100%;
+
+  &::before {
+    @include txmx-pseudo;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 2px;
+  }
+
+  &::after {
+    @include txmx-pseudo;
+    top: 2px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 0 0 2px 2px;
+    transform: translateY(var(--valueScale));
+  }
+
+  &-left {
+    z-index: 1;
+    right: 50%;
+    left: 50%;
+    margin: 0 0 0 -16px;
+
+    &::before {
+      right: 0;
+      left: 0;
+      background: $txcm-barChartBarBorder-left-background;
+    }
+
+    &::after {
+      background: $txcm-barChartBar-left-background;
+    }
+  }
+
+  &-right {
+    right: 50%;
+    left: 50%;
+    margin: 0 -16px 0 0;
+
+    &::before {
+      right: 0;
+      left: 0;
+      background: $txcm-barChartBarBorder-right-background;
+    }
+
+    &::after {
+      background: $txcm-barChartBar-right-background;
+    }
+  }
+}

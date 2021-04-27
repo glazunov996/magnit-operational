@@ -1,0 +1,34 @@
+$txcm-listFilterInput-slice-phone-background: $txgl-gray-300;
+
+.txcm-listFilterInput {
+  width: 100%;
+  padding: 0 31px;
+
+  &:hover {
+    @extend %txph-dashboardListFilterInput-hover;
+  }
+
+  &:focus {
+    @extend %txph-dashboardListFilterInput-focus;
+  }
+
+  %txph-listFilter-slice & {
+    @include txmx-mq(phone) {
+      background: $txcm-listFilterInput-slice-phone-background;
+    }
+  }
+}
+
+$txcm-listFilterIcon-size: 10px;
+$txcm-listFilterIcon-color: $txgl-gray-200;
+
+.txcm-listFilterIcon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  width: $txcm-listFilterIcon-size;
+  height: $txcm-listFilterIcon-size;
+  margin: ($txcm-listFilterIcon-size / -2) 0 0 ($txcm-listFilterIcon-size / -2);
+  pointer-events: none;
+  fill: $txcm-listFilterIcon-color;
+}

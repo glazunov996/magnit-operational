@@ -1,0 +1,12 @@
+// Responsive Padding
+
+@mixin txmx-responsivePadding($top: 0, $bottom: 0, $right: $txgl-gap, $left: $txgl-gap) {
+  $style: $top + ' ' + $right + ' ' + $bottom + ' ' + $left;
+  $responsiveStyle: $top + ' ' + 'calc(' + $right + ' - 100vw + 100%) ' + $bottom + ' ' + $left;
+  padding: unquote('' + txf-sanitizeShorthand($style));
+  padding: unquote($responsiveStyle);
+}
+
+@mixin txmx-rp($top: 0, $bottom: 0, $right: $txgl-gap, $left: $txgl-gap) {
+  @include txmx-responsivePadding($top, $bottom, $right, $left);
+}

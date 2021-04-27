@@ -1,0 +1,273 @@
+form {
+  @include txmx-media(print) {
+    display: none;
+  }
+}
+
+fieldset {
+  display: block;
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+
+$txcm-legend-padding: 1.5em;
+
+legend {
+  position: relative;
+  left: -$txcm-legend-padding;
+  padding: 0 $txcm-legend-padding;
+  font-weight: bold;
+}
+
+label {
+  cursor: pointer;
+  touch-action: manipulation;
+  user-select: none;
+}
+
+%txph-formElement {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: inherit;
+
+  @include txmx-media(print) {
+    display: none;
+  }
+}
+
+%txph-formFieldStyle {
+  border: $txgl-form-borderWidth solid $txgl-form-borderColor;
+  border-radius: $txgl-form-borderRadius;
+  color: $txgl-form-color;
+  background: $txgl-form-background;
+  transition: border-color $txgl-transition;
+
+  &:hover {
+    border-color: $txgl-form-hover-borderColor;
+  }
+}
+
+%txph-formFieldState {
+  &:hover {
+    border-color: $txgl-form-hover-borderColor;
+    color: $txgl-form-hover-color;
+    background: $txgl-form-hover-background;
+  }
+
+  &:active,
+  &:focus {
+    border-color: $txgl-form-active-borderColor;
+    color: $txgl-form-active-color;
+    background: transparent;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    border-color: $txgl-form-disabled-borderColor;
+    color: $txgl-ui-disabled-color;
+    cursor: default;
+    cursor: not-allowed;
+  }
+
+  &[readonly] {
+    cursor: default;
+    cursor: not-allowed;
+
+    &:hover {
+      border-color: $txgl-form-borderColor;
+    }
+  }
+}
+
+%txph-formMozBorderReset {
+  &::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+}
+
+%txph-formAppearance {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+%txph-input {
+  @extend %txph-formElement;
+  @extend %txph-formFieldStyle;
+  height: $txgl-form-height;
+  padding: 0 16px;
+  box-shadow: none;
+}
+
+input {
+  @extend %txph-input;
+  @extend %txph-formFieldState;
+
+  &[type='radio'],
+  &[type='checkbox'] {
+    height: auto;
+    padding: 0;
+    border: 0;
+    vertical-align: middle;
+  }
+
+  &[type='submit'],
+  &[type='reset'],
+  &[type='button'] {
+    @extend %txph-formButton;
+    @extend %txph-formAppearance;
+    @extend %txph-formMozBorderReset;
+
+    &:disabled {
+      @extend %txph-formButtonStyle-disabled;
+    }
+  }
+
+  &[type='file'] {
+    height: auto;
+    padding: 0;
+    border: 0;
+  }
+
+  &[type='search'] {
+    @extend %txph-formAppearance;
+
+    &::-ms-clear {
+      display: none;
+      width: 0;
+      height: 0;
+    }
+
+    &::-ms-reveal {
+      display: none;
+      width: 0;
+      height: 0;
+    }
+
+    ::-webkit-search-decoration {
+      display: none;
+    }
+
+    &::-webkit-search-cancel-button {
+      display: none;
+    }
+
+    &::-webkit-search-results-button {
+      display: none;
+    }
+
+    &::-webkit-search-results-decoration {
+      display: none;
+    }
+  }
+
+  &[type='number'] {
+    @extend %txph-formAppearance;
+  }
+
+  &[type='color'] {
+    padding: 0 2px;
+  }
+
+  &[type='range'] {
+    height: auto;
+    padding: 0;
+  }
+
+  &[type='image'] {
+    height: auto;
+    padding: 0;
+    border: 0;
+  }
+
+  &::placeholder {
+    color: $txgl-placeholder-color;
+    opacity: 1;
+  }
+}
+
+$txgl-select-background: $txgl-white;
+
+$txgl-selectButton-width: 45px;
+
+select {
+  @extend %txph-formElement;
+  @extend %txph-formAppearance;
+  position: relative;
+  height: $txgl-form-height;
+  padding: 0 ($txgl-selectButton-width + $txgl-gap) 0 $txgl-gap;
+  border: 0;
+  vertical-align: top;
+  touch-action: manipulation;
+  transition: background $txgl-transition;
+
+  &[multiple] {
+    height: 150px;
+    padding: 0;
+    border: $txgl-form-borderWidth solid $txgl-form-borderColor;
+    border-radius: $txgl-form-borderRadius;
+    background: none;
+
+    option {
+      padding: 10px $txgl-gap;
+    }
+  }
+}
+
+textarea {
+  @extend %txph-formElement;
+  @extend %txph-formFieldStyle;
+  @extend %txph-formFieldState;
+  display: block;
+  overflow: auto;
+  height: 150px;
+  padding: 0.75em $txgl-gap;
+}
+
+%txph-formButtonStyle {
+  box-sizing: border-box;
+  height: $txgl-button-height;
+  padding: 0 $txgl-button-padding;
+  border-radius: $txgl-form-borderRadius;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: background $txgl-transition, color $txgl-transition;
+
+  &-disabled {
+    color: $txgl-button-disabled-color;
+    background: $txgl-button-disabled-background;
+    cursor: default;
+    cursor: not-allowed;
+
+    &:hover,
+    &:active {
+      color: $txgl-button-disabled-color;
+      background: $txgl-button-disabled-background;
+    }
+  }
+}
+
+%txph-formButton {
+  @extend %txph-formButtonStyle;
+  border: 0;
+
+  &:disabled {
+    @extend %txph-formButtonStyle-disabled;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+button {
+  @extend %txph-formElement;
+  @extend %txph-formButton;
+  @extend %txph-formAppearance;
+  @extend %txph-formMozBorderReset;
+}

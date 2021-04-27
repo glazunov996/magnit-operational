@@ -1,0 +1,48 @@
+$txcm-sliceGraph-minHeight: 40px;
+
+$txcm-sliceGraphHightlight-background: #26292d;
+
+.txcm-sliceGraph {
+  --highlightWidth: 0;
+  --highlightPosition: 0;
+  --highlightOpacity: 0;
+  --highlightShift: 0;
+  @extend %txph-dataTableGraph;
+  position: relative;
+  overflow: hidden;
+  min-height: $txcm-sliceGraph-minHeight;
+  margin: -9px 0 -9px 16px;
+
+  &::before {
+    @include txmx-pseudo;
+    top: 0;
+    left: 0;
+    width: 90px;
+    height: 100%;
+    background: $txgl-background;
+  }
+
+  @include txmx-mq(phone) {
+    margin: -9px 0;
+  }
+}
+
+.txcm-sliceGraphHolder {
+  position: absolute;
+  top: 8px;
+  right: 0;
+  bottom: 0px;
+  left: 90px;
+  display: flex;
+  flex-direction: column;
+
+  &::before {
+    @include txmx-pseudo;
+    top: -13px;
+    bottom: 0;
+    width: var(--highlightWidth);
+    background: $txcm-sliceGraphHightlight-background;
+    opacity: var(--highlightOpacity);
+    transform: translateX(var(--highlightPosition)) translateX(var(--highlightShift));
+  }
+}

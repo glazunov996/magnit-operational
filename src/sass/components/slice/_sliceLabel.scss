@@ -1,0 +1,33 @@
+$txcm-sliceLabel-color: $txgl-white-900;
+
+.txcm-sliceLabel {
+  @extend %txph-dataTableLabel;
+  position: relative;
+  padding: 1px 0 1px $txgl-gap;
+  color: $txcm-sliceLabel-color;
+
+  &::before {
+    @include txmx-pseudo;
+    top: -11px;
+    right: 0;
+    bottom: -11px;
+    width: 1px;
+    background: $txgl-dataTable-borderColor;
+  }
+
+  @include txmx-mq(tablet) {
+    overflow: hidden;
+    position: sticky;
+    padding-right: 2px;
+    z-index: 1;
+    left: 0;
+    word-break: break-word;
+    background: $txgl-background;
+  }
+
+  @include txmx-mq(phone) {
+    &::before {
+      display: none;
+    }
+  }
+}

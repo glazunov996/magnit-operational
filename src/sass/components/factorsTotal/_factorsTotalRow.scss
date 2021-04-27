@@ -1,0 +1,20 @@
+$txcm-factorsTotalRow-background: $txgl-gray-500;
+
+.txcm-factorsTotalRow {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 9px 0;
+  margin: 0 0 1px;
+  background: $txcm-factorsTotalRow-background;
+
+  @include txmx-mq(tablet) {
+    width: 200%;
+    width: calc(200% - 235px);
+  }
+
+  @include txmx-mq(phone) {
+    width: 400%;
+    width: calc(400% - 650px);
+  }
+}

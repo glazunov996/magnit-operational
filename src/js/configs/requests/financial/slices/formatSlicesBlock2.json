@@ -1,0 +1,38 @@
+{
+  "qInitialDataFetch": [
+    {
+        "qHeight": 20,
+        "qWidth": 5
+    }
+  ],
+  "qDimensions": [
+      {
+          "qLabel": "FRMT",
+          "qLibraryId": "jeY",
+          "qNullSuppression": true
+      }
+  ],
+  "qMeasures": [
+      {
+          "qLabel": "ТаблОтклоненияПоФорматам.Факт % от выр",
+          "qLibraryId": "tdpLeV"
+      },
+      {
+          "qLabel": "ТаблОтклоненияПоФорматам.vs Факт п-п %",
+          "qLibraryId": "mfkwrV"
+      },
+      {
+          "qLabel": "ТаблОтклоненияПоФорматам.vs Бюджет %",
+          "qLibraryId": "yacVSmJ"
+      },
+      {
+          "qLabel": "ТаблОтклоненияПоФорматам.Стрелка",
+          "qLibraryId": "AYqkjZU"
+      }
+  ],
+  "qSuppressZero": true,
+  "qSuppressMissing": true,
+  "qMode": "S",
+  "qInterColumnSortOrder": [],
+  "qStateName": "$"
+}

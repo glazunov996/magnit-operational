@@ -1,0 +1,27 @@
+$txcm-graphModePicker-color: $txgl-white-900;
+
+.txcm-graphModePicker {
+  position: relative;
+  z-index: 1;
+  color: $txcm-graphModePicker-color;
+}
+
+.txcm-graphModePickerToggle {
+  @include txmx-fontSize(22px);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 0 0 0 25px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  line-height: 1;
+  white-space: nowrap;
+
+  @include txmx-mq(phone) {
+    @include txmx-fontSize(18px);
+  }
+}
+
+.txcm-graphModePickerToggleIcon {
+  @extend %txph-optionPickerToggleIcon;
+}

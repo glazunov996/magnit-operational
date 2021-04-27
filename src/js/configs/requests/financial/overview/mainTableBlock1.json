@@ -1,0 +1,70 @@
+{
+  "qInitialDataFetch": [
+    {
+      "qHeight": 200,
+      "qWidth": 13
+    }
+  ],
+  "qDimensions": [
+    {
+      "qLabel": "PNL_ITEM_ID7",
+      "qLibraryId": "fJjkWPP",
+      "qNullSuppression": true
+    }
+  ],
+  "qMeasures": [
+    { 
+        "qLabel": "DESCRIPTION7_мера",
+        "qLibraryId": "TYNXKp"
+    }, 
+    {
+      "qLabel": "ОсновнаяТаблица.Факт месяц",
+      "qLibraryId": "pAAAKDm"
+    },
+    {
+      "qLabel": "ОсновнаяТаблица.Факт % от выр. месяц",
+      "qLibraryId": "KSZHkg"
+    },
+    {
+      "qLabel": "ОсновнаяТаблица.vs Факт п-п % месяц",
+      "qLibraryId": "KuJXDh"
+    },
+    {
+      "qLabel": "ОсновнаяТаблица.vs Факт п-п месяц",
+      "qLibraryId": "mvdsf"
+    },
+    {
+      "qLabel": "ОсновнаяТаблица.vs Бюджет % месяц",
+      "qLibraryId": "qngmV"
+    },
+    {
+      "qLabel": "ОсновнаяТаблица.vs Бюджет месяц",
+      "qLibraryId": "fzeapzf"
+    },
+    {
+      "qLabel": "ОсновнаяТаблица.Бюджет % от выр. месяц",
+      "qLibraryId": "033ea8ef-dd2f-471e-b7d9-5d3aea280396"
+    },
+    {
+      "qLabel": "ОсновнаяТаблица.Бюджет месяц",
+      "qLibraryId": "ndySRHy"
+    },
+    {
+      "qLabel": "ОсновнаяТаблица.Факт п-п % от выр. месяц",
+      "qLibraryId": "915a14f9-5dcb-480e-af43-7128bf81e146"
+    },
+    {
+      "qLabel": "ОсновнаяТаблица.Факт п-п месяц",
+      "qLibraryId": "b8ed1836-0f0b-4003-8d75-5a7aa04ef8cf"
+    },
+    {
+      "qLabel": "ОсновнаяТаблица.Стрелка месяц",
+      "qLibraryId": "kyhNYy"
+    }
+  ],
+  "qSuppressZero": true,
+  "qSuppressMissing": true,
+  "qMode": "S",
+  "qInterColumnSortOrder": [],
+  "qStateName": "$"
+}

@@ -1,0 +1,77 @@
+.txcm-asideNavigation {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+}
+
+$txcm-asideNavigationHeader-color: $txgl-white-900;
+$txcm-asideNavigationHeader-height: 32px;
+
+.txcm-asideNavigationHeader {
+  @include txmx-fontSize(15px);
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  min-height: $txcm-asideNavigationHeader-height;
+  margin: 0 0 14px;
+  color: $txcm-asideNavigationHeader-color;
+  background: inherit;
+  font-weight: 600;
+}
+
+$txcm-asideNavLink-height: 32px;
+$txcm-asideNavLink-active-color: $txgl-white-900;
+
+.txcm-asideNavLink {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: $txcm-asideNavLink-height;
+  text-decoration: none;
+
+  &-is-active {
+    @extend %txph-asideNavLink-is-active;
+    @include txmx-link($txcm-asideNavLink-active-color);
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: $txcm-asideNavLink-height;
+    text-decoration: none;
+  }
+
+  &-is-disabled {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: $txcm-asideNavLink-height;
+    text-decoration: none;
+    pointer-events: none;
+    color: currentColor;
+    cursor: not-allowed;
+    opacity: 0.35;
+  }
+}
+
+$txcm-asideNavLinkIcon-width: 9px;
+$txcm-asideNavLinkIcon-height: 6px;
+$txcm-asideNavLinkIcon-color: $txgl-red;
+
+.txcm-asideNavLinkIcon {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  width: $txcm-asideNavLinkIcon-width;
+  height: $txcm-asideNavLinkIcon-height;
+  margin: ($txcm-asideNavLinkIcon-height / -2) 0 0;
+  color: $txcm-asideNavLinkIcon-color;
+  opacity: 0;
+  transition: opacity $txgl-transition-default;
+  fill: currentColor;
+
+  %txph-asideNavLink-is-active > & {
+    opacity: 1;
+  }
+}

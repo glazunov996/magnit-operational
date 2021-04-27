@@ -1,0 +1,50 @@
+.txcm-menuDrawerNavigation {
+  width: 100%;
+  margin: 28px 0 0;
+}
+
+$txcm-menuDrawerNavLink-height: 32px;
+$txcm-menuDrawerNavLink-color: $txgl-white-900;
+
+.txcm-menuDrawerNavLink {
+  @include txmx-fontSize(14px);
+  @include txmx-link($txcm-menuDrawerNavLink-color);
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: $txcm-menuDrawerNavLink-height;
+  font-weight: 600;
+  text-decoration: none;
+
+  &-is-active {
+    @include txmx-fontSize(14px);
+    @include txmx-link($txcm-menuDrawerNavLink-color);
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: $txcm-menuDrawerNavLink-height;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  &-is-disabled {
+    @include txmx-fontSize(14px);
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: $txcm-menuDrawerNavLink-height;
+    font-weight: 600;
+    text-decoration: none;
+    pointer-events: none;
+    color: currentColor;
+    cursor: not-allowed;
+    opacity: 0.35;
+  }
+}
+
+.txcm-menuDrawerNavExpand {
+  @extend %txph-buttonLayout;
+  @extend %txph-buttonBorder;
+  width: 100%;
+  margin: 16px 0 0;
+}

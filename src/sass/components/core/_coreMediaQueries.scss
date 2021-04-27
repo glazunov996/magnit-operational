@@ -1,0 +1,56 @@
+$txgl-breakpoints: (
+  phoneMax: 768px,
+  desktopMin: 1200px,
+  desktopWide: 1366px,
+  desktopMax: 1920px
+);
+
+$txgl-dpi: (
+  hdpi: 150,
+  xhdpi: 250
+);
+
+$txgl-deviceBreakpoints: (
+  wide: txf-breakpointQuery($min: desktopWide, $pixels: true),
+  hdpi: txf-breakpointQuery($dpi: hdpi, $pixels: true),
+  xhdpi: txf-breakpointQuery($dpi: xhdpi, $pixels: true),
+  tablet: txf-breakpointQuery($max: desktopMin, $pixels: true),
+  tablet2x: txf-breakpointQuery($max: desktopMin, $dpi: hdpi, $pixels: true),
+  tablet3x: txf-breakpointQuery($max: desktopMin, $dpi: xhdpi, $pixels: true),
+  phone: txf-breakpointQuery($max: phoneMax, $pixels: true),
+  phone2x: txf-breakpointQuery($max: phoneMax, $dpi: hdpi, $pixels: true),
+  phone3x: txf-breakpointQuery($max: phoneMax, $dpi: xhdpi, $pixels: true),
+);
+
+$txgl-mediaQueries: (
+  wide: txf-deviceBreakpoint(wide),
+  hdpi: txf-deviceBreakpoint(hdpi),
+  xhdpi: txf-deviceBreakpoint(xhdpi),
+  tablet: txf-deviceBreakpoint(tablet),
+  tablet2x: txf-deviceBreakpoint(tablet2x),
+  tablet3x: txf-deviceBreakpoint(tablet3x),
+  phone: txf-deviceBreakpoint(phone),
+  phone2x: txf-deviceBreakpoint(phone2x),
+  phone3x: txf-deviceBreakpoint(phone3x),
+  watch: '(max-device-width: 42mm) and (min-device-width: 38mm)',
+  print: 'print',
+  speech: 'speech',
+  exotic: 'projection, tv',
+  home: '(display-mode: standalone)',
+  full: '(device-width: 100vw) and (device-height: 100vh)',
+  nopointer: '(pointer: none)',
+  coarse: '(pointer: coarse)',
+  fine: '(pointer: fine)',
+  hover: '(hover: hover)',
+  nohover: '(hover: none)',
+  landscape: '(orientation: landscape)',
+  portrait: '(orientation: portrait)',
+  progressive: '(scan: progressive)',
+  interlace: '(scan: interlace)',
+  grid: '(grid)',
+  still: '(prefers-reduced-motion: reduce)',
+  motion: '(prefers-reduced-motion: no-preference)',
+  contrast: '(-ms-high-contrast: active)',
+  bow: '(-ms-high-contrast: black-on-white)',
+  wob: '(-ms-high-contrast: white-on-black)',
+);

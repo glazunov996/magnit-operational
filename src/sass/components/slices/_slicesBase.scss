@@ -1,0 +1,13 @@
+.txcm-slicesSection {
+  @extend %txph-section;
+}
+
+.txcm-slicesHeader {
+  @extend %txph-sectionHeader;
+  z-index: 6;
+}
+
+.txcm-slicesRows {
+  @extend %txph-sectionRows;
+  padding: 0 0 1px;
+}

@@ -1,0 +1,30 @@
+$txph-dataTableValue-height: 20px;
+
+$txph-dataTableValue-decreasing-color: $txgl-white-900;
+$txph-dataTableValue-decreasing-background: $txgl-yellow;
+
+$txph-dataTableValue-decreasingCritically-color: $txgl-white-900;
+$txph-dataTableValue-decreasingCritically-background: $txgl-red;
+
+%txph-dataTableValue {
+  position: relative;
+  right: -6px;
+  box-sizing: border-box;
+  height: $txph-dataTableValue-height;
+  padding: 0 6px;
+  border-radius: 3px;
+  text-align: right;
+  line-height: $txph-dataTableValue-height;
+  white-space: nowrap;
+  font-size: 14px;
+
+  &-is-decreasing {
+    color: $txph-dataTableValue-decreasing-color;
+    background: $txph-dataTableValue-decreasing-background;
+  }
+
+  &-is-decreasingCritically {
+    color: $txph-dataTableValue-decreasingCritically-color;
+    background: $txph-dataTableValue-decreasingCritically-background;
+  }
+}

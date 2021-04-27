@@ -1,0 +1,36 @@
+$txcm-exportControls-borderColor: $txgl-gray-300;
+
+.txcm-exportControls {
+  position: fixed;
+  z-index: 3;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 16px $txgl-gap;
+  border-top: 1px solid $txcm-exportControls-borderColor;
+  background: $txgl-background;
+
+  @include txmx-mq(phone) {
+    padding: 8px $txgl-gap-small;
+  }
+}
+
+%txph-exportControl {
+  min-width: 110px;
+  margin: 0 0 0 10px;
+}
+
+.txcm-exportCancel {
+  @extend %txph-buttonLayoutLarge;
+  @extend %txph-buttonGray;
+  @extend %txph-exportControl;
+}
+
+.txcm-exportDownload {
+  @extend %txph-buttonLayoutLarge;
+  @extend %txph-buttonRed;
+  @extend %txph-exportControl;
+}

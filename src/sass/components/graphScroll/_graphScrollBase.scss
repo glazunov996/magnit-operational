@@ -1,0 +1,33 @@
+$txcm-graphScroll-height: 10px;
+
+.txcm-graphScroll {
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: $txcm-graphScroll-height;
+  user-select: none;
+}
+
+$txcm-graphScrollThumb-width: 80px;
+$txcm-graphScrollThumb-height: 3px;
+$txcm-graphScrollThumb-background: $txgl-gray-400;
+
+.txcm-graphScrollThumb {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: $txcm-graphScrollThumb-width;
+  height: $txcm-graphScrollThumb-height;
+  border-radius: $txcm-graphScrollThumb-height / 2;
+  margin: ($txcm-graphScrollThumb-height / -2) 0 0;
+  background: $txcm-graphScrollThumb-background;
+
+  &::before {
+    @include txmx-pseudo;
+    top: -20px;
+    bottom: -5px;
+    width: 100%;
+  }
+}

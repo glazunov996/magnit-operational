@@ -1,0 +1,50 @@
+{
+  "modes": [
+    {
+      "label": "Динамика",
+      "value": "graphModeDynamics"
+    }, {
+      "label": "Срез по округу/TO",
+      "subLabel": "Округ",
+      "value": "graphModeCounty",
+      "options": "counties"
+    }, {
+      "label": "Срез по формату",
+      "subLabel": "Формат",
+      "value": "graphModeFormat",
+      "options": "formats"
+    }, {
+      "label": "Срез по категориям",
+      "subLabel": "Категория",
+      "value": "graphModeCategory",
+      "options": "categories"
+    }, {
+      "label": "Структура чека",
+      "subLabel": "Стр. чек.",
+      "value": "graphModeReceipt"
+    }
+  ],
+  "dynamics": [
+    {
+      "value": "graphDetailDay",
+      "label": "D",
+      "subLabel": "По дн."
+    }, {
+      "value": "graphDetailWeek",
+      "label": "W",
+      "subLabel": "По нед."
+    }, {
+      "value": "graphDetailMonth",
+      "label": "M",
+      "subLabel": "По мес."
+    }, {
+      "value": "graphDetailQuarter",
+      "label": "Q",
+      "subLabel": "По кв."
+    }, {
+      "value": "graphDetailYear",
+      "label": "Y",
+      "subLabel": "По годам"
+    }
+  ]
+}

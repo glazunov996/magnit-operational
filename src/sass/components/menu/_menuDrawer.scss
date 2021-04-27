@@ -1,0 +1,59 @@
+$txcm-menuDrawer-width: 254px;
+$txcm-menuDrawer-background: $txgl-gray-500;
+
+.txcm-menuDrawer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  width: $txcm-menuDrawer-width;
+  height: 100%;
+  padding: 20px 20px 0;
+  background: $txcm-menuDrawer-background;
+  pointer-events: all;
+  transform: translateX(100%);
+  transition: transform $txgl-transition-slow;
+
+  &-is-active {
+    transform: translateX(0);
+  }
+
+  @include txmx-mq(phone) {
+    width: 100%;
+  }
+}
+
+$txcm-menuLogo-size: 24px;
+$txcm-menuLogo-color: $txgl-white-900;
+
+.txcm-menuLogo {
+  position: absolute;
+  top: 24px;
+  left: 20px;
+  display: block;
+  width: $txcm-menuLogo-size;
+  height: $txcm-menuLogo-size;
+  fill: $txcm-menuLogo-color;
+}
+
+$txcm-menuDrawerLanguage-color: $txgl-white;
+$txcm-menuDrawerLanguage-size: 32px;
+$txcm-menuDrawerLanguage-fontSize: 14px;
+
+.txcm-menuDrawerLocale {
+  @include txmx-fontSize($txcm-menuDrawerLanguage-fontSize);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $txcm-menuDrawerLanguage-size;
+  height: $txcm-menuDrawerLanguage-size;
+  padding: 0;
+  margin: 0 0 0 40px;
+  color: $txcm-menuDrawerLanguage-color;
+  background: none;
+  text-decoration: none;
+}

@@ -1,0 +1,61 @@
+[
+  {
+    "options": [
+      {
+        "type": "controlledSelect",
+        "data": {
+          "name": "LFL",
+          "label": "LFL",
+          "pick": []
+        }
+      },
+      {
+        "type": "controlledSelect",
+        "data": {
+          "label": "NonLFL",
+          "name": "NonLFL",
+          "pick": []
+        }
+      }
+    ]
+  },
+  {
+    "options": [
+      {
+        "type": "picks",
+        "data": {
+          "name": "FRMT",
+          "pick": []
+        }
+      },
+      {
+        "type": "controlledSelect",
+        "data": {
+          "label": "Подформ.",
+          "name": "SUBFRMT",
+          "pick": []
+        }
+      }
+    ]
+  },
+  {
+    "options": [
+      {
+        "type": "controlledSelect",
+        "data": {
+          "label": "Округ",
+          "name": "Округ",
+          "pick": []
+        }
+      },
+      {
+        "type": "controlledSelect",
+        "data": {
+          "label": "Фил./гр.",
+          "name": "Филиал",
+          "pick": []
+        }
+      }
+    ]
+  }
+]

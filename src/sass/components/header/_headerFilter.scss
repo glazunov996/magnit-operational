@@ -1,0 +1,19 @@
+.txcm-unitStepper {
+  margin: 0 2px 0 14px;
+
+  %txph-filter & {
+    display: none;
+  }
+
+  @include txmx-mq(tablet) {
+    %txph-header & {
+      display: none;
+    }
+
+    %txph-filter & {
+      display: flex;
+      margin: 0 14px 0 16px;
+      pointer-events: all;
+    }
+  }
+}

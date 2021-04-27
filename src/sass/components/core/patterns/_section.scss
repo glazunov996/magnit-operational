@@ -1,0 +1,41 @@
+%txph-section {
+  position: relative;
+  margin: 138px $txgl-gap 30px 0;
+
+  @include txmx-mq(tablet) {
+    margin: 138px 0 30px;
+  }
+
+  @include txmx-mq(phone) {
+    margin: 122px 0 30px;
+  }
+}
+
+$txph-sectionHeader-adjustment: 320px;
+
+%txph-sectionHeader {
+  position: sticky;
+  z-index: 6;
+  top: 137px;
+  left: 0;
+  margin: 0 0 -1px;
+
+  @include txmx-mq(tablet) {
+    overflow: hidden;
+    padding: 0 0 $txph-sectionHeader-adjustment;
+    margin: 0 0 (-$txph-sectionHeader-adjustment - 1px);
+    pointer-events: none;
+  }
+
+  @include txmx-mq(phone) {
+    top: 121px;
+  }
+}
+
+%txph-sectionRows {
+  @include txmx-mq(tablet) {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+}

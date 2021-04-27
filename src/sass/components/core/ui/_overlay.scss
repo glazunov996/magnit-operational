@@ -1,0 +1,34 @@
+$txcm-overlay-background: rgba($txgl-gray-600, 0.9);
+
+.txcm-overlay {
+  @include txmx-layer(over, 200);
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-100%) translateZ(0);
+  transition: visibility $txgl-transition-slow step-end, transform $txgl-transition-slow step-end;
+
+  &::before {
+    @include txmx-pseudo;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $txcm-overlay-background;
+    opacity: 0;
+    transition: opacity $txgl-transition-slow;
+  }
+
+  &-is-visible {
+    visibility: visible;
+    transform: translateX(0) translateZ(0);
+    transition: visibility $txgl-transition-slow step-start, transform $txgl-transition-slow step-start;
+
+    &::before {
+      opacity: 1;
+    }
+  }
+}

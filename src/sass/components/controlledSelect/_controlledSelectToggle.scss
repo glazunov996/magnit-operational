@@ -1,0 +1,119 @@
+$txcm-controlledSelectToggle-color: $txgl-white;
+$txcm-controlledSelectToggle-background: $txgl-gray-400;
+$txcm-controlledSelectToggle-hover-color: $txgl-white-900;
+$txcm-controlledSelectToggle-hover-background: $txgl-gray-300;
+$txcm-controlledSelectToggle-active-color: $txgl-white-900;
+$txcm-controlledSelectToggle-active-background: $txgl-gray-200;
+$txcm-controlledSelectToggle-has-selected-color: $txgl-black;
+$txcm-controlledSelectToggle-has-selected-background: $txgl-white-900;
+$txcm-controlledSelectToggle-is-opened-color: $txgl-gray-100;
+$txcm-controlledSelectToggle-is-opened-background: $txgl-black-500;
+$txcm-controlledSelectToggle-is-opened-borderColor: $txgl-gray-300;
+
+.txcm-controlledSelectToggle {
+  position: relative;
+  height: $txgl-filter-height;
+  padding: 0 28px 0 12px;
+  border-radius: $txgl-form-borderRadius;
+  color: $txcm-controlledSelectToggle-color;
+  background: $txcm-controlledSelectToggle-background;
+
+  &:hover {
+    color: $txcm-controlledSelectToggle-hover-color;
+    background: $txcm-controlledSelectToggle-hover-background;
+  }
+
+  &:active {
+    color: $txcm-controlledSelectToggle-active-color;
+    background: $txcm-controlledSelectToggle-active-background;
+  }
+
+  &-has-selected {
+    @extend %txph-controlledSelectToggle-is-opened;
+    border-radius: $txgl-form-borderRadius 0 0 $txgl-form-borderRadius;
+    color: $txcm-controlledSelectToggle-has-selected-color;
+    background: $txcm-controlledSelectToggle-has-selected-background;
+
+    &:hover,
+    &:active {
+      color: $txcm-controlledSelectToggle-has-selected-color;
+      background: $txcm-controlledSelectToggle-has-selected-background;
+    }
+  }
+
+  &-is-opened {
+    color: $txcm-controlledSelectToggle-is-opened-color;
+    background: $txcm-controlledSelectToggle-is-opened-background;
+    box-shadow: 0 0 0 1px inset $txcm-controlledSelectToggle-is-opened-borderColor;
+
+    &:hover,
+    &:active {
+      color: $txcm-controlledSelectToggle-is-opened-color;
+      background: $txcm-controlledSelectToggle-is-opened-background;
+    }
+  }
+}
+
+$txcm-controlledSelectToggleIcon-width: 6px;
+$txcm-controlledSelectToggleIcon-height: 4px;
+
+.txcm-controlledSelectToggleIcon {
+  @extend %txph-fatArrow;
+  right: ($txgl-filter-height / 2);
+}
+
+$txcm-controlledSelectReset-borderColor: $txcm-selectToggle-hover-background;
+
+$txcm-controlledSelectResetIcon-width: 10px;
+$txcm-controlledSelectResetIcon-height: 2px;
+$txcm-controlledSelectResetIcon-color: $txgl-gray-100;
+$txcm-controlledSelectResetIcon-hover-color: $txgl-white-900;
+
+.txcm-controlledSelectReset {
+  position: relative;
+  display: none;
+  overflow: hidden;
+  width: $txgl-filter-height;
+  height: 0;
+  padding: $txgl-filter-height 0 0;
+  border-radius: 0 $txgl-form-borderRadius $txgl-form-borderRadius 0;
+  color: $txcm-controlledSelectResetIcon-color;
+  background: $txcm-selectToggle-background;
+  box-shadow: -1px 0 0 $txcm-controlledSelectReset-borderColor;
+
+  &::before,
+  &::after {
+    @include txmx-pseudo;
+    top: 50%;
+    left: 50%;
+    width: $txcm-controlledSelectResetIcon-width;
+    height: $txcm-controlledSelectResetIcon-height;
+    border-radius: $txcm-controlledSelectResetIcon-height / 2;
+    margin: ($txcm-controlledSelectResetIcon-height / -2) 0 0 ($txcm-controlledSelectResetIcon-width / -2);
+    background: currentColor;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  &:hover {
+    color: $txcm-selectToggle-hover-color;
+  }
+
+  &:active {
+    color: $txcm-selectToggle-active-color;
+  }
+
+  &:disabled {
+    color: $txgl-button-disabled-color;
+  }
+
+  %txph-controlledSelectToggle-is-opened + & {
+    display: block;
+  }
+}

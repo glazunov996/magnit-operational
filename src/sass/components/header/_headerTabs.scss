@@ -1,0 +1,95 @@
+.txcm-headerTabs {
+  @extend %txph-headerTabs;
+  display: flex;
+  order: -1;
+  align-self: stretch;
+  margin: 0 0 0 16px;
+
+  @include txmx-mq(tablet) {
+    position: absolute;
+    bottom: 0;
+    left: 45px;
+  }
+
+  @include txmx-mq(phone) {
+    left: 30px;
+  }
+}
+
+$txcm-headerTab-color: $txgl-gray-100;
+$txcm-headerTab-hover-color: $txgl-white-900;
+$txcm-headerTab-active-color: $txgl-white-900;
+$txcm-headerTab-borderColor: $txgl-white-900;
+
+$txcm-headerTab-tablet-height: 34px;
+
+.txcm-headerTab {
+  @include txmx-link($txcm-headerTab-color, $txcm-headerTab-color, $txcm-headerTab-hover-color, $txcm-headerTab-hover-color);
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0.5em 0 0;
+  margin: 0 0 0 16px;
+  text-decoration: none;
+
+  &::before {
+    @include txmx-pseudo;
+    top: 100%;
+    left: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 20px;
+    border-bottom: 2px solid $txcm-headerTab-borderColor;
+    opacity: 0;
+    transition: opacity $txgl-transition;
+  }
+
+  &-is-active {
+    @include txmx-link($txcm-headerTab-color, $txcm-headerTab-color, $txcm-headerTab-hover-color, $txcm-headerTab-hover-color);
+    @include txmx-link($txcm-headerTab-active-color);
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0.5em 0 0;
+    margin: 0 0 0 16px;
+    text-decoration: none;
+
+    &::before {
+      @include txmx-pseudo;
+      top: 100%;
+      left: 0;
+      box-sizing: border-box;
+      width: 100%;
+      height: 20px;
+      border-bottom: 2px solid $txcm-headerTab-borderColor;
+      opacity: 1;
+      transition: opacity $txgl-transition;
+    }
+
+    @include txmx-mq(tablet) {
+      align-items: flex-start;
+      height: $txcm-headerTab-tablet-height;
+      padding: 0;
+  
+      &::before {
+        top: auto;
+        bottom: 0;
+        height: 20px;
+        border-bottom: 2px solid $txcm-headerTab-borderColor;
+      }
+    }
+  }
+
+  @include txmx-mq(tablet) {
+    align-items: flex-start;
+    height: $txcm-headerTab-tablet-height;
+    padding: 0;
+
+    &::before {
+      top: auto;
+      bottom: 0;
+      height: 20px;
+      border-bottom: 2px solid $txcm-headerTab-borderColor;
+    }
+  }
+}

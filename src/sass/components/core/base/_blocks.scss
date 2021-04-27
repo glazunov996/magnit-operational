@@ -1,0 +1,22 @@
+article,
+aside,
+details,
+footer,
+header,
+hgroup,
+hr,
+nav,
+main,
+progress,
+section,
+summary {
+  display: block;
+}
+
+hr {
+  display: block;
+  height: 0;
+  padding: 0;
+  border-top: 1px solid $txgl-text;
+  margin: 1.5em 0;
+}

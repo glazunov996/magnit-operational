@@ -1,0 +1,133 @@
+[
+  {
+    "label": "Финансовые показатели",
+    "indicators": [
+      {
+        "id": "7498",
+        "order": 1,
+        "label": "Выручка",
+        "url": "revenue",
+        "status": true
+      },
+      {
+        "id": "7493",
+        "order": 2,
+        "label": "EBITDA",
+        "url": "ebitda",
+        "status": true
+      },
+      {
+        "id": "7510",
+        "order": 3,
+        "label": "Себестоимость реализации",
+        "url": "cost-of-sales",
+        "status": false
+      },
+      {
+        "id": "7526",
+        "order": 4,
+        "label": "CM",
+        "url": "sm",
+        "status": false
+      },
+      {
+        "id": "7558",
+        "order": 5,
+        "label": "Валовый доход",
+        "url": "gross-income",
+        "status": true
+      },
+      {
+        "id": "7504",
+        "order": 6,
+        "label": "Прочие реализационные доходы и расходы",
+        "url": "sales-income",
+        "status": false
+      },
+      {
+        "id": "7369",
+        "order": 7,
+        "label": "Операционные расходы",
+        "url": "operating-expenses",
+        "status": false
+      },
+      {
+        "id": "7486",
+        "order": 8,
+        "label": "EBITDAR",
+        "url": "indicator-ebitdar",
+        "status": false
+      },
+      {
+        "id": "7487",
+        "order": 9,
+        "label": "Расходы аренды",
+        "url": "rent",
+        "status": false
+      },
+      {
+        "id": "7491",
+        "order": 10,
+        "label": "EBITDA до LTI",
+        "url": "before-lti",
+        "status": false
+      },
+      {
+        "id": "7492",
+        "order": 11,
+        "label": "LTI",
+        "url": "lti",
+        "status": false
+      },
+      {
+        "id": "7494",
+        "order": 12,
+        "label": "Амортизация",
+        "url": "depreciation",
+        "status": false
+      },
+      {
+        "id": "7572",
+        "order": 13,
+        "label": "Инвестиционные доходы",
+        "url": "investment-income",
+        "status": false
+      },
+      {
+        "id": "7575",
+        "order": 14,
+        "label": "Финансовые доходы/расходы",
+        "url": "finance-income-expenses",
+        "status": false
+      },
+      {
+        "id": "7589",
+        "order": 15,
+        "label": "Курсовые и суммовые разницы",
+        "url": "rate-and-amount",
+        "status": false
+      },
+      {
+        "id": "7591",
+        "order": 16,
+        "label": "Налог на прибыль",
+        "url": "income-tax",
+        "status": false
+      },
+      {
+        "id": "7594",
+        "order": 17,
+        "label": "Чистая прибыль",
+        "url": "net-profit",
+        "status": true
+      },
+      {
+        "id": "7661",
+        "order": 18,
+        "label": "Доп. показатели",
+        "url": "additional-indicators",
+        "status": false
+      }
+    ]
+  }
+]

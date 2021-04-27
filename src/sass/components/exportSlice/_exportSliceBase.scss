@@ -1,0 +1,60 @@
+$txcm-exportSlice-width: 200px;
+
+.txcm-exportSlice {
+  --switchShift: 0;
+  --switchOrder: 2;
+  position: relative;
+  display: flex;
+  order: var(--switchOrder);
+  align-items: center;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  width: $txcm-exportSlice-width;
+  padding: 6px;
+  border-radius: 6px;
+  margin: 0 -6px 0 0;
+  background: $txgl-background;
+  transform: translateX(var(--switchShift));
+
+  &::before {
+    @include txmx-pseudo(relative);
+    width: 100%;
+  }
+
+  &-is-switching {
+    z-index: 3;
+  }
+
+  @include txmx-mq(phone) {
+    width: 100%;
+    padding: 0 0 24px;
+    border-radius: 0;
+    margin: 0;
+    transform: translateY(var(--switchShift));
+  }
+}
+
+.txcm-exportSiceHeader {
+  position: relative;
+  order: -1;
+}
+
+$txcm-exportSliceContent-background: $txgl-gray-400;
+
+.txcm-exportSliceContent {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+
+  @include txmx-mq(phone) {
+    display: none;
+    padding: 16px 16px 8px;
+    border-radius: 3px;
+    background: $txcm-exportSliceContent-background;
+
+    &-is-active {
+      display: flex;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.txcm-columnOptionPickerToggle {
+  @extend %txph-optionPickerToggle;
+  width: auto;
+  white-space: nowrap;
+
+  @include txmx-mq(phone) {
+    left: 10px;
+  }
+}
+
+.txcm-columnOptionPickerToggleIcon {
+  @extend %txph-optionPickerToggleIcon;
+}

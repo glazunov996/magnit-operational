@@ -1,0 +1,6 @@
+.txcm-comboBarGraphExtBar {
+  transition: stroke-width $txgl-transition-default, fill $txgl-transition-default;
+  stroke-width: 0.5;
+  stroke: var(--theme-color);
+  fill: var(--theme-color);
+}

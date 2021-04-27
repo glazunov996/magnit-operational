@@ -1,0 +1,34 @@
+{
+  "qInitialDataFetch": [
+    {
+      "qHeight": 20,
+      "qWidth": 4
+    }
+  ],
+  "qDimensions": [
+    {
+      "qLabel": "PNL_ITEM_ID7",
+      "qLibraryId": "fJjkWPP",
+      "qNullSuppression": true
+    }
+  ],
+  "qMeasures": [
+    {
+      "qLabel": "ТаблКоличОтклоненийПоОкругам.Кол-во отклонений, месяц",
+      "qLibraryId": "jhTjk"
+    },
+    {
+      "qLabel": "ТаблКоличОтклоненийПоОкругам.По округу от бюджета % месяц",
+      "qLibraryId": "PCqN"
+    },
+    {
+      "qLabel": "ТаблКоличОтклоненийПоОкругам.По округу от п.п. % месяц",
+      "qLibraryId": "HBBRb"
+    }
+  ],
+  "qSuppressZero": true,
+  "qSuppressMissing": true,
+  "qMode": "S",
+  "qInterColumnSortOrder": [],
+  "qStateName": "$"
+}

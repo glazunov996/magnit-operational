@@ -1,0 +1,42 @@
+$txph-factorLabel-width: 210px;
+$txcm-factorLabel-color: $txgl-white-900;
+
+$txph-factorLabel-tablet-width: 250px;
+
+$txph-factorLabel-phone-width: 160px;
+
+.txcm-factorLabel {
+  position: relative;
+  display: block;
+  order: -1;
+  flex-grow: 0;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  width: $txph-factorLabel-width;
+  height: auto;
+  padding: 10px 0 10px $txgl-gap;
+  color: $txcm-factorLabel-color;
+  background: $txgl-background;
+
+  @include txmx-mq(tablet) {
+    position: sticky;
+    z-index: 2;
+    left: 0;
+    width: $txph-factorLabel-tablet-width;
+  }
+
+  @include txmx-mq(phone) {
+    width: $txph-factorLabel-phone-width;
+    padding: 10px 8px 10px $txgl-gap-small;
+
+    &::before {
+      @include txmx-pseudo;
+      z-index: -1;
+      top: 0;
+      right: -75px;
+      bottom: 0;
+      left: 0;
+      background: inherit;
+    }
+  }
+}

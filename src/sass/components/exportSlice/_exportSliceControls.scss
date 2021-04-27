@@ -1,0 +1,86 @@
+$txcm-exportSliceRemove-size: 32px;
+
+$txcm-exportSliceRemoveIcon-width: 10px;
+$txcm-exportSliceRemoveIcon-height: 2px;
+$txcm-exportSliceRemoveIcon-color: $txgl-gray-100;
+$txcm-exportSliceRemoveIcon-hover-color: $txgl-white-900;
+
+.txcm-exportSliceRemove {
+  position: relative;
+  order: -1;
+  overflow: hidden;
+  width: $txcm-exportSliceRemove-size;
+  height: 0;
+  padding: $txcm-exportSliceRemove-size 0 0;
+  color: $txcm-exportSliceRemoveIcon-color;
+  background: none;
+
+  &::before,
+  &::after {
+    @include txmx-pseudo;
+    top: 50%;
+    left: 50%;
+    width: $txcm-exportSliceRemoveIcon-width;
+    height: $txcm-exportSliceRemoveIcon-height;
+    border-radius: $txcm-exportSliceRemoveIcon-height / 2;
+    margin: ($txcm-exportSliceRemoveIcon-height / -2) 0 0 ($txcm-exportSliceRemoveIcon-width / -2);
+    background: currentColor;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  &:hover,
+  &:active {
+    color: $txcm-exportSliceRemoveIcon-hover-color;
+  }
+}
+
+$txph-sliceControl-color: $txgl-gray-100;
+$txph-sliceControl-hover-color: $txgl-white-900;
+
+%txph-sliceControl {
+  @include txmx-fontSize(12px);
+  width: 50%;
+  color: $txph-sliceControl-color;
+  background: none;
+  white-space: nowrap;
+
+  &:hover,
+  &:active {
+    color: $txph-sliceControl-hover-color;
+  }
+
+  @include txmx-mq(phone) {
+    width: auto;
+  }
+}
+
+.txcm-exportSliceSelectAll {
+  @extend %txph-sliceControl;
+}
+
+.txcm-exportSliceClear {
+  @extend %txph-sliceControl;
+}
+
+.txcm-exportSliceSelectAllText {
+  display: block;
+
+  @include txmx-mq(phone) {
+    display: none;
+  }
+}
+
+.txcm-exportSliceSelectAllMobileText {
+  display: none;
+
+  @include txmx-mq(phone) {
+    display: block;
+  }
+}

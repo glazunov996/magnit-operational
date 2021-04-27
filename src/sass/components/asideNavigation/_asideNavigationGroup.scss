@@ -1,0 +1,73 @@
+.txcm-asideNavGroup {
+  margin: 0 0 12px;
+}
+
+$txcm-asideNavGroupLink-height: 32px;
+$txcm-asideNavGroupLink-color: $txgl-gray-100;
+$txcm-asideNavGroupLink-hover-color: $txgl-white;
+$txcm-asideNavGroupLink-active-color: $txgl-white-900;
+
+.txcm-asideNavGroupLink {
+  @include txmx-link($txcm-asideNavGroupLink-color, $txcm-asideNavGroupLink-color, $txcm-asideNavGroupLink-hover-color, $txcm-asideNavGroupLink-active-color);
+  position: relative;
+  display: block;
+  overflow: hidden;
+  box-sizing: border-box;
+  height: $txcm-asideNavGroupLink-height;
+  padding: 8px 10px 0 0;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  &-is-active {
+    @extend %txph-asideNavGroupLink-is-active;
+    @include txmx-link($txcm-asideNavGroupLink-color, $txcm-asideNavGroupLink-color, $txcm-asideNavGroupLink-hover-color, $txcm-asideNavGroupLink-active-color);
+    @include txmx-link($txcm-asideNavGroupLink-active-color);
+    position: relative;
+    display: block;
+    overflow: hidden;
+    box-sizing: border-box;
+    height: $txcm-asideNavGroupLink-height;
+    padding: 8px 10px 0 0;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &-is-disabled {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    box-sizing: border-box;
+    height: $txcm-asideNavGroupLink-height;
+    padding: 8px 10px 0 0;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    pointer-events: none;
+    color: currentColor;
+    cursor: not-allowed;
+    opacity: 0.35;
+  }
+}
+
+$txcm-asideNavGroupLinkIcon-width: 9px;
+$txcm-asideNavGroupLinkIcon-height: 6px;
+$txcm-asideNavGroupLinkIcon-color: $txgl-red;
+
+.txcm-asideNavGroupLinkIcon {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  width: $txcm-asideNavGroupLinkIcon-width;
+  height: $txcm-asideNavGroupLinkIcon-height;
+  margin: ($txcm-asideNavGroupLinkIcon-height / -2) 0 0;
+  color: $txcm-asideNavGroupLinkIcon-color;
+  opacity: 0;
+  transition: opacity $txgl-transition-default;
+  fill: currentColor;
+
+  %txph-asideNavGroupLink-is-active > & {
+    opacity: 1;
+  }
+}

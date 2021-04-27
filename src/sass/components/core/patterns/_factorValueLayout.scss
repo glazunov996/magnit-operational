@@ -1,0 +1,12 @@
+$txph-factorValueLayout-minWidth: 45px;
+$txph-factorValueLayout-maxWidth: 65px;
+
+%txph-factorValueLayout {
+  flex-shrink: 0;
+  width: 10%;
+  min-width: $txph-factorValueLayout-minWidth;
+  max-width: $txph-factorValueLayout-maxWidth;
+  margin: 0 14px 0 0;
+  text-align: right;
+  line-height: 1.65;
+}

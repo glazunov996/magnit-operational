@@ -1,0 +1,22 @@
+.txcm-factorColumn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-shrink: 1;
+  width: 50%;
+
+  &::after {
+    @include txmx-pseudo(relative);
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 16px;
+  }
+
+  & + & {
+    @extend %txph-factorColumn-odd;
+
+    &::after {
+      order: -1;
+    }
+  }
+}

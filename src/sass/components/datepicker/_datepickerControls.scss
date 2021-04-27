@@ -1,0 +1,82 @@
+$txcm-datepickerPrecision-color: $txgl-gray-100;
+$txcm-datepickerPrecision-borderColor: $txgl-gray-300;
+
+.txcm-datepickerControls {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  padding: 15px 0 0;
+  border-top: 1px solid $txcm-datepickerPrecision-borderColor;
+  margin: 10px 15px 0;
+  color: $txcm-datepickerPrecision-color;
+}
+
+$txcm-datepickerPrecisionControl-height: 32px;
+$txcm-datepickerPrecisionControl-width: 60px;
+$txcm-datepickerPrecisionControl-color: $txgl-gray-100;
+$txcm-datepickerPrecisionControl-hover-color: $txgl-white-900;
+
+.txcm-datepickerPrecisionControl {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: $txcm-datepickerPrecisionControl-width;
+  height: $txcm-datepickerPrecisionControl-height;
+  padding: 0;
+  color: $txcm-datepickerPrecisionControl-color;
+  background: none;
+  animation: deactivate $txgl-transition-default both;
+
+  &:hover {
+    color: $txcm-datepickerPrecisionControl-hover-color;
+  }
+
+  &:active {
+    color: $txcm-datepickerPrecisionControl-hover-color;
+  }
+
+  &-is-active {
+    animation: activate $txgl-transition-default both;
+  }
+}
+
+@keyframes deactivate {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+}
+
+@keyframes activate {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+$txcm-datepickerPrecisionControlIcon-width: 7px;
+$txcm-datepickerPrecisionControlIcon-height: 8px;
+
+.txcm-datepickerPrecisionControlIcon {
+  position: relative;
+  top: 1px;
+  width: $txcm-datepickerPrecisionControlIcon-width;
+  height: $txcm-datepickerPrecisionControlIcon-height;
+  margin: 0 8px 0 0;
+  fill: currentColor;
+}

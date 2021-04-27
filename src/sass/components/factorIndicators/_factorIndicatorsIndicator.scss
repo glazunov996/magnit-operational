@@ -1,0 +1,42 @@
+.txcm-factorsTotalDiagramIndicatorHolder {
+  position: relative;
+  display: flex;
+  flex-shrink: 1;
+  width: 50%;
+
+  &::after {
+    @include txmx-pseudo(relative);
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 16px;
+  }
+
+  & + & {
+    @extend %txph-factorsTotalDiagram-next;
+
+    &::after {
+      order: -1;
+    }
+  }
+}
+
+$txcm-factorsTotalDiagramIndicator-color: $txgl-gray-400;
+
+.txcm-factorsTotalDiagramIndicator {
+  --shift: 0;
+  position: relative;
+  bottom: 42px;
+  flex-grow: 1;
+
+  &::before {
+    @include txmx-pseudo;
+    bottom: 100%;
+    left: -1px;
+    width: 100%;
+    height: 10000px;
+    background-image: linear-gradient(to top, $txcm-factorsTotalDiagramIndicator-color, $txcm-factorsTotalDiagramIndicator-color 4px, transparent 4px, transparent);
+    background-size: 1px 8px;
+    background-repeat: repeat-y;
+    transform: translateX(var(--shift));
+  }
+}

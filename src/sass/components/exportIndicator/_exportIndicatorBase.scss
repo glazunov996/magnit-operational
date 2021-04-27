@@ -1,0 +1,97 @@
+$txcm-exportIndicator-height: 36px;
+$txcm-exportIndicator-width: 210px;
+$txcm-exportIndicator-background: $txgl-gray-400;
+
+.txcm-exportIndicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 1 22%;
+  flex-direction: column;
+  width: $txcm-exportIndicator-width;
+  height: $txcm-exportIndicator-height;
+  border-radius: 3px;
+  margin: 0 4px;
+  background: $txcm-exportIndicator-background;
+  padding: 0px 12px;
+  margin: 0 4px 4px 0;
+
+  &:first-child {
+    margin: 0 4px 4px 0;
+  }
+
+  &:last-child {
+    margin: 0 0 0 0px;
+  }
+
+  @include txmx-mq(phone) {
+    justify-content: flex-start;
+    flex-direction: row;
+    min-width: 0;
+    min-height: 0;
+    margin: 0;
+    background: none;
+
+    &:first-child,
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
+
+$txcm-exportIndicatorLabel-color: $txgl-white-900;
+
+.txcm-exportIndicatorLabel {
+  display: flex;
+  align-items: center;
+  color: $txcm-exportIndicatorLabel-color;
+
+  @include txmx-mq(phone) {
+    align-items: center;
+    flex-grow: 1;
+    margin: 12px 0;
+  }
+}
+
+$txcm-exportIndicatorRemove-size: 32px;
+
+$txcm-exportIndicatorRemoveIcon-width: 10px;
+$txcm-exportIndicatorRemoveIcon-height: 2px;
+$txcm-exportIndicatorRemoveIcon-color: $txgl-gray-100;
+$txcm-exportIndicatorRemoveIcon-hover-color: $txgl-white-900;
+
+.txcm-exportIndicatorRemove {
+  position: relative;
+  overflow: hidden;
+  width: $txcm-exportIndicatorRemove-size;
+  height: 0;
+  padding: $txcm-exportIndicatorRemove-size 0 0;
+  margin: 0 0 0 5px;
+  color: $txcm-exportIndicatorRemoveIcon-color;
+  background: none;
+
+  &::before,
+  &::after {
+    @include txmx-pseudo;
+    top: 50%;
+    left: 50%;
+    width: $txcm-exportIndicatorRemoveIcon-width;
+    height: $txcm-exportIndicatorRemoveIcon-height;
+    border-radius: $txcm-exportIndicatorRemoveIcon-height / 2;
+    margin: ($txcm-exportIndicatorRemoveIcon-height / -2) 0 0 ($txcm-exportIndicatorRemoveIcon-width / -2);
+    background: currentColor;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  &:hover,
+  &:active {
+    color: $txcm-exportIndicatorRemoveIcon-hover-color;
+  }
+}

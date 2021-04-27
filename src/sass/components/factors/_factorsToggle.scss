@@ -1,0 +1,72 @@
+$txph-factorsToggle-width: 210px;
+$txcm-factorsToggle-color: $txgl-white;
+$txcm-factorsToggle-active-color: $txgl-white-900;
+
+$txph-factorsToggle-tablet-width: 250px;
+
+$txph-factorsToggle-phone-width: 160px;
+
+.txcm-factorsToggle {
+  position: relative;
+  display: block;
+  order: -1;
+  flex-grow: 0;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  width: $txph-factorsToggle-width;
+  height: auto;
+  padding: 10px 0 10px $txgl-gap;
+  color: $txcm-factorsToggle-color;
+  background: $txgl-background;
+  text-align: left;
+
+  &:hover,
+  &:active {
+    color: $txcm-factorsToggle-active-color;
+  }
+
+  &-is-active {
+    color: $txcm-factorsToggle-active-color;
+  }
+
+  @include txmx-mq(tablet) {
+    position: sticky;
+    z-index: 1;
+    left: 0;
+    width: $txph-factorsToggle-tablet-width;
+  }
+
+  @include txmx-mq(phone) {
+    width: $txph-factorsToggle-phone-width;
+    padding: 10px 8px 10px $txgl-gap;
+
+    &::before {
+      @include txmx-pseudo;
+      z-index: -1;
+      top: 0;
+      right: -75px;
+      bottom: 0;
+      left: 0;
+      background: inherit;
+    }
+  }
+}
+
+$txcm-factorsToggleIcon-width: 6px;
+$txcm-factorsToggleIcon-height: 10px;
+$txcm-factorsToggleIcon-fill: $txgl-gray-100;
+
+.txcm-factorsToggleIcon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  width: $txcm-factorsToggleIcon-width;
+  height: $txcm-factorsToggleIcon-height;
+  margin: ($txcm-factorsToggleIcon-height / -2 + 1px) 0 0;
+  transform: rotate(180deg);
+  fill: $txcm-factorsToggleIcon-fill;
+
+  &-is-active {
+    transform: rotate(270deg);
+  }
+}

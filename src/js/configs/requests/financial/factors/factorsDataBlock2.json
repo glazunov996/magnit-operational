@@ -1,0 +1,35 @@
+{
+  "qInitialDataFetch": [
+    {
+        "qHeight": 200,
+        "qWidth": 4
+    }
+  ],
+  "qDimensions": [
+      {
+          "qLabel": "PNL_ITEM_ID7",
+          "qLibraryId": "fJjkWPP",
+          "qNullSuppression": true
+      },
+      {
+          "qLabel": "DESCRIPTION6",
+          "qLibraryId": "RrzDmvs",
+          "qNullSuppression": true
+      }
+  ],
+  "qMeasures": [
+      {
+          "qLabel": "Мосты.Факт % от выр.",
+          "qLibraryId": "fnds"
+      },
+      {
+          "qLabel": "Мосты.Бюджет % от выр.",
+          "qLibraryId": "hYexseW"
+      }
+  ],
+  "qSuppressZero": true,
+  "qSuppressMissing": true,
+  "qMode": "S",
+  "qInterColumnSortOrder": [],
+  "qStateName": "$"
+}

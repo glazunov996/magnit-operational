@@ -1,0 +1,69 @@
+$txcm-kpiCell-minHeight: 110px;
+$txcm-kpiCell-padding: 28px;
+$txcm-kpiCell-hover-background: $txgl-gray-450;
+
+$txcm-kpiCell-phone-minHeight: 75px;
+$txcm-kpiCell-phone-padding: 28px;
+
+$txcm-kpiCellPseudo-width: 16px;
+
+.txcm-kpiCell {
+  @extend %txph-dataTableCell;
+  position: relative;
+  box-sizing: border-box;
+  min-height: $txcm-kpiCell-minHeight;
+  border-top: $txcm-kpiCell-padding solid transparent;
+  border-bottom: $txcm-kpiCell-padding solid transparent;
+
+  &::before {
+    @include txmx-pseudo;
+    top: -$txcm-kpiCell-padding;
+    right: 0;
+    bottom: -$txcm-kpiCell-padding;
+    width: 1px;
+    background: $txgl-dataTable-borderColor;
+  }
+
+  &::after {
+    @include txmx-pseudo;
+    z-index: -1;
+    top: -$txcm-kpiCell-phone-padding;
+    right: 0;
+    bottom: -$txcm-kpiCell-phone-padding;
+    left: 0;
+    background: $txcm-kpiCell-hover-background;
+    opacity: 0;
+  }
+
+  & + & {
+    &::after {
+      left: -16px;
+    }
+  }
+
+  &:hover {
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  @include txmx-mq(tablet) {
+    & + & {
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  @include txmx-mq(phone) {
+    min-height: $txcm-kpiCell-phone-minHeight;
+    border-top: $txcm-kpiCell-phone-padding solid transparent;
+    border-bottom: $txcm-kpiCell-phone-padding solid transparent;
+
+    &::before {
+      top: -$txcm-kpiCell-phone-padding;
+      bottom: -$txcm-kpiCell-phone-padding;
+      display: none;
+    }
+  }
+}

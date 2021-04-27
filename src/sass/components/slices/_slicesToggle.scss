@@ -1,0 +1,52 @@
+$txcm-slicesToggle-minWidth: 95px;
+$txcm-slicesToggle-color: $txgl-white;
+$txcm-slicesToggle-active-color: $txgl-white-900;
+
+.txcm-slicesToggle {
+  @include txmx-fontSize(15px);
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  min-width: $txcm-slicesToggle-minWidth;
+  padding: 0 12px;
+  margin: 0 0 20px ($txgl-gap - 12px);
+  color: $txcm-slicesToggle-color;
+  background: none;
+  text-align: left;
+
+  &::before {
+    @include txmx-pseudo;
+    top: -10px;
+    right: 0;
+    bottom: -10px;
+    left: -$txgl-gap;
+  }
+
+  &:hover,
+  &:active {
+    color: $txcm-slicesToggle-active-color;
+  }
+
+  &-is-active {
+    color: $txcm-slicesToggle-active-color;
+  }
+}
+
+$txcm-slicesToggleIcon-width: 6px;
+$txcm-slicesToggleIcon-height: 11px;
+$txcm-slicesToggleIcon-fill: $txgl-gray-100;
+
+.txcm-slicesToggleIcon {
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  width: $txcm-slicesToggleIcon-width;
+  height: $txcm-slicesToggleIcon-height;
+  margin: ($txcm-slicesToggleIcon-height / -2 + 1px) 0 0;
+  transform: rotate(180deg);
+  fill: $txcm-slicesToggleIcon-fill;
+
+  &-is-active {
+    transform: rotate(270deg);
+  }
+}

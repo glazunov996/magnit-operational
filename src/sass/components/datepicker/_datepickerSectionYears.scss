@@ -1,0 +1,26 @@
+.txcm-datepickerYears {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.txcm-datepickerYear {
+  box-sizing: border-box;
+  width: 50%;
+  padding: 2px;
+  margin: 0;
+}
+
+.txcm-datepickerYearButton {
+  @extend %txph-buttonLayoutLarge;
+  @extend %txph-buttonBorder;
+  width: 100%;
+  font-weight: 600;
+
+  &-is-active {
+    @extend %txph-buttonRed;
+  }
+}

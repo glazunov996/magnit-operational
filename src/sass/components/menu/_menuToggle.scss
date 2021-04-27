@@ -1,0 +1,46 @@
+$txcm-menuToggle-size: 32px;
+$txcm-menuToggle-color: $txgl-white-900;
+$txcm-menuToggle-hover-color: $txgl-gray-100;
+
+$txcm-menuToggleBar-width: 12px;
+$txcm-menuToggleBar-height: 2px;
+
+.txcm-menuToggle {
+  @include txmx-layer(over, -1);
+  @include txmx-link($txcm-menuToggle-color, $txcm-menuToggle-color, $txcm-menuToggle-hover-color, $txcm-menuToggle-hover-color);
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  display: block;
+  width: $txcm-menuToggle-size;
+  height: $txcm-menuToggle-size;
+  color: $txcm-menuToggle-color;
+  background: none;
+  text-indent: -10000px;
+
+  &::before,
+  &::after {
+    @include txmx-pseudo;
+    top: 50%;
+    left: 50%;
+    width: $txcm-menuToggleBar-width;
+  }
+
+  &::before {
+    height: $txcm-menuToggleBar-height;
+    margin: ($txcm-menuToggleBar-height / -2) 0 0 ($txcm-menuToggleBar-width / -2);
+    background: currentColor;
+  }
+
+  &::after {
+    height: ($txcm-menuToggleBar-height + 4px);
+    border-width: $txcm-menuToggleBar-height 0;
+    border-style: solid;
+    border-color: currentColor;
+    margin: (($txcm-menuToggleBar-height * 3 + 4px) / -2) 0 0 ($txcm-menuToggleBar-width / -2);
+  }
+
+  @include txmx-mq(phone) {
+    right: 16px;
+  }
+}

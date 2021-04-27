@@ -1,0 +1,16 @@
+$txcm-bodyPadding-height: 139px;
+
+body {
+  position: relative;
+  display: inherit;
+  flex-direction: inherit;
+  flex-grow: 1;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+
+  @include txmx-media(print) {
+    width: auto;
+    padding: 2.54cm;
+  }
+}

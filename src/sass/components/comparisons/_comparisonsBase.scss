@@ -1,0 +1,12 @@
+.txcm-comparisonsSection {
+  @extend %txph-section;
+}
+
+.txcm-comparisonsHeader {
+  @extend %txph-sectionHeader;
+}
+
+.txcm-comparisonsRows {
+  @extend %txph-sectionRows;
+  padding: 0 0 1px;
+}

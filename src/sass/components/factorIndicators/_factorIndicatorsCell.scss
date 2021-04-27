@@ -1,0 +1,31 @@
+.txcm-factorsTotalDiagramIndicatorCell {
+  @extend %txph-dataTableCell;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  &::before {
+    @extend %txph-dataTableColumnLayout;
+    @include txmx-pseudo(relative);
+    margin: 0 18px 0 0;
+  }
+
+  &:last-child {
+    margin: 0;
+  }
+
+  @include txmx-mq(tablet) {
+    flex-grow: 1;
+    width: auto;
+    min-width: 0;
+    max-width: initial;
+  }
+
+  @include txmx-mq(phone) {
+    margin: 0 32px 0 0;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+}

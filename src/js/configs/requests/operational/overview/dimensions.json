@@ -1,0 +1,17 @@
+{
+	"region": {
+		"qLabel": "Округ",
+		"qLibraryId": "pzMPQ",
+		"qNullSuppression": true
+	},
+	"format": {
+		"qLabel": "Формат",
+		"qLibraryId": "8191e425-8372-4ff2-b6ad-73356e29de11",
+		"qNullSuppression": true
+	},
+	"group20": {
+		"qLabel": "ГР20",
+		"qLibraryId": "5cbae1fb-ff9b-468c-be21-56e7a0f92b2d",
+    "qNullSuppression": true
+  }
+}

@@ -1,0 +1,93 @@
+.txcm-navigation {
+  display: flex;
+  align-items: center;
+}
+
+$txcm-navigationElement-size: 32px;
+
+%txcm-navigationElement {
+  position: relative;
+  display: inherit;
+  align-items: inherit;
+  justify-content: center;
+  height: $txcm-navigationElement-size;
+  min-width: $txcm-navigationElement-size;
+  margin: 0 0 0 16px;
+  text-decoration: none;
+}
+
+$txcm-navigationExportLink-color: $txgl-white-900;
+$txcm-navigationExportLink-hover-color: $txgl-gray-100;
+
+$txcm-navigationExportLinkClose-width: 20px;
+$txcm-navigationExportLinkClose-height: 2px;
+$txcm-navigationExportLinkClose-color: $txgl-gray-100;
+$txcm-navigationExportLinkClose-hover-color: $txgl-white-900;
+
+.txcm-navigationExportLink {
+  @extend %txcm-navigationElement;
+  @include txmx-link($txcm-navigationExportLink-color, $txcm-navigationExportLink-color, $txcm-navigationExportLink-hover-color, $txcm-navigationExportLink-hover-color);
+
+  &-is-active {
+    @extend %txcm-navigationElement;
+    @include txmx-link($txcm-navigationExportLink-color, $txcm-navigationExportLink-color, $txcm-navigationExportLink-hover-color, $txcm-navigationExportLink-hover-color);
+    display: none;
+  }
+
+  &-is-disabled {
+    @extend %txcm-navigationElement;
+    pointer-events: none;
+    color: currentColor;
+    cursor: not-allowed;
+    opacity: 0.35;
+  }
+}
+
+$txcm-navigationExportIcon-width: 18px;
+$txcm-navigationExportIcon-height: 15px;
+
+.txcm-navigationExportIcon {
+  width: $txcm-navigationExportIcon-width;
+  height: $txcm-navigationExportIcon-height;
+  transition: opacity $txgl-transition;
+  fill: currentColor;
+}
+
+.txcm-navigationExportBack {
+  @extend %txcm-navigationElement;
+  display: none;
+  background: none;
+
+  &::before,
+  &::after {
+    @include txmx-pseudo;
+    top: 50%;
+    left: 50%;
+    width: $txcm-navigationExportLinkClose-width;
+    height: $txcm-navigationExportLinkClose-height;
+    border-radius: $txcm-navigationExportLinkClose-height / 2;
+    margin: ($txcm-navigationExportLinkClose-height / -2) 0 0 ($txcm-navigationExportLinkClose-width / -2);
+    background: $txcm-navigationExportLinkClose-color;
+    transition: opacity $txgl-transition, background $txgl-transition-fast;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  &:hover,
+  &:active {
+    &::before,
+    &::after {
+      background: $txcm-navigationExportLinkClose-hover-color;
+    }
+  }
+
+  &-is-active {
+    display: block;
+  }
+}

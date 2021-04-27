@@ -1,0 +1,23 @@
+.txcm-factorDiagram {
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+}
+
+.txcm-factorDiagramSVG {
+  flex-grow: 1;
+  overflow: visible;
+}
+
+$txcm-factorDiagramRectBase-stroke: $txgl-gray-100;
+$txcm-factorDiagramRectBase-decreasing-fill: $txgl-red;
+
+.txcm-factorDiagramRectBase {
+  fill: url('#txcm-diagonalHatch');
+  stroke-width: 0.5;
+  stroke: $txgl-gray-100;
+
+  &-is-decreasing {
+    fill: $txcm-factorDiagramRectBase-decreasing-fill;
+  }
+}

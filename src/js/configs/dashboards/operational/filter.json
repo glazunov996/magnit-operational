@@ -1,0 +1,104 @@
+[
+  {
+    "options":
+    [
+      {
+        "type": "picks",
+        "data": {
+          "name": "FRMT",
+          "pick": [],
+          "options": [{
+            "label": "ММ",
+            "value": "ММ"
+          }, {
+            "label": "МК",
+            "value": "МК"
+          }, {
+            "label": "МО",
+            "value": "МО"
+          }, {
+            "label": "МС",
+            "value": "МС"
+          }, {
+            "label": "МС+",
+            "value": "МС+"
+          }, {
+            "label": "МА",
+            "value": "МА"
+          }, {
+            "label": "СИА",
+            "value": "СИА"
+          }, {
+            "label": "HQ",
+            "value": "HQ"
+          }]
+        }
+      }, {
+        "type": "controlledSelect",
+        "data": {
+          "label": "Подформ.",
+          "name": "SUBFRMT",
+          "pick": []
+        }
+      }
+    ]
+  }, {
+    "options":
+    [
+      {
+        "type": "controlledSelect",
+        "data": {
+          "label": "Округ",
+          "name": "REGION",
+          "pick": []
+        }
+      }, {
+        "type": "controlledSelect",
+        "data": {
+          "label": "Фил./гр.",
+          "name": "BRANCH",
+          "pick": []
+        }
+      }
+      , {
+        "type": "controlledSelect",
+        "data": {
+          "label": "Магазин",
+          "name": "WHS_NAME",
+          "pick": []
+        }
+      }
+    ]
+  }, {
+    "options":
+    [
+      {
+        "type": "controlledSelect",
+        "data": {
+          "label": "Гр. 20",
+          "name": "ART_GRP_LVL_0_NAME",
+          "pick": []
+        }
+      }
+    ]
+  }, {
+    "options":
+    [
+      {
+        "type": "controlledSelect",
+        "data": {
+          "label": "ТУ",
+          "name": "ТУ",
+          "pick": []
+        }
+      }, {
+        "type": "controlledSelect",
+        "data": {
+          "label": "СВ",
+          "name": "СВ",
+          "pick": []
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,19 @@
+.txcm-sliceCell {
+  @extend %txph-dataTableCell;
+  position: relative;
+
+  &::before {
+    @include txmx-pseudo;
+    top: -9px;
+    right: 0;
+    bottom: -9px;
+    width: 1px;
+    background: $txgl-dataTable-borderColor;
+  }
+
+  @include txmx-mq(tablet) {
+    &::before {
+      display: none;
+    }
+  }
+}

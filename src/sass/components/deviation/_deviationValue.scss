@@ -1,0 +1,11 @@
+.txcm-deviationValue {
+  @extend %txph-dataTableValue;
+
+  &-is-decreasing {
+    @extend %txph-dataTableValue-is-decreasing;
+  }
+
+  &-is-decreasingCritically {
+    @extend %txph-dataTableValue-is-decreasingCritically;
+  }
+}

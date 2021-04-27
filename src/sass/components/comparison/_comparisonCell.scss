@@ -1,0 +1,29 @@
+$txcm-comparisonCell-minHeight: 110px;
+
+.txcm-comparisonCell {
+  @extend %txph-dataTableCell;
+  position: relative;
+  min-height: $txcm-comparisonCell-minHeight;
+  border-top: 24px solid transparent;
+  border-bottom: 24px solid transparent;
+
+  &::before {
+    @include txmx-pseudo;
+    top: -24px;
+    right: 0;
+    bottom: -24px;
+    width: 1px;
+    background: $txgl-dataTable-borderColor;
+  }
+
+  &::after {
+    @extend %txph-dataTableColumn;
+    @include txmx-pseudo(relative);
+  }
+
+  @include txmx-mq(tablet) {
+    &::before {
+      display: none;
+    }
+  }
+}

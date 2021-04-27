@@ -1,0 +1,72 @@
+.txcm-graphTooltip {
+  margin: 0 0 -2px;
+}
+
+$txcm-graphTooltipRowHeaderLegend-size: 6px;
+
+$txcm-graphTooltipRowHeaderLegend-fact-background: $txgl-red;
+$txcm-graphTooltipRowHeaderLegend-fact-normal-background: $txgl-green;
+$txcm-graphTooltipRowHeaderLegend-delatBudget-background: $txgl-gray-200;
+$txcm-graphTooltipRowHeaderLegend-delatPoP-background: $txgl-gray-300;
+
+.txcm-graphTooltipRowHeader {
+  position: relative;
+  font-weight: normal;
+
+  &::before {
+    @include txmx-pseudo;
+    top: 50%;
+    left: 0;
+    width: $txcm-graphTooltipRowHeaderLegend-size;
+    height: $txcm-graphTooltipRowHeaderLegend-size;
+    margin: ($txcm-graphTooltipRowHeaderLegend-size / -2) 0 0 ($txcm-graphTooltipRowHeaderLegend-size / -2);
+  }
+
+  &-fact {
+    &::before {
+      border-radius: 50%;
+      background: $txcm-graphTooltipRowHeaderLegend-fact-background;
+    }
+  }
+
+  &-fact-normal {
+    &::before {
+      border-radius: 50%;
+      background: $txcm-graphTooltipRowHeaderLegend-fact-normal-background;
+    }
+  }
+
+  &-deltaBudget {
+    &::before {
+      border-radius: 1px;
+      background: $txcm-graphTooltipRowHeaderLegend-delatBudget-background;
+    }
+  }
+
+  &-deltaPoP {
+    &::before {
+      border-radius: 1px;
+      background: $txcm-graphTooltipRowHeaderLegend-delatPoP-background;
+    }
+  }
+}
+
+.txcm-graphTooltipRowHeader,
+.txcm-graphTooltipRowCell {
+  padding: 2px 25px 2px 0;
+  border: 0;
+  white-space: nowrap;
+  font-size: 14px;
+
+  &:first-child {
+    padding: 2px 25px 2px 10px;
+  }
+
+  &:last-child {
+    padding: 2px 0;
+  }
+}
+
+.txcm-graphTooltipRowCell {
+  text-align: right;
+}

@@ -1,0 +1,43 @@
+$txcm-graphHeaderShade-width: 20px;
+
+.txcm-graphHeader {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  align-self: stretch;
+  flex-grow: 1;
+  overflow: hidden;
+  user-select: none;
+
+  &::before,
+  &::after {
+    @include txmx-pseudo;
+    z-index: 3;
+    width: $txcm-graphHeaderShade-width;
+    height: 100%;
+    opacity: 0;
+    transition: opacity $txgl-transition-default;
+  }
+
+  &::before {
+    left: 0;
+    background: linear-gradient(to right, $txgl-background, rgba($txgl-background, 0));
+  }
+
+  &::after {
+    right: 0;
+    background: linear-gradient(to left, $txgl-background, rgba($txgl-background, 0));
+  }
+
+  &-has-leftShade {
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  &-has-rightShade {
+    &::after {
+      opacity: 1;
+    }
+  }
+}

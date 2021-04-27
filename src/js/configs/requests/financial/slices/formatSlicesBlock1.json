@@ -1,0 +1,38 @@
+{
+  "qInitialDataFetch": [
+    {
+        "qHeight": 20,
+        "qWidth": 5
+    }
+  ],
+  "qDimensions": [
+      {
+          "qLabel": "FRMT",
+          "qLibraryId": "jeY",
+          "qNullSuppression": true
+      }
+  ],
+  "qMeasures": [
+      {
+          "qLabel": "ТаблОтклоненияПоФорматам.Факт % от выр месяц",
+          "qLibraryId": "QWTG"
+      },
+      {
+          "qLabel": "ТаблОтклоненияПоФорматам.vs Факт п-п % месяц",
+          "qLibraryId": "DtfFZ"
+      },
+      {
+          "qLabel": "ТаблОтклоненияПоФорматам.vs Бюджет % месяц",
+          "qLibraryId": "cmtTzPK"
+      },
+      {
+          "qLabel": "ТаблОтклоненияПоФорматам.Стрелка месяц",
+          "qLibraryId": "dmupPb"
+      }
+  ],
+  "qSuppressZero": true,
+  "qSuppressMissing": true,
+  "qMode": "S",
+  "qInterColumnSortOrder": [],
+  "qStateName": "$"
+}

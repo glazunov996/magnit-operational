@@ -1,0 +1,29 @@
+$txcm-indicatorsHeader-color: $txgl-white-900;
+$txcm-indicatorsHeader-height: 32px;
+
+.txcm-indicatorsHeader {
+  @include txmx-fontSize(15px);
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  min-height: $txcm-indicatorsHeader-height;
+  margin: 0 0 14px;
+  color: $txcm-indicatorsHeader-color;
+  background: inherit;
+  font-weight: 600;
+}
+
+.txcm-indicatorsActive {
+  margin: 0 0 16px;
+  transition: margin $txgl-transition-default ease-in-out;
+
+  &:empty {
+    margin: 0;
+  }
+
+  &-is-empty {
+    margin: 0;
+  }
+}

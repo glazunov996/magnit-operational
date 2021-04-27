@@ -1,0 +1,24 @@
+// Parameters
+
+@import 'coreColors';
+@import 'coreGlobal';
+
+// Functions & Mixins
+
+@import 'coreFunctions';
+@import 'coreMixins';
+
+// Typography
+
+@import 'coreTypography';
+@import 'coreFonts';
+
+// Media
+
+@import 'coreMediaQueries';
+
+// Elements
+
+@import 'coreBase';
+@import 'coreUI';
+@import 'corePatterns';

@@ -1,0 +1,32 @@
+$txcm-filter-height: 65px;
+$txcm-filter-position: 72px;
+$txcm-filter-borderColor: $txgl-gray-400;
+
+$txcm-filter-phone-position: 65px;
+$txcm-filter-phone-height: 50px;
+
+.txcm-filter {
+  @extend %txph-filter;
+  @include txmx-layer(top, 10);
+  position: fixed;
+  top: $txcm-filter-position;
+  left: 0;
+  display: flex;
+  align-items: flex-start;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
+  height: calc(100% - #{$txcm-filter-position});
+  padding: 20px $txgl-gap 0;
+  background-image: linear-gradient(to top, $txcm-filter-borderColor, $txcm-filter-borderColor 1px, $txgl-background 1px, $txgl-background);
+  background-position: 0 0;
+  background-size: 100% $txcm-filter-height;
+  background-repeat: no-repeat;
+  pointer-events: none;
+
+  @include txmx-mq(phone) {
+    height: calc(100% - #{$txcm-filter-phone-position});
+    padding: 12px $txgl-gap-small 0;
+    background-size: 100% $txcm-filter-phone-height;
+  }
+}

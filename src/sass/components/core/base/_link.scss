@@ -1,0 +1,36 @@
+a {
+  @include txmx-link($txgl-link, $txgl-visited, $txgl-hover, $txgl-active);
+  -webkit-tap-highlight-color: $txgl-tap;
+  text-decoration: underline;
+  text-decoration-skip: spaces edges;
+  text-decoration-skip-ink: auto;
+  touch-action: manipulation;
+  transition: color $txgl-transition;
+
+  &:focus {
+    outline: none;
+  }
+
+  @include txmx-media(coarse) {
+    @include txmx-link($txgl-link, $txgl-visited, $txgl-link, $txgl-link);
+  }
+
+  @include txmx-media(print) {
+    @include txmx-link($txgl-text-print, $all: true);
+    text-decoration: none;
+
+    &::after {
+      content: ' (' attr(href) ')';
+      font-size: 90%;
+    }
+
+    &[href^='javascript:'],
+    &[href^='#'],
+    &[href^='mailto:'],
+    &[href^='tel:'] {
+      &::after {
+        content: '';
+      }
+    }
+  }
+}

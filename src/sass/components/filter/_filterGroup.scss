@@ -1,0 +1,32 @@
+.txcm-filterGroup {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0 14px 0 0;
+  pointer-events: all;
+
+  &:last-child {
+    margin: 0;
+
+    &::after {
+      @include txmx-pseudo;
+      z-index: -1;
+      top: -20px;
+      right: -$txgl-gap;
+      width: 4000vw;
+      height: $txcm-filter-height;
+    }
+  }
+
+  @include txmx-mq(phone) {
+    margin: 0 12px 0 0;
+
+    &:last-child {
+      &::after {
+        top: -12px;
+        right: -$txgl-gap-small;
+        height: $txcm-filter-phone-height;
+      }
+    }
+  }
+}

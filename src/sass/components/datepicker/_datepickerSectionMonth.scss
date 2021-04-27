@@ -1,0 +1,191 @@
+$txcm-datepickerWeekLabel-width: 32px;
+$txcm-datepickerWeekLabel-borderColor: $txgl-gray-300;
+
+.txcm-datepickerWeekLabel {
+  order: 0;
+  box-sizing: border-box;
+  width: $txcm-datepickerWeekLabel-width;
+  padding: 0 6px 6px 0;
+  border-bottom: 1px solid $txcm-datepickerWeekLabel-borderColor;
+  text-align: center;
+}
+
+$txcm-datepickerWeekNumbers-borderColor: $txgl-gray-300;
+
+.txcm-datepickerWeekNumbers {
+  display: flex;
+  order: 1;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: $txcm-datepickerWeekLabel-width;
+  padding: 0;
+  border-right: 1px solid $txcm-datepickerWeekNumbers-borderColor;
+  margin: 0 0 12px;
+  list-style: none;
+}
+
+.txcm-datepickerWeekNumber {
+  position: relative;
+  padding: 0;
+  margin: 5px 0;
+  text-align: center;
+}
+
+$txcm-datepickerWeekNumberButton-size: 24px;
+$txcm-datepickerWeekNumberButton-color: $txgl-gray-100;
+$txcm-datepickerWeekNumberButton-hover-color: $txgl-white-900;
+$txcm-datepickerWeekNumberButton-hover-background: $txgl-gray-100;
+$txcm-datepickerWeekNumberButton-active-background: $txgl-red;
+
+$txcm-datepickerWeekNumberButtonHighlight-width: 234px;
+$txcm-datepickerWeekNumberButtonHighlight-background: $txgl-gray-300;
+
+.txcm-datepickerWeekNumberButton {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $txcm-datepickerWeekNumberButton-size;
+  height: $txcm-datepickerWeekNumberButton-size;
+  color: $txcm-datepickerWeekNumberButton-color;
+  background: none;
+  font-weight: 600;
+
+  &::before {
+    @include txmx-pseudo;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+  }
+
+  &::after {
+    @include txmx-pseudo;
+    top: 0%;
+    left: 100%;
+    width: $txcm-datepickerWeekNumberButtonHighlight-width;
+    height: 100%;
+    border-radius: 3px;
+    margin: 0 0 0 12px;
+    background: $txcm-datepickerWeekNumberButtonHighlight-background;
+    pointer-events: none;
+    opacity: 0;
+    transition: $txgl-transition-default;
+  }
+
+  &:hover,
+  &:active,
+  &:focus,
+  &-is-active {
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  &:hover {
+    color: $txcm-datepickerWeekNumberButton-hover-color;
+    background: $txcm-datepickerWeekNumberButton-hover-background;
+  }
+
+  &:active {
+    color: $txcm-datepickerWeekNumberButton-hover-color;
+    background: $txcm-datepickerWeekNumberButton-active-background;
+  }
+
+  &-is-active {
+    color: $txcm-datepickerWeekNumberButton-hover-color;
+    background: $txcm-datepickerWeekNumberButton-active-background;
+
+    &:hover {
+      color: $txcm-datepickerWeekNumberButton-hover-color;
+      background: $txcm-datepickerWeekNumberButton-active-background;
+    }
+  }
+}
+
+$txcm-datepickerDayNames-width: 242px;
+$txcm-datepickerDayNames-borderColor: $txgl-gray-300;
+
+.txcm-datepickerDayNames {
+  display: flex;
+  order: 0;
+  flex-grow: 1;
+  width: $txcm-datepickerDayNames-width;
+  padding: 0 0 6px;
+  border-bottom: 1px solid $txcm-datepickerDayNames-borderColor;
+  margin: 0 0 12px;
+  list-style: none;
+}
+
+.txcm-datepickerDayName {
+  width: 14.2857%;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.txcm-datepickerDays {
+  display: flex;
+  order: 1;
+  flex-wrap: wrap;
+  width: $txcm-datepickerDayNames-width;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.txcm-datepickerDay {
+  display: flex;
+  justify-content: center;
+  width: 14.2857%;
+  padding: 0;
+  margin: 5px 0;
+}
+
+$txcm-datepickerDayButton-size: 24px;
+$txcm-datepickerDayButton-color: $txgl-white-900;
+$txcm-datepickerDayButton-hover-background: $txgl-gray-100;
+$txcm-datepickerDayButton-active-background: $txgl-red;
+$txcm-datepickerDayButton-padding-color: $txgl-gray-200;
+
+.txcm-datepickerDayButton {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $txcm-datepickerDayButton-size;
+  height: $txcm-datepickerDayButton-size;
+  color: $txcm-datepickerDayButton-color;
+  background: none;
+  font-weight: 600;
+  transition: background $txgl-transition-default;
+
+  &::before {
+    @include txmx-pseudo;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+  }
+
+  &:hover {
+    background: $txcm-datepickerDayButton-hover-background;
+  }
+
+  &:active {
+    background: $txcm-datepickerDayButton-active-background;
+  }
+
+  &-is-active {
+    background: $txcm-datepickerDayButton-active-background;
+
+    &:hover {
+      background: $txcm-datepickerDayButton-active-background;
+    }
+  }
+
+  &-is-padding {
+    color: $txcm-datepickerDayButton-padding-color;
+    font-weight: normal;
+  }
+}

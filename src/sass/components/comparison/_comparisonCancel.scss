@@ -1,0 +1,61 @@
+$txcm-comparisonCancel-phone-size: 16px;
+$txcm-comparisonCancel-phone-background: $txgl-gray-400;
+
+$txcm-comparisonCancelIcon-width: 10px;
+$txcm-comparisonCancelIcon-height: 2px;
+$txcm-comparisonCancelIcon-color: $txgl-gray-200;
+
+$txcm-comparisonCancelIcon-phone-color: $txgl-gray-100;
+
+.txcm-comparisonCancel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: $txgl-gap;
+  height: 100%;
+  padding: 0;
+  color: $txcm-comparisonCancelIcon-color;
+  background: none;
+  text-indent: -10000px;
+  opacity: 0;
+  transition: opacity $txgl-transition-default;
+
+  &::before,
+  &::after {
+    @include txmx-pseudo;
+    top: 50%;
+    left: 50%;
+    width: $txcm-comparisonCancelIcon-width;
+    height: $txcm-comparisonCancelIcon-height;
+    margin: ($txcm-comparisonCancelIcon-height / -2) 0 0 ($txcm-comparisonCancelIcon-width / -2);
+    background: currentColor;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  %txph-comparisonLabel-hover & {
+    opacity: 1;
+  }
+
+  @include txmx-mq(phone) {
+    @include txmx-fontSize(15px);
+    top: auto;
+    bottom: 16px;
+    left: $txgl-gap-small;
+    width: $txcm-comparisonCancel-phone-size;
+    height: $txcm-comparisonCancel-phone-size;
+    background: $txcm-comparisonCancel-phone-background;
+    opacity: 1;
+
+    &::before,
+    &::after {
+      background: $txcm-comparisonCancelIcon-phone-color;
+    }
+  }
+}

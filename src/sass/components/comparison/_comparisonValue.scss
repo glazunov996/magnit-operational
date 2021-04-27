@@ -1,0 +1,88 @@
+$txcm-comparisonValue-height: 20px;
+$txcm-comparisonValue-color: $txgl-white-900;
+
+.txcm-comparisonValue {
+  position: relative;
+  display: flex;
+  order: -3;
+  align-items: center;
+  height: $txcm-comparisonValue-height;
+  margin: 14px 0 0;
+  color: $txcm-comparisonValue-color;
+  line-height: $txcm-comparisonValue-height;
+  transform-origin: 100% 75%;
+  transition: $txgl-transition-default;
+
+  &:first-child {
+    margin: 0;
+  }
+
+  &-is-highlighted {
+    @extend %txph-comparisonValue-is-highlighted;
+    font-weight: 600;
+    transform: scale(1.8333);
+  }
+
+  @include txmx-mq(phone) {
+    transform-origin: 100% 50%;
+
+    &-is-highlighted {
+      transform: scale(1.25);
+    }
+  }
+}
+
+$txcm-comparisonValueIcon-width: 4px;
+$txcm-comparisonValueIcon-height: 6px;
+$txcm-comparisonValueIcon-increasing-fill: $txgl-green;
+$txcm-comparisonValueIcon-dectreasing-fill: $txgl-yellow;
+$txcm-comparisonValueIcon-dectreasingCritically-fill: $txgl-red;
+
+.txcm-comparisonValueIcon {
+  visibility: hidden;
+  width: $txcm-comparisonValueIcon-width;
+  height: $txcm-comparisonValueIcon-height;
+  margin: 0 6px 0 0;
+  opacity: 0;
+  transition: $txgl-transition-default;
+
+  &-is-increasing {
+    visibility: visible;
+    transform: rotate(90deg);
+    fill: $txcm-comparisonValueIcon-increasing-fill;
+  }
+
+  &-is-decreasing {
+    visibility: visible;
+    transform: rotate(-90deg);
+    fill: $txcm-comparisonValueIcon-dectreasing-fill;
+  }
+
+  &-is-decreasingCritically {
+    visibility: visible;
+    transform: rotate(-90deg);
+    fill: $txcm-comparisonValueIcon-dectreasingCritically-fill;
+  }
+
+  %txph-comparisonValue-is-highlighted & {
+    opacity: 1;
+  }
+}
+
+.txcm-comparisonValueAdd {
+  @extend %txph-dataTableValue;
+  position: relative;
+  margin: 14px 0 0;
+
+  &:first-child {
+    margin: 0 0 auto;
+  }
+
+  &-is-decreasing {
+    @extend %txph-dataTableValue-is-decreasing;
+  }
+
+  &-is-decreasingCritically {
+    @extend %txph-dataTableValue-is-decreasingCritically;
+  }
+}

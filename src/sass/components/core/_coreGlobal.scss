@@ -1,0 +1,66 @@
+$txgl-gap: 32px;
+$txgl-gap-narrow: 24px;
+$txgl-gap-small: 16px;
+
+$txgl-layers: (
+  over: 200,
+  top: 100,
+  content: 50,
+  bottom: 0,
+  under: -1,
+);
+
+$txgl-transition-default: 200ms;
+$txgl-transition-fast: 100ms;
+$txgl-transition-medium: 300ms;
+$txgl-transition-slow: 400ms;
+$txgl-transition-slowest: 500ms;
+
+$txgl-transition: $txgl-transition-default;
+
+$txgl-link: $txgl-white;
+$txgl-visited: $txgl-white;
+$txgl-hover: $txgl-white-900;
+$txgl-active: $txgl-white-900;
+
+$txgl-tap: rgba($txgl-active, 0.35);
+
+$txgl-ui-focus-color: $txgl-red;
+$txgl-ui-disabled-color: $txgl-gray;
+$txgl-ui-valid-color: $txgl-green;
+$txgl-ui-invalid-color: $txgl-red;
+
+$txgl-form-height: 32px;
+$txgl-form-borderWidth: 1px;
+$txgl-form-borderRadius: 3px;
+$txgl-form-color: $txgl-white-900;
+$txgl-form-borderColor: $txgl-gray-300;
+$txgl-form-background: $txgl-gray-400;
+$txgl-form-hover-color: $txgl-white-900;
+$txgl-form-hover-borderColor: $txgl-gray-200;
+$txgl-form-hover-background: $txgl-gray-300;
+$txgl-form-active-color: $txgl-white-900;
+$txgl-form-active-borderColor: $txgl-gray-100;
+$txgl-form-disabled-color: rgba($txgl-gray-200, 0.65);
+$txgl-form-disabled-borderColor: $txgl-gray-300;
+$txgl-form-error-color: $txgl-white-900;
+$txgl-form-error-borderColor: $txgl-red;
+
+$txgl-button-color: $txgl-white-900;
+$txgl-button-background: $txgl-red;
+$txgl-button-hover-background: $txgl-red-600;
+$txgl-button-active-background: $txgl-red-400;
+$txgl-button-disabled-color: $txgl-gray-200;
+$txgl-button-disabled-background: $txgl-gray;
+$txgl-button-height: 24px;
+$txgl-button-padding: 12px;
+
+$txgl-filter-height: 25px;
+$txgl-filter-margin: 2px;
+
+$txgl-placeholder-color: $txgl-gray-100;
+
+$txgl-selection-color: $txgl-black;
+$txgl-selection-background: $txgl-white-900;
+
+$txgl-dataTable-borderColor: $txgl-gray-400;

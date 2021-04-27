@@ -1,0 +1,25 @@
+.txcm-slices-loader {
+  z-index: 2;
+  position: absolute;
+  top: 230px;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: $txgl-background;
+
+  .txcm-filter ~ & {
+    top: 138px;
+  }
+}
+
+.txcm-slices-loaderIcon {
+  position: absolute;
+}
+
+.txcm-slices-loaderMessage {
+  position: absolute;
+  margin: 0 0 0 16px;
+}

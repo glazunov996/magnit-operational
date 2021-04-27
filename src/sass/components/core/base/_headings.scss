@@ -1,0 +1,38 @@
+%txph-heading {
+  font-weight: bold;
+  line-height: 1.25;
+  page-break-after: avoid;
+  break-after: avoid;
+  orphans: 3;
+  widows: 3;
+}
+
+h1 {
+  @extend %txph-heading;
+  @include txmx-fontSize(h1);
+}
+
+h2 {
+  @extend %txph-heading;
+  @include txmx-fontSize(h2);
+}
+
+h3 {
+  @extend %txph-heading;
+  @include txmx-fontSize(h3);
+}
+
+h4 {
+  @extend %txph-heading;
+  @include txmx-fontSize(h4);
+}
+
+h5 {
+  @extend %txph-heading;
+  @include txmx-fontSize(h5);
+}
+
+h6 {
+  @extend %txph-heading;
+  @include txmx-fontSize(h6);
+}

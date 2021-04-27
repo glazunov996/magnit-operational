@@ -1,0 +1,64 @@
+$txcm-comparisonLabel-color: $txgl-white-900;
+
+.txcm-comparisonLabel {
+  @extend %txph-dataTableLabel;
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  padding: 24px 0 24px $txgl-gap;
+
+  &:hover {
+    @extend %txph-comparisonLabel-hover;
+  }
+
+  @include txmx-mq(tablet) {
+    position: sticky;
+    z-index: 1;
+    left: 0;
+
+    &::before {
+      @include txmx-pseudo;
+      top: 0;
+      right: 20px;
+      left: 0;
+      height: 100%;
+      background: $txgl-background;
+    }
+  }
+
+  @include txmx-mq(phone) {
+    padding: 16px 20px 32px $txgl-gap-small;
+    background: none;
+  }
+}
+
+.txcm-comparisonText {
+  @include txmx-fontSize(18px);
+  position: relative;
+  top: -0.35em;
+  display: flex;
+  color: $txcm-comparisonLabel-color;
+  font-weight: 600;
+  line-height: 1.5;
+
+  @include txmx-mq(phone) {
+    @include txmx-fontSize(15px);
+  }
+}
+
+$txcm-comparisonUnits-color: $txgl-gray-100;
+
+.txcm-comparisonUnits {
+  position: relative;
+  color: $txcm-comparisonUnits-color;
+
+  @include txmx-mq(phone) {
+    position: absolute;
+    right: 0;
+    bottom: 15px;
+    left: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

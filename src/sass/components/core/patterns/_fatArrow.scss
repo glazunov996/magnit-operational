@@ -1,0 +1,12 @@
+$txph-fatArrow-width: 3px;
+$txph-fatArrow-height: 5px;
+
+%txph-fatArrow {
+  position: absolute;
+  top: 50%;
+  width: $txph-fatArrow-width;
+  height: $txph-fatArrow-height;
+  margin: ($txph-fatArrow-height / -2) 0 0 ($txph-fatArrow-width / -2);
+  transform: rotate(-90deg);
+  fill: currentColor;
+}

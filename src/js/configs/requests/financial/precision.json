@@ -1,0 +1,51 @@
+{
+  "qInitialDataFetch": [
+    {
+      "qHeight": 20,
+      "qWidth": 6
+    }
+  ],
+  "qDimensions": [
+    {
+      "qDef": {
+        "qFieldDefs": [
+          "=vPeriod"
+        ]
+      }
+    },
+    {
+      "qDef": {
+        "qFieldDefs": [
+          "=vPeriodDiagram"
+        ]
+      }
+    },
+    {
+      "qDef": {
+        "qFieldDefs": [
+          "=vAbsFlag"
+        ]
+      }
+    },
+    {
+      "qDef": {
+        "qFieldDefs": [
+          "=vDetal"
+        ]
+      }
+    },
+    {
+      "qDef": {
+        "qFieldDefs": [
+          "=vMatchShop"
+        ]
+      }
+    }
+  ],
+  "qMeasures": [],
+  "qSuppressZero": false,
+  "qSuppressMissing": false,
+  "qMode": "S",
+  "qInterColumnSortOrder": [],
+  "qStateName": "$"
+  }

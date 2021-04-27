@@ -1,0 +1,23 @@
+$txcm-lineGraphSegment-stroke: $txgl-green;
+$txcm-lineGraphSegment-has-deviations-stroke: $txgl-red;
+
+.txcm-lineGraphSegment {
+  stroke: $txcm-lineGraphSegment-stroke;
+  stroke-width: 2;
+
+  &-has-fullDeviations {
+    stroke: $txcm-lineGraphSegment-has-deviations-stroke;
+  }
+
+  &-has-leftDeviations {
+    stroke: url('#txcm-graphGradient-leftDeviations');
+  }
+
+  &-has-rightDeviations {
+    stroke: url('#txcm-graphGradient-rightDeviations');
+  }
+
+  &-no-budget {
+    stroke: $txgl-gray-100;
+  }
+}

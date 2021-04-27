@@ -1,0 +1,44 @@
+$txph-monoHighlight-color: $txgl-red;
+
+%txph-monoHighlight {
+  color: $txph-monoHighlight-color;
+
+  @include txmx-media(print) {
+    color: $txgl-text-print;
+  }
+}
+
+%txph-monoFont {
+  font-family: $txgl-font-mono;
+}
+
+pre {
+  @extend %txph-monoFont;
+  display: block;
+  overflow: auto;
+  padding: 0 1.5em;
+  margin: 1.5em 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  tab-size: 2;
+}
+
+code {
+  @extend %txph-monoFont;
+}
+
+samp {
+  @extend %txph-monoHighlight;
+  @extend %txph-monoFont;
+}
+
+var {
+  @extend %txph-monoHighlight;
+  @extend %txph-monoFont;
+  font-weight: bold;
+  font-style: normal;
+}
+
+tt {
+  @extend %txph-monoFont;
+}

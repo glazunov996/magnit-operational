@@ -1,0 +1,14 @@
+$txcm-graphOptions-width: 90px;
+
+.txcm-graphOptions {
+  position: relative;
+  z-index: 11;
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: $txcm-graphOptions-width;
+  background: $txgl-background;
+
+  &-is-kind {
+    margin-top: 6px;
+  }
+}

@@ -1,0 +1,31 @@
+.txcm-templateForm {
+  display: none;
+
+  &-is-active {
+    display: block;
+  }
+}
+
+$txcm-templateInputPlaceholder-color: $txgl-gray-200;
+
+.txcm-templateInput {
+  padding: 0;
+  border: 0;
+  background: none;
+
+  &::placeholder {
+    color: $txcm-templateInputPlaceholder-color;
+  }
+
+  &:hover,
+  &:active {
+    background: none;
+  }
+}
+
+.txcm-templateAdd {
+  @extend %txph-buttonLayout;
+  @extend %txph-buttonBorder;
+  width: 100%;
+  margin: 28px 0 0;
+}

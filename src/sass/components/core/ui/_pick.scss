@@ -1,0 +1,72 @@
+.txcm-pickInput {
+  position: absolute;
+  left: -10000px;
+
+  &:disabled {
+    @extend %txph-pickInput-disabled;
+  }
+
+  &:checked {
+    @extend %txph-pickInput-checked;
+
+    &:disabled {
+      @extend %txph-pickInput-checkedDisabled;
+    }
+  }
+}
+
+$txcm-pick-color: $txgl-white;
+$txcm-pick-background: $txgl-gray-400;
+$txcm-pick-hover-color: $txgl-white-900;
+$txcm-pick-hover-background: $txgl-gray-300;
+$txcm-pick-active-color: $txgl-white-900;
+$txcm-pick-active-background: $txgl-gray-200;
+$txcm-pick-checked-color: $txgl-gray;
+$txcm-pick-checked-background: $txgl-white-900;
+
+.txcm-pick {
+  display: flex;
+  align-items: center;
+  height: $txgl-filter-height;
+  padding: 0 8px;
+  border-radius: $txgl-form-borderRadius;
+  margin: 0 $txgl-filter-margin;
+  color: $txcm-pick-color;
+  background: $txcm-pick-background;
+  white-space: nowrap;
+  transition: background $txgl-transition, color $txgl-transition;
+
+  &:hover {
+    color: $txcm-pick-hover-color;
+    background: $txcm-pick-hover-background;
+  }
+
+  &:active {
+    color: $txcm-pick-active-color;
+    background: $txcm-pick-active-background;
+  }
+
+  %txph-pickInput-checked + & {
+    color: $txcm-pick-checked-color;
+    background: $txcm-pick-checked-background;
+  }
+
+  %txph-pickInput-disabled + & {
+    cursor: not-allowed;
+    opacity: 0.35;
+
+    &:hover,
+    &:active {
+      color: $txcm-pick-color;
+      background: $txcm-pick-background;
+    }
+  }
+
+  %txph-pickInput-checkedDisabled + & {
+    &:hover,
+    &:active {
+      color: $txcm-pick-checked-color;
+      background: $txcm-pick-checked-background;
+    }
+  }
+}

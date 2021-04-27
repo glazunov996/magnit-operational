@@ -1,0 +1,13 @@
+.txcm-authHelp {
+  margin: 70px 0 0;
+  text-align: center;
+}
+
+$txcm-authHelpLink-color: $txgl-red;
+$txcm-authHelpLink-hover-color: $txgl-red-600;
+$txcm-authHelpLink-active-color: $txgl-red-400;
+
+.txcm-authHelpLink {
+  @include txmx-link($txcm-authHelpLink-color, $txcm-authHelpLink-color, $txcm-authHelpLink-hover-color, $txcm-authHelpLink-active-color);
+  text-decoration: none;
+}

@@ -1,0 +1,42 @@
+{
+  "qInitialDataFetch": [
+    {
+        "qHeight": 20,
+        "qWidth": 6
+    }
+  ],
+  "qDimensions": [
+      {
+          "qLabel": "PNL_ITEM_ID7",
+          "qLibraryId": "fJjkWPP",
+          "qNullSuppression": true
+      }
+  ],
+  "qMeasures": [
+      {
+          "qLabel": "МостыИтоги.Факт п-п % от выр. месяц",
+          "qLibraryId": "UbmdGRk"
+      },
+      {
+          "qLabel": "МостыИтоги.Бюджет % от выр. месяц",
+          "qLibraryId": "wbBtd"
+      },
+      {
+          "qLabel": "МостыИтоги.Факт % от выр. месяц",
+          "qLibraryId": "gjAvD"
+      },
+      {
+          "qLabel": "МостыИтоги.тп vs Бюджет месяц",
+          "qLibraryId": "89764093-4562-4e72-a611-0587a836af1c"
+      },
+      {
+          "qLabel": "МостыИтоги.тп vs пп месяц",
+          "qLibraryId": "GJPya"
+      }
+  ],
+  "qSuppressZero": true,
+  "qSuppressMissing": true,
+  "qMode": "S",
+  "qInterColumnSortOrder": [],
+  "qStateName": "$"
+}

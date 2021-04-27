@@ -1,0 +1,45 @@
+{
+  "qInitialDataFetch": [
+      {
+          "qHeight": 1000,
+          "qWidth": 6
+      }
+  ],
+  "qDimensions": [
+      {
+          "qLabel": "Округ",
+          "qLibraryId": "HkYej",
+          "qNullSuppression": true
+      },
+      {
+          "qLabel": "ПериодИзмерение_id",
+          "qLibraryId": "0a2456a6-3694-468d-b28c-778bac05b6cb",
+          "qNullSuppression": true,
+          "qDef" : {
+              "qSortCriterias": [{
+                  "qSortByNumeric": 1
+              }]
+          }
+      },
+      {
+          "qLabel": "ПериодИзмерение",
+          "qLibraryId": "sAVanm",
+          "qNullSuppression": true
+      }
+  ],
+  "qMeasures": [
+      {
+          "qLabel": "ГрафикПоОкругам.vs Факт п-п",
+          "qLibraryId": "4ab16dc1-3061-4817-9433-a7a4a4a58bc1"
+      },
+      {
+          "qLabel": "ГрафикПоОкругам.vs Бюждет",
+          "qLibraryId": "brenF"
+      }
+  ],
+  "qSuppressZero": false,
+  "qSuppressMissing": false,
+  "qMode": "S",
+  "qInterColumnSortOrder": [],
+  "qStateName": "$"
+  }

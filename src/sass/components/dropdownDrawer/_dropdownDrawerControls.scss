@@ -1,0 +1,39 @@
+$txcm-dropdownDrawerControls-borderColor: $txgl-gray-300;
+
+.txcm-dropdownDrawerControls {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  order: 2;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 8px 16px;
+  border-top: 1px solid $txcm-dropdownDrawerControls-borderColor;
+  margin: 6px 0 0;
+  background: inherit;
+  transform: translateX(-16px);
+}
+
+%txph-dropdownDrawerControl {
+  position: relative;
+  right: -8px;
+  margin: 0 0 0 8px;
+  white-space: nowrap;
+
+  &:first-child {
+    margin: 0;
+  }
+}
+
+.txcm-dropdownDrawerCancel {
+  @extend %txph-buttonLayout;
+  @extend %txph-buttonBorder;
+  @extend %txph-dropdownDrawerControl;
+}
+
+.txcm-dropdownDrawerApply {
+  @extend %txph-buttonLayout;
+  @extend %txph-buttonRed;
+  @extend %txph-dropdownDrawerControl;
+}

@@ -1,0 +1,66 @@
+$txcm-template-color: $txgl-gray-100;
+$txcm-template-hover-color: $txgl-white-900;
+
+.txcm-template {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  height: 32px;
+  padding: 0;
+  color: $txcm-template-color;
+  background: none;
+  text-decoration: none;
+
+  &:hover,
+  &:active {
+    color: $txcm-template-hover-color;
+  }
+
+  %txph-templateDelete-hover + & {
+    color: $txcm-template-hover-color;
+  }
+}
+
+$txcm-templateDelete-size: 32px;
+
+$txcm-templateDeleteIcon-width: 10px;
+$txcm-templateDeleteIcon-height: 2px;
+
+.txcm-templateDelete {
+  position: relative;
+  order: 1;
+  flex-grow: 0;
+  flex-shrink: 0;
+  overflow: hidden;
+  width: $txcm-templateDelete-size;
+  height: 0;
+  padding: $txcm-templateDelete-size 0 0;
+  color: $txcm-template-color;
+  background: none;
+
+  &::before,
+  &::after {
+    @include txmx-pseudo;
+    top: 50%;
+    left: 50%;
+    width: $txcm-templateDeleteIcon-width;
+    height: $txcm-templateDeleteIcon-height;
+    border-radius: $txcm-templateDeleteIcon-height / 2;
+    margin: ($txcm-templateDeleteIcon-height / -2) 0 0 ($txcm-templateDeleteIcon-width / -2);
+    background: currentColor;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  &:hover,
+  &:active {
+    @extend %txph-templateDelete-hover;
+    color: $txcm-template-hover-color;
+  }
+}

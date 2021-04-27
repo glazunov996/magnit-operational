@@ -1,0 +1,61 @@
+$txcm-kpiCancel-phone-size: 16px;
+$txcm-kpiCancel-phone-background: $txgl-gray-400;
+
+$txcm-kpiCancelIcon-width: 10px;
+$txcm-kpiCancelIcon-height: 2px;
+$txcm-kpiCancelIcon-color: $txgl-gray-200;
+
+$txcm-kpiCancelIcon-phone-color: $txgl-gray-100;
+
+.txcm-kpiCancel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: $txgl-gap;
+  height: 100%;
+  padding: 0;
+  color: $txcm-kpiCancelIcon-color;
+  background: none;
+  text-indent: -10000px;
+  opacity: 0;
+  transition: opacity $txgl-transition-default;
+
+  &::before,
+  &::after {
+    @include txmx-pseudo;
+    top: 50%;
+    left: 50%;
+    width: $txcm-kpiCancelIcon-width;
+    height: $txcm-kpiCancelIcon-height;
+    margin: ($txcm-kpiCancelIcon-height / -2) 0 0 ($txcm-kpiCancelIcon-width / -2);
+    background: currentColor;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  %txph-kpiLabel-hover & {
+    opacity: 1;
+  }
+
+  @include txmx-mq(phone) {
+    @include txmx-fontSize(15px);
+    top: auto;
+    bottom: 16px;
+    left: $txgl-gap-small;
+    width: $txcm-kpiCancel-phone-size;
+    height: $txcm-kpiCancel-phone-size;
+    background: $txcm-kpiCancel-phone-background;
+    opacity: 1;
+
+    &::before,
+    &::after {
+      background: $txcm-kpiCancelIcon-phone-color;
+    }
+  }
+}

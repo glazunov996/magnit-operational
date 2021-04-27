@@ -1,0 +1,30 @@
+$txcm-factorsTotalLabel-color: $txgl-white-900;
+
+$txcm-factorsTotalLabel-tablet-width: 250px;
+
+$txcm-factorsTotalLabel-phone-width: 160px;
+
+.txcm-factorsTotalLabel {
+  @extend %txph-dataTableLabel;
+  @include txmx-fontSize(15px);
+  position: relative;
+  overflow: hidden;
+  padding: 0 0 0 $txgl-gap;
+  color: $txcm-factorsTotalLabel-color;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  @include txmx-mq(tablet) {
+    position: sticky;
+    z-index: 1;
+    left: 0;
+    width: $txcm-factorsTotalLabel-tablet-width;
+    background: inherit;
+  }
+
+  @include txmx-mq(phone) {
+    z-index: 2;
+    width: $txcm-factorsTotalLabel-phone-width;
+    padding: 0 8px 0 $txgl-gap-small;
+  }
+}

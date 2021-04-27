@@ -1,0 +1,23 @@
+html {
+  @include txmx-hyphens;
+  display: flex;
+  flex-direction: column;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  min-height: 100%;
+  color: $txgl-text;
+  background: $txgl-background;
+  font-size: $txgl-fontSize;
+  font-feature-settings: 'liga' 1, 'clig' 1, 'kern' 1;
+  font-variant-numeric: tabular-nums;
+  text-rendering: optimizeSpeed;
+  line-height: $txgl-lineHeight;
+
+  @include txmx-media(print) {
+    box-decoration-break: clone;
+    background: $txgl-background-print;
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+}

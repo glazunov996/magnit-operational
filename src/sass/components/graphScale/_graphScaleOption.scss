@@ -1,0 +1,39 @@
+$txph-graphScaleOption-height: 24px;
+
+%txph-graphScaleOption {
+  position: relative;
+  flex-grow: 1;
+  flex-basis: 0;
+  box-sizing: border-box;
+  height: $txph-graphScaleOption-height;
+}
+
+%txph-graphScaleOptionText {
+  position: absolute;
+  top: 12px;
+  right: 6px;
+  left: 6px;
+  overflow: hidden;
+  height: 100%;
+  text-align: center;
+  text-transform: capitalize;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.txcm-graphScaleFixedOption {
+  @extend %txph-graphScaleOption;
+}
+
+.txcm-graphScaleFixedOptionText {
+  @extend %txph-graphScaleOptionText;
+}
+
+.txcm-graphScaleDateOption {
+  @extend %txph-graphScaleOption;
+}
+
+.txcm-graphScaleDateOptionText {
+  @extend %txph-graphScaleOptionText;
+  font-size: 14px;
+}

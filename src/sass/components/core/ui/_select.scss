@@ -1,0 +1,197 @@
+.txcm-select {
+  position: relative;
+  display: flex;
+  margin: 0 $txgl-filter-margin;
+  white-space: nowrap;
+}
+
+$txcm-selectToggle-color: $txgl-white;
+$txcm-selectToggle-background: $txgl-gray-400;
+$txcm-selectToggle-hover-color: $txgl-white-900;
+$txcm-selectToggle-hover-background: $txgl-gray-300;
+$txcm-selectToggle-active-color: $txgl-white-900;
+$txcm-selectToggle-active-background: $txgl-gray-200;
+$txcm-selectToggle-has-selected-color: $txgl-black;
+$txcm-selectToggle-has-selected-background: $txgl-white-900;
+$txcm-selectToggle-is-opened-color: $txgl-gray-100;
+$txcm-selectToggle-is-opened-background: $txgl-black-500;
+$txcm-selectToggle-is-opened-borderColor: $txgl-gray-300;
+
+.txcm-selectToggle {
+  position: relative;
+  height: $txgl-filter-height;
+  padding: 0 28px 0 12px;
+  border-radius: $txgl-form-borderRadius;
+  color: $txcm-selectToggle-color;
+  background: $txcm-selectToggle-background;
+
+  &:hover {
+    color: $txcm-selectToggle-hover-color;
+    background: $txcm-selectToggle-hover-background;
+  }
+
+  &:active {
+    color: $txcm-selectToggle-active-color;
+    background: $txcm-selectToggle-active-background;
+  }
+
+  &-has-selected {
+    @extend %txph-selectToggle-has-selected;
+    border-radius: $txgl-form-borderRadius 0 0 $txgl-form-borderRadius;
+    color: $txcm-selectToggle-has-selected-color;
+    background: $txcm-selectToggle-has-selected-background;
+
+    &:hover,
+    &:active {
+      color: $txcm-selectToggle-has-selected-color;
+      background: $txcm-selectToggle-has-selected-background;
+    }
+  }
+
+  &-is-opened {
+    color: $txcm-selectToggle-is-opened-color;
+    background: $txcm-selectToggle-is-opened-background;
+    box-shadow: 0 0 0 1px inset $txcm-selectToggle-is-opened-borderColor;
+
+    &:hover,
+    &:active {
+      color: $txcm-selectToggle-is-opened-color;
+      background: $txcm-selectToggle-is-opened-background;
+    }
+  }
+}
+
+$txcm-selectToggleIcon-width: 6px;
+$txcm-selectToggleIcon-height: 4px;
+
+.txcm-selectToggleIcon {
+  @extend %txph-fatArrow;
+  right: ($txgl-filter-height / 2);
+}
+
+$txcm-selectReset-borderColor: $txcm-selectToggle-hover-background;
+
+$txcm-selectResetIcon-width: 10px;
+$txcm-selectResetIcon-height: 2px;
+$txcm-selectResetIcon-color: $txgl-gray-100;
+$txcm-selectResetIcon-hover-color: $txgl-white-900;
+
+.txcm-selectReset {
+  position: relative;
+  display: none;
+  overflow: hidden;
+  width: $txgl-filter-height;
+  height: 0;
+  padding: $txgl-filter-height 0 0;
+  border-radius: 0 $txgl-form-borderRadius $txgl-form-borderRadius 0;
+  background: $txcm-selectToggle-background;
+  box-shadow: -1px 0 0 $txcm-selectReset-borderColor;
+
+  &::before,
+  &::after {
+    @include txmx-pseudo;
+    top: 50%;
+    left: 50%;
+    width: $txcm-selectResetIcon-width;
+    height: $txcm-selectResetIcon-height;
+    border-radius: $txcm-selectResetIcon-height / 2;
+    margin: ($txcm-selectResetIcon-height / -2) 0 0 ($txcm-selectResetIcon-width / -2);
+    background: $txcm-selectResetIcon-color;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  &:hover {
+    color: $txcm-selectToggle-hover-color;
+    background: $txcm-selectToggle-hover-background;
+  }
+
+  &:active {
+    color: $txcm-selectToggle-active-color;
+    background: $txcm-selectToggle-active-background;
+  }
+
+  %txph-selectToggle-has-selected + & {
+    display: block;
+  }
+}
+
+$txcm-selectOptions-optionHeight: 32px;
+$txcm-selectOptions-maxWidth: 200px;
+$txcm-selectOptions-count: 5;
+$txcm-selectOptions-maxHeight: $txcm-selectOptions-count * $txcm-selectOptions-optionHeight;
+$txcm-selectOptions-background: $txgl-gray-400;
+
+.txcm-selectOptions {
+  position: absolute;
+  top: 100%;
+  left: $txgl-filter-margin;
+  visibility: hidden;
+  overflow: hidden;
+  box-sizing: border-box;
+  min-width: 100%;
+  min-width: calc(100% - #{($txgl-filter-margin * 2)});
+  max-width: $txcm-selectOptions-maxWidth;
+  max-height: $txcm-selectOptions-maxHeight;
+  padding: 0;
+  border-radius: 3px;
+  margin: 6px 0 0;
+  background: $txcm-selectOptions-background;
+  list-style: none;
+  opacity: 0;
+  transform: translateZ(0);
+  transition: opacity $txgl-transition-default, opacity $txgl-transition-default step-end;
+
+  &-is-opened {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity $txgl-transition-default, opacity $txgl-transition-default step-start;
+  }
+}
+
+.txcm-selectOption {
+  margin: 0;
+}
+
+.txcm-selectInput {
+  position: absolute;
+  left: -10000px;
+
+  &:checked {
+    @extend %txph-selectInput-checked;
+  }
+}
+
+$txcm-selectLabel-highlighted-background: $txgl-gray-300;
+$txcm-selectLabel-active-color: $txgl-white-900;
+$txcm-selectLabel-active-background: $txgl-gray-200;
+$txcm-selectLabel-selected-color: $txgl-black;
+$txcm-selectLabel-selected-background: $txgl-white-900;
+
+.txcm-selectLabel {
+  display: flex;
+  align-items: center;
+  height: $txcm-selectOptions-optionHeight;
+  padding: 0 16px;
+  transition: color $txgl-transition, background $txgl-transition;
+
+  &:active {
+    color: $txcm-selectLabel-active-color;
+    background: $txcm-selectLabel-active-background;
+  }
+
+  %txph-selectInput-checked + & {
+    color: $txcm-selectLabel-selected-color;
+    background: $txcm-selectLabel-selected-background;
+  }
+
+  &-is-highlighted {
+    background: $txcm-selectLabel-highlighted-background;
+  }
+}

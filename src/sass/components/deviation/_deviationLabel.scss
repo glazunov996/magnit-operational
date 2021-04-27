@@ -1,0 +1,154 @@
+.txcm-deviationLabel {
+  @extend %txph-dataTableLabel;
+  @include txmx-fontSize(14px);
+  display: flex;
+  align-items: stretch;
+  align-self: stretch;
+  padding: 8px 0 0 $txgl-gap;
+  white-space: nowrap;
+
+  @include txmx-mq(tablet) {
+    position: sticky;
+    z-index: 1;
+    left: -6.25em;
+    background: inherit;
+
+    &::before {
+      @include txmx-pseudo;
+      z-index: -1;
+      top: 0;
+      left: 100%;
+      width: 6.25em;
+      height: 100%;
+      background: inherit;
+    }
+  }
+
+  @include txmx-mq(phone) {
+    @include txmx-fontSize(11px);
+    left: -6.5em;
+
+    &::before {
+      width: 6.65em;
+    }
+  }
+}
+
+$txcm-deviationLabelLink-color: $txgl-white;
+
+.txcm-deviationLabelLink {
+  @extend %txph-dataTableLabel;
+  @include txmx-link($txcm-deviationLabelLink-color);
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-self: stretch;
+  flex-wrap: wrap;
+  padding: 8px 0 0 $txgl-gap;
+  margin: -8px 0 0 (-$txgl-gap);
+  text-decoration: none;
+
+  &-is-active {
+    @extend %txph-dataTableLabel;
+    @include txmx-link($txcm-deviationLabelLink-color);
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-self: stretch;
+    flex-wrap: wrap;
+    padding: 8px 0 0 $txgl-gap;
+    margin: -8px 0 0 (-$txgl-gap);
+    text-decoration: none;
+  }
+
+  &::before {
+    @include txmx-pseudo(relative);
+    order: 1;
+    width: 100%;
+    height: 0;
+  }
+
+  &-is-disabled {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-self: stretch;
+    flex-wrap: wrap;
+    padding: 8px 0 0 $txgl-gap;
+    margin: -8px 0 0 (-$txgl-gap);
+    text-decoration: none;
+    pointer-events: none;
+    color: currentColor;
+    cursor: not-allowed;
+    opacity: 0.35;
+  }
+}
+
+$txcm-deviationCount-width: 24px;
+$txcm-deviationCount-height: 16px;
+$txcm-deviationCount-color: $txgl-white-900;
+$txcm-deviationCount-background: $txgl-red;
+
+$txcm-deviationCount-tablet-shadowColor: $txgl-gray-400;
+
+.txcm-deviationCount {
+  @include txmx-fontSize(14px);
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  width: $txcm-deviationCount-width;
+  height: $txcm-deviationCount-height;
+  color: $txcm-deviationCount-color;
+  font-weight: 600;
+  line-height: 1.25;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: attr(data-count);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    padding: 0 4px 0 0;
+    border-radius: 0 3px 3px 0;
+    background: $txcm-deviationCount-background;
+  }
+
+  @include txmx-mq(tablet) {
+    // position: sticky;
+    z-index: 2;
+    left: $txgl-gap;
+    transform: translateX(-$txgl-gap);
+
+    &::before {
+      box-shadow: 0.85em 0 0 $txcm-deviationCount-tablet-shadowColor;
+    }
+  }
+
+  @include txmx-mq(tablet) {
+    &::before {
+      box-shadow: 0.55em 0 0 $txcm-deviationCount-tablet-shadowColor;
+    }
+  }
+}
+
+$txcm-deviation-count-hint-color: $txgl-white;
+$txcm-deviation-count-hint-background: $txgl-gray-400;
+
+.txcm-deviationCountHint {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  height: $txgl-filter-height;
+  padding: 0 8px;
+  border-radius: $txgl-form-borderRadius;
+  color: $txcm-deviation-count-hint-color;
+  // background: $txcm-deviation-count-hint-background;
+  background: green;
+  z-index: 1;
+  white-space: nowrap;
+}

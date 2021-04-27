@@ -1,0 +1,25 @@
+.txcm-loader {
+  @include txmx-layer(over, 10);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: $txgl-background;
+
+  .txcm-filter ~ & {
+    top: 138px;
+  }
+}
+
+.txcm-loaderIcon {
+  position: relative;
+}
+
+.txcm-loaderMessage {
+  position: relative;
+  margin: 0 0 0 16px;
+}

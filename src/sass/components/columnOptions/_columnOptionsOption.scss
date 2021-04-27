@@ -1,0 +1,23 @@
+.txcm-columnOptionInput {
+  @extend %txph-checkControlInput;
+
+  &:checked {
+    @extend %txph-columnOptionInput-checked;
+  }
+}
+
+.txcm-columnOptionControl {
+  @extend %txph-checkControl;
+
+  %txph-columnOptionInput-checked + & {
+    @extend %txph-checkControl-is-checked;
+  }
+}
+
+.txcm-columnOptionControlIcon {
+  @extend %txph-checkControlIcon;
+
+  &-is-visible {
+    @extend %txph-checkControlIcon-is-visible;
+  }
+}

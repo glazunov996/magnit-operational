@@ -1,0 +1,20 @@
+$txph-dataTableLabel-width: 210px;
+
+$txph-dataTableLabel-tablet-width: 150px;
+
+$txph-dataTableLabel-phone-width: 110px;
+
+%txph-dataTableLabel {
+  flex-grow: 0;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  width: $txph-dataTableLabel-width;
+
+  @include txmx-mq(tablet) {
+    width: $txph-dataTableLabel-tablet-width;
+  }
+
+  @include txmx-mq(phone) {
+    width: $txph-dataTableLabel-phone-width;
+  }
+}

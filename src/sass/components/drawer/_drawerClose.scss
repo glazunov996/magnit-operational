@@ -1,0 +1,43 @@
+$txcm-drawerClose-size: 32px;
+
+$txcm-drawerCloseIcon-width: 20px;
+$txcm-drawerCloseIcon-height: 2px;
+$txcm-drawerCloseIcon-color: $txgl-gray-100;
+$txcm-drawerCloseIcon-hover-color: $txgl-white-900;
+
+.txcm-drawerClose {
+  position: absolute;
+  z-index: 0;
+  top: 20px;
+  right: 20px;
+  width: $txcm-drawerClose-size;
+  height: $txcm-drawerClose-size;
+  color: $txcm-drawerCloseIcon-color;
+  background: none;
+  text-indent: -10000px;
+
+  &::before,
+  &::after {
+    @include txmx-pseudo;
+    top: 50%;
+    left: 50%;
+    width: $txcm-drawerCloseIcon-width;
+    height: $txcm-drawerCloseIcon-height;
+    border-radius: $txcm-drawerCloseIcon-height / 2;
+    margin: ($txcm-drawerCloseIcon-height / -2) 0 0 ($txcm-drawerCloseIcon-width / -2);
+    background: currentColor;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  &:hover,
+  &:active {
+    color: $txcm-drawerCloseIcon-hover-color;
+  }
+}

@@ -1,0 +1,17 @@
+.txcm-tableHeaderCell {
+  @extend %txph-dataTableCell;
+  position: relative;
+  z-index: 2;
+  pointer-events: all;
+
+  %txph-tableHeader-factors & {
+    flex-grow: 1;
+    width: auto;
+    min-width: 0;
+    max-width: initial;
+  }
+
+  %txph-tableHeader-factors & + & {
+    margin: 0;
+  }
+}

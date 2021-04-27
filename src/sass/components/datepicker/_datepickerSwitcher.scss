@@ -1,0 +1,77 @@
+.txcm-datepickerSwitcher {
+  @include txmx-fontSize(14px);
+  position: relative;
+  display: flex;
+  order: -10;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: -12px 0 2px;
+}
+
+$txph-datepickerSwitcherButton-size: 42px;
+$txph-datepickerSwitcherButton-color: $txgl-gray-100;
+
+%txph-datepickerSwitcherButton {
+  position: relative;
+  width: $txph-datepickerSwitcherButton-size;
+  height: $txph-datepickerSwitcherButton-size;
+  color: $txph-datepickerSwitcherButton-color;
+  background: none;
+  text-indent: -10000px;
+  transition: opacity $txgl-transition-default, visibility $txgl-transition-default step-start;
+
+  &-is-inactive {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity $txgl-transition-default, visibility $txgl-transition-default step-end;
+  }
+}
+
+.txcm-datepickerSwitcherPrev {
+  @extend %txph-datepickerSwitcherButton;
+  order: -1;
+
+  &-is-inactive {
+    @extend %txph-datepickerSwitcherButton-is-inactive;
+  }
+}
+
+.txcm-datepickerSwitcherNext {
+  @extend %txph-datepickerSwitcherButton;
+
+  &-is-inactive {
+    @extend %txph-datepickerSwitcherButton-is-inactive;
+  }
+}
+
+$txph-datepickerSwitcherButtonIcon-width: 4px;
+$txph-datepickerSwitcherButtonIcon-height: 8px;
+
+%txph-datepickerSwitcherButtonIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: $txph-datepickerSwitcherButtonIcon-width;
+  height: $txph-datepickerSwitcherButtonIcon-height;
+  margin: ($txph-datepickerSwitcherButtonIcon-height / -2) 0 0 ($txph-datepickerSwitcherButtonIcon-width / -2);
+  fill: currentColor;
+}
+
+.txcm-datepickerSwitcherPrevIcon {
+  @extend %txph-datepickerSwitcherButtonIcon;
+}
+
+.txcm-datepickerSwitcherNextIcon {
+  @extend %txph-datepickerSwitcherButtonIcon;
+  transform: rotate(180deg);
+}
+
+$txcm-datepickerPrecisionOption-color: $txgl-white;
+
+.txcm-datepickerPrecisionOption {
+  color: $txcm-datepickerPrecisionOption-color;
+  background: none;
+  font-weight: 600;
+  text-transform: capitalize;
+}

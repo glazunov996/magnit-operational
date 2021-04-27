@@ -1,0 +1,43 @@
+.txcm-lineGraphPointGroup {
+  &:hover {
+    @extend %txph-lineGraphPointGroup-hover;
+  }
+}
+
+$txcm-lineGraphPoint-stroke: $txgl-green;
+$txcm-lineGraphPoint-fill: $txgl-gray-500;
+$txcm-lineGraphPoint-deviations-stroke: $txgl-red;
+
+.txcm-lineGraphPoint {
+  transition: stroke-width $txgl-transition-default, fill $txgl-transition-default;
+  stroke: $txcm-lineGraphPoint-stroke;
+  stroke-width: 1.5;
+  fill: $txcm-lineGraphPoint-fill;
+
+  %txph-lineGraphPointGroup-hover > & {
+    stroke-width: 2.25;
+    fill: $txcm-lineGraphPoint-stroke;
+  }
+
+  &-has-deviations {
+    stroke: $txcm-lineGraphPoint-deviations-stroke;
+
+    %txph-lineGraphPointGroup-hover > & {
+      stroke-width: 4;
+      fill: $txcm-lineGraphPoint-deviations-stroke;
+    }
+  }
+
+  &-no-budget {
+    stroke: $txgl-gray-100;
+
+    %txph-lineGraphPointGroup-hover > & {
+      stroke-width: 4;
+      fill: $txgl-gray-100;
+    }
+  }
+}
+
+.txcm-lineGraphPointDummy {
+  fill: rgba($txcm-lineGraphPoint-fill, 0.001);
+}

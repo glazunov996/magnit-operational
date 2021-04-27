@@ -1,0 +1,32 @@
+.txcm-kpiDataTooltip {
+  margin: 0 0 -2px;
+}
+
+$txcm-kpiDataTooltipCollumnHeader-color: $txgl-gray-100;
+
+.txcm-kpiDataTooltipCollumnHeader {
+  color: $txcm-kpiDataTooltipCollumnHeader-color;
+}
+
+.txcm-kpiDataTooltipCollumnHeader,
+.txcm-kpiDataTooltipRowHeader {
+  padding: 0 0 2px;
+  font-weight: normal;
+}
+
+.txcm-kpiDataTooltipCollumnHeader,
+.txcm-kpiDataTooltipRowHeader,
+.txcm-kpiDataTooltipRowCell {
+  border: 0;
+  white-space: nowrap;
+  padding: 2px 25px 2px 0;
+  font-size: 14px;
+  &:last-child {
+    padding: 2px 0;
+  }
+}
+
+.txcm-kpiDataTooltipCollumnHeader,
+.txcm-kpiDataTooltipRowCell {
+  text-align: right;
+}

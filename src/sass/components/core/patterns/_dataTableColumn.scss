@@ -1,0 +1,43 @@
+$txph-dataTableColumn-minWidth: 60px;
+$txph-dataTableColumn-maxWidth: 90px;
+
+%txph-dataTableColumnLayout {
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: 20%;
+  min-width: $txph-dataTableColumn-minWidth;
+  max-width: $txph-dataTableColumn-maxWidth;
+  margin: 0 0 0 4px;
+  text-align: right;
+}
+
+%txph-dataTableColumn {
+  @extend %txph-dataTableColumnLayout;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  font-size: 14px;
+  white-space: nowrap;
+  padding-left: 6px;
+
+  @include txmx-mq(tablet) {
+    padding-left: 8px;
+  }
+}
+
+%txph-dataTableWideColumnLayout {
+  flex-shrink: 1;
+  width: 50%;
+
+  @include txmx-mq(phone) {
+    width: 100%;
+  }
+}
+
+%txph-dataTableWideColumn {
+  @extend %txph-dataTableWideColumnLayout;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  font-size: 14px;
+}
